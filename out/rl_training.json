@@ -1,0 +1,9564 @@
+{
+  "config": {
+    "episodes": 9000,
+    "warmup": 500,
+    "batch": 256,
+    "updates_per_step": 2,
+    "lr_actor": 0.0003,
+    "lr_critic": 0.001,
+    "lr_alpha": 0.0003,
+    "hidden": [
+      256,
+      256
+    ],
+    "buffer": 60000,
+    "target_entropy_scale": 0.6,
+    "eval_every": 250,
+    "eval_scenarios": 40,
+    "seed": 0
+  },
+  "evals": [
+    {
+      "reward": 0.4603780773450509,
+      "reward_std": 0.23022906951548627,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.25693330035751744,
+      "mean_RWA": 1.0567198319828475,
+      "mean_swept": 3.9337435356242345,
+      "mean_lane_departure": 0.04042329417676332,
+      "episode": 250,
+      "alpha": 1.0,
+      "train_reward_500": 0.26964314934461703,
+      "elapsed_s": 48.73623709900039
+    },
+    {
+      "reward": 0.459518260877088,
+      "reward_std": 0.22958147528040027,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.25674827376279163,
+      "mean_RWA": 1.0606089281215318,
+      "mean_swept": 3.9326665203820106,
+      "mean_lane_departure": 0.04070079533321683,
+      "episode": 500,
+      "alpha": 1.0,
+      "train_reward_500": 0.2659550712379465,
+      "elapsed_s": 98.73213895400022
+    },
+    {
+      "reward": 0.48803873410657006,
+      "reward_std": 0.19448825078814883,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.2535181432766803,
+      "mean_RWA": 1.0568577212860402,
+      "mean_swept": 3.9106501499397575,
+      "mean_lane_departure": 0.02798888719072825,
+      "episode": 750,
+      "alpha": 0.8647433519363403,
+      "train_reward_500": 0.2753930078863416,
+      "elapsed_s": 155.46385759200075
+    },
+    {
+      "reward": 0.4923168317022073,
+      "reward_std": 0.18983535449789982,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.2501928720459892,
+      "mean_RWA": 1.0552869545322774,
+      "mean_swept": 3.8971762321693872,
+      "mean_lane_departure": 0.026582030573520106,
+      "episode": 1000,
+      "alpha": 0.7542821764945984,
+      "train_reward_500": 0.33257506149425814,
+      "elapsed_s": 211.4369100670001
+    },
+    {
+      "reward": 0.49406858169796325,
+      "reward_std": 0.18751505932529888,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.24949858150847737,
+      "mean_RWA": 1.0545550909965116,
+      "mean_swept": 3.8952031094861765,
+      "mean_lane_departure": 0.025728728913531524,
+      "episode": 1250,
+      "alpha": 0.6622065305709839,
+      "train_reward_500": 0.35333045571451455,
+      "elapsed_s": 267.6119381690005
+    },
+    {
+      "reward": 0.5004006165840899,
+      "reward_std": 0.17514603527968062,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.24723667443261615,
+      "mean_RWA": 1.0482740977593314,
+      "mean_swept": 3.885111015212914,
+      "mean_lane_departure": 0.023606851099770877,
+      "episode": 1500,
+      "alpha": 0.5842297673225403,
+      "train_reward_500": 0.34230560251410386,
+      "elapsed_s": 325.0121323020003
+    },
+    {
+      "reward": 0.5049130208609187,
+      "reward_std": 0.16531246595576632,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.24532497359216715,
+      "mean_RWA": 1.047521027251402,
+      "mean_swept": 3.8767119356912403,
+      "mean_lane_departure": 0.021858230705104224,
+      "episode": 1750,
+      "alpha": 0.5173395872116089,
+      "train_reward_500": 0.36453578103015893,
+      "elapsed_s": 379.9544826630008
+    },
+    {
+      "reward": 0.5089433035385889,
+      "reward_std": 0.1574817079325358,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.24262335892405512,
+      "mean_RWA": 1.045670241237584,
+      "mean_swept": 3.8639264116092003,
+      "mean_lane_departure": 0.02030477235410416,
+      "episode": 2000,
+      "alpha": 0.4593786597251892,
+      "train_reward_500": 0.3727199992315642,
+      "elapsed_s": 436.5087479880003
+    },
+    {
+      "reward": 0.5128397242402648,
+      "reward_std": 0.15299084727349913,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.23952048871601067,
+      "mean_RWA": 1.0421654871300299,
+      "mean_swept": 3.8503073282074682,
+      "mean_lane_departure": 0.019429263468058584,
+      "episode": 2250,
+      "alpha": 0.4087490439414978,
+      "train_reward_500": 0.3821859775931167,
+      "elapsed_s": 492.5526939430001
+    },
+    {
+      "reward": 0.510998830462992,
+      "reward_std": 0.15588267960722035,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.24040077573244617,
+      "mean_RWA": 1.0383258189819,
+      "mean_swept": 3.8541396661879106,
+      "mean_lane_departure": 0.019905890005514636,
+      "episode": 2500,
+      "alpha": 0.36427703499794006,
+      "train_reward_500": 0.37482463735295235,
+      "elapsed_s": 549.3553433780007
+    },
+    {
+      "reward": 0.5148754040386294,
+      "reward_std": 0.15126750708326536,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.23710577208229724,
+      "mean_RWA": 1.037125640396904,
+      "mean_swept": 3.8392343204274146,
+      "mean_lane_departure": 0.018820455606988883,
+      "episode": 2750,
+      "alpha": 0.3250352144241333,
+      "train_reward_500": 0.35349294397881453,
+      "elapsed_s": 605.8748586250003
+    },
+    {
+      "reward": 0.5191420055712814,
+      "reward_std": 0.14314166229911923,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.2346513769401052,
+      "mean_RWA": 1.0362284494910043,
+      "mean_swept": 3.828381465076832,
+      "mean_lane_departure": 0.01744211867641147,
+      "episode": 3000,
+      "alpha": 0.2902556359767914,
+      "train_reward_500": 0.3901247840748801,
+      "elapsed_s": 661.9814331350008
+    },
+    {
+      "reward": 0.5232778464988911,
+      "reward_std": 0.13459402764095255,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.23366327578113327,
+      "mean_RWA": 1.0329199354743388,
+      "mean_swept": 3.8229077341993496,
+      "mean_lane_departure": 0.01565200687266146,
+      "episode": 3250,
+      "alpha": 0.2593613862991333,
+      "train_reward_500": 0.417266949520613,
+      "elapsed_s": 718.6192566240006
+    },
+    {
+      "reward": 0.525338787236216,
+      "reward_std": 0.13358472846288555,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.23043027417216094,
+      "mean_RWA": 1.0295648688692427,
+      "mean_swept": 3.811776233945456,
+      "mean_lane_departure": 0.015449483922202361,
+      "episode": 3500,
+      "alpha": 0.2318694293498993,
+      "train_reward_500": 0.425606350132375,
+      "elapsed_s": 774.5315818180006
+    },
+    {
+      "reward": 0.5279178200722778,
+      "reward_std": 0.1281799494298577,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.22892402865106476,
+      "mean_RWA": 1.0341237520954465,
+      "mean_swept": 3.8015094525310986,
+      "mean_lane_departure": 0.014183437667952215,
+      "episode": 3750,
+      "alpha": 0.20736628770828247,
+      "train_reward_500": 0.4519134858154591,
+      "elapsed_s": 831.721215507001
+    },
+    {
+      "reward": 0.5316815874321177,
+      "reward_std": 0.12474309462577177,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.22620631272477026,
+      "mean_RWA": 1.0287521119800989,
+      "mean_swept": 3.7890896320265584,
+      "mean_lane_departure": 0.013357083244160522,
+      "episode": 4000,
+      "alpha": 0.18550553917884827,
+      "train_reward_500": 0.4522296511453864,
+      "elapsed_s": 888.2853354769995
+    },
+    {
+      "reward": 0.5333666862522245,
+      "reward_std": 0.12351588533249717,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.22455869946705115,
+      "mean_RWA": 1.0208413382415387,
+      "mean_swept": 3.784521463607933,
+      "mean_lane_departure": 0.013112028947524834,
+      "episode": 4250,
+      "alpha": 0.16598932445049286,
+      "train_reward_500": 0.4458648004167004,
+      "elapsed_s": 944.5001166689999
+    },
+    {
+      "reward": 0.5326519347450537,
+      "reward_std": 0.12526382783175688,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.2239096033533944,
+      "mean_RWA": 1.0247262471254703,
+      "mean_swept": 3.780528927155493,
+      "mean_lane_departure": 0.013475443646253471,
+      "episode": 4500,
+      "alpha": 0.1485520750284195,
+      "train_reward_500": 0.4611393564668486,
+      "elapsed_s": 1001.1109866269999
+    },
+    {
+      "reward": 0.5373981303300889,
+      "reward_std": 0.11855880154845655,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.22061981263459046,
+      "mean_RWA": 1.020157352247953,
+      "mean_swept": 3.765668232225006,
+      "mean_lane_departure": 0.011746638473237503,
+      "episode": 4750,
+      "alpha": 0.13296329975128174,
+      "train_reward_500": 0.4844352577389012,
+      "elapsed_s": 1056.8371385219998
+    },
+    {
+      "reward": 0.5387125014684576,
+      "reward_std": 0.11753322030350881,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.2205127234128244,
+      "mean_RWA": 1.0173606516164244,
+      "mean_swept": 3.7643640753044094,
+      "mean_lane_departure": 0.011522582218786987,
+      "episode": 5000,
+      "alpha": 0.11902657896280289,
+      "train_reward_500": 0.4759264497429707,
+      "elapsed_s": 1112.9440566060002
+    },
+    {
+      "reward": 0.540914304640947,
+      "reward_std": 0.11519973436554626,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.21892847889352612,
+      "mean_RWA": 1.0130709135436216,
+      "mean_swept": 3.7585690357372954,
+      "mean_lane_departure": 0.010753479577476317,
+      "episode": 5250,
+      "alpha": 0.10656518489122391,
+      "train_reward_500": 0.47339942750401565,
+      "elapsed_s": 1169.3992598870009
+    },
+    {
+      "reward": 0.5456702240540069,
+      "reward_std": 0.11204568708503161,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.21423439034288977,
+      "mean_RWA": 1.008476116372753,
+      "mean_swept": 3.738750770751294,
+      "mean_lane_departure": 0.009283260579073343,
+      "episode": 5500,
+      "alpha": 0.09542056918144226,
+      "train_reward_500": 0.493889133103742,
+      "elapsed_s": 1226.609823906001
+    },
+    {
+      "reward": 0.5437973923764362,
+      "reward_std": 0.11481414552087583,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.21455884856186605,
+      "mean_RWA": 1.0062627724239543,
+      "mean_swept": 3.7408339187491593,
+      "mean_lane_departure": 0.010381550075676343,
+      "episode": 5750,
+      "alpha": 0.08545058965682983,
+      "train_reward_500": 0.4923942399833237,
+      "elapsed_s": 1283.5586136090005
+    },
+    {
+      "reward": 0.5474872024209559,
+      "reward_std": 0.10877766419762777,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.21220424550446423,
+      "mean_RWA": 1.0092907160849611,
+      "mean_swept": 3.7255726154462514,
+      "mean_lane_departure": 0.008914796088436571,
+      "episode": 6000,
+      "alpha": 0.07652843743562698,
+      "train_reward_500": 0.4963838925900349,
+      "elapsed_s": 1339.5327180969998
+    },
+    {
+      "reward": 0.5499218161650214,
+      "reward_std": 0.11022616049465728,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.20902124395667215,
+      "mean_RWA": 1.0006429914980743,
+      "mean_swept": 3.714958276309383,
+      "mean_lane_departure": 0.00849730819239991,
+      "episode": 6250,
+      "alpha": 0.06854408979415894,
+      "train_reward_500": 0.5079325718071818,
+      "elapsed_s": 1396.448387288001
+    },
+    {
+      "reward": 0.5513363943977272,
+      "reward_std": 0.10820152687703695,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.20874911922571066,
+      "mean_RWA": 1.0036541299038428,
+      "mean_swept": 3.7133499169466413,
+      "mean_lane_departure": 0.008280752296417605,
+      "episode": 6500,
+      "alpha": 0.06140134856104851,
+      "train_reward_500": 0.5107353914251989,
+      "elapsed_s": 1455.1055366340006
+    },
+    {
+      "reward": 0.5535095525603873,
+      "reward_std": 0.10604713382177682,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.20555601588288702,
+      "mean_RWA": 0.9978527690343414,
+      "mean_swept": 3.7009017807527043,
+      "mean_lane_departure": 0.007731333966363762,
+      "episode": 6750,
+      "alpha": 0.05500565096735954,
+      "train_reward_500": 0.5148120374659754,
+      "elapsed_s": 1512.4669526320013
+    },
+    {
+      "reward": 0.553859395043664,
+      "reward_std": 0.1079691077372818,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.20459007630204723,
+      "mean_RWA": 0.9966639536777316,
+      "mean_swept": 3.696621676114026,
+      "mean_lane_departure": 0.007804084977441483,
+      "episode": 7000,
+      "alpha": 0.04928094893693924,
+      "train_reward_500": 0.5037716009571747,
+      "elapsed_s": 1570.2994082650002
+    },
+    {
+      "reward": 0.5562754024384556,
+      "reward_std": 0.1005900942593403,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.20322513168702433,
+      "mean_RWA": 0.9946799129159652,
+      "mean_swept": 3.690794864592317,
+      "mean_lane_departure": 0.007080190390421975,
+      "episode": 7250,
+      "alpha": 0.04415847733616829,
+      "train_reward_500": 0.507414571716684,
+      "elapsed_s": 1627.843859003
+    },
+    {
+      "reward": 0.5589888125335667,
+      "reward_std": 0.09679928012348009,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.19994920454162007,
+      "mean_RWA": 0.9874266971923806,
+      "mean_swept": 3.672464721484947,
+      "mean_lane_departure": 0.006687251232728614,
+      "episode": 7500,
+      "alpha": 0.039573222398757935,
+      "train_reward_500": 0.5247384705565341,
+      "elapsed_s": 1684.8956750010002
+    },
+    {
+      "reward": 0.5604597262628546,
+      "reward_std": 0.0954257523299138,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.19772931141395636,
+      "mean_RWA": 0.985633345730468,
+      "mean_swept": 3.6644384077978636,
+      "mean_lane_departure": 0.006455958129691059,
+      "episode": 7750,
+      "alpha": 0.035471297800540924,
+      "train_reward_500": 0.5247377081187381,
+      "elapsed_s": 1742.0591136330004
+    },
+    {
+      "reward": 0.5614562526707809,
+      "reward_std": 0.0922356734149538,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.19681009368351937,
+      "mean_RWA": 0.9825664798724698,
+      "mean_swept": 3.658580162625287,
+      "mean_lane_departure": 0.006111833949820367,
+      "episode": 8000,
+      "alpha": 0.03179686516523361,
+      "train_reward_500": 0.5191027537310399,
+      "elapsed_s": 1799.5031274740013
+    },
+    {
+      "reward": 0.5624438875978676,
+      "reward_std": 0.09021114478453285,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.19578640535649872,
+      "mean_RWA": 0.9809065051134432,
+      "mean_swept": 3.654799201343173,
+      "mean_lane_departure": 0.005956819364749266,
+      "episode": 8250,
+      "alpha": 0.028507811948657036,
+      "train_reward_500": 0.514665839659445,
+      "elapsed_s": 1856.875788708001
+    },
+    {
+      "reward": 0.5636804567066843,
+      "reward_std": 0.08880646740793009,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.19400259774675827,
+      "mean_RWA": 0.9815261052925053,
+      "mean_swept": 3.6425292530500584,
+      "mean_lane_departure": 0.00557799679162006,
+      "episode": 8500,
+      "alpha": 0.02555830217897892,
+      "train_reward_500": 0.5276730491951764,
+      "elapsed_s": 1914.4412546920012
+    },
+    {
+      "reward": 0.566277435952088,
+      "reward_std": 0.08448317903740808,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.19140610461948912,
+      "mean_RWA": 0.9777357759996107,
+      "mean_swept": 3.6299184590934046,
+      "mean_lane_departure": 0.005223154863483348,
+      "episode": 8750,
+      "alpha": 0.022921256721019745,
+      "train_reward_500": 0.5325849384590893,
+      "elapsed_s": 1972.0493690940002
+    },
+    {
+      "reward": 0.5660459073465091,
+      "reward_std": 0.0865264117292267,
+      "success_rate": 1.0,
+      "collisions": 0,
+      "rollovers": 0,
+      "mean_peak_LTR": 0.19016442298628,
+      "mean_RWA": 0.9752401593290463,
+      "mean_swept": 3.628096292726479,
+      "mean_lane_departure": 0.005538315013810862,
+      "episode": 9000,
+      "alpha": 0.020558565855026245,
+      "train_reward_500": 0.5304392364452254,
+      "elapsed_s": 2029.839615934001
+    }
+  ],
+  "history": [
+    {
+      "ep": 1,
+      "reward": -1.5,
+      "cause": "collision"
+    },
+    {
+      "ep": 6,
+      "reward": 0.5148083825088977,
+      "cause": "success"
+    },
+    {
+      "ep": 11,
+      "reward": 0.39612037879125506,
+      "cause": "success"
+    },
+    {
+      "ep": 16,
+      "reward": 0.5255823389780792,
+      "cause": "success"
+    },
+    {
+      "ep": 21,
+      "reward": 0.0201473959262351,
+      "cause": "success"
+    },
+    {
+      "ep": 26,
+      "reward": 0.4633746421248115,
+      "cause": "success"
+    },
+    {
+      "ep": 31,
+      "reward": 0.357902817871664,
+      "cause": "success"
+    },
+    {
+      "ep": 36,
+      "reward": 0.643657053061987,
+      "cause": "success"
+    },
+    {
+      "ep": 41,
+      "reward": -0.5952675187232406,
+      "cause": "success"
+    },
+    {
+      "ep": 46,
+      "reward": -0.39131233348551725,
+      "cause": "success"
+    },
+    {
+      "ep": 51,
+      "reward": 0.6006817506804325,
+      "cause": "success"
+    },
+    {
+      "ep": 56,
+      "reward": 0.5105809905225671,
+      "cause": "success"
+    },
+    {
+      "ep": 61,
+      "reward": 0.10385525298766624,
+      "cause": "success"
+    },
+    {
+      "ep": 66,
+      "reward": 0.5851184645347994,
+      "cause": "success"
+    },
+    {
+      "ep": 71,
+      "reward": 0.46739685784226653,
+      "cause": "success"
+    },
+    {
+      "ep": 76,
+      "reward": 0.4864263735115594,
+      "cause": "success"
+    },
+    {
+      "ep": 81,
+      "reward": 0.47694954956201885,
+      "cause": "success"
+    },
+    {
+      "ep": 86,
+      "reward": 0.04000284471862037,
+      "cause": "success"
+    },
+    {
+      "ep": 91,
+      "reward": 0.5772042080547238,
+      "cause": "success"
+    },
+    {
+      "ep": 96,
+      "reward": 0.5561464771663619,
+      "cause": "success"
+    },
+    {
+      "ep": 101,
+      "reward": 0.4889541421714442,
+      "cause": "success"
+    },
+    {
+      "ep": 106,
+      "reward": 0.5363585666160994,
+      "cause": "success"
+    },
+    {
+      "ep": 111,
+      "reward": 0.4889737665901447,
+      "cause": "success"
+    },
+    {
+      "ep": 116,
+      "reward": 0.49706732593365094,
+      "cause": "success"
+    },
+    {
+      "ep": 121,
+      "reward": 0.21665062441051292,
+      "cause": "success"
+    },
+    {
+      "ep": 126,
+      "reward": 0.5081182675074429,
+      "cause": "success"
+    },
+    {
+      "ep": 131,
+      "reward": 0.4406088940871112,
+      "cause": "success"
+    },
+    {
+      "ep": 136,
+      "reward": -0.020697301898286946,
+      "cause": "success"
+    },
+    {
+      "ep": 141,
+      "reward": 0.5298092844073233,
+      "cause": "success"
+    },
+    {
+      "ep": 146,
+      "reward": 0.5050854421150327,
+      "cause": "success"
+    },
+    {
+      "ep": 151,
+      "reward": -0.5596466825036257,
+      "cause": "success"
+    },
+    {
+      "ep": 156,
+      "reward": 0.5123747609295595,
+      "cause": "success"
+    },
+    {
+      "ep": 161,
+      "reward": 0.5228645619180289,
+      "cause": "success"
+    },
+    {
+      "ep": 166,
+      "reward": -0.4243955293138093,
+      "cause": "success"
+    },
+    {
+      "ep": 171,
+      "reward": 0.5255669731388669,
+      "cause": "success"
+    },
+    {
+      "ep": 176,
+      "reward": -0.2106899345343866,
+      "cause": "success"
+    },
+    {
+      "ep": 181,
+      "reward": 0.49636871311783204,
+      "cause": "success"
+    },
+    {
+      "ep": 186,
+      "reward": 0.5660129938871821,
+      "cause": "success"
+    },
+    {
+      "ep": 191,
+      "reward": 0.060631299800809835,
+      "cause": "success"
+    },
+    {
+      "ep": 196,
+      "reward": 0.2962765901756085,
+      "cause": "success"
+    },
+    {
+      "ep": 201,
+      "reward": 0.6496482969445473,
+      "cause": "success"
+    },
+    {
+      "ep": 206,
+      "reward": 0.14887183947920163,
+      "cause": "success"
+    },
+    {
+      "ep": 211,
+      "reward": 0.05537447742578022,
+      "cause": "success"
+    },
+    {
+      "ep": 216,
+      "reward": 0.5908086561878425,
+      "cause": "success"
+    },
+    {
+      "ep": 221,
+      "reward": 0.577504348785862,
+      "cause": "success"
+    },
+    {
+      "ep": 226,
+      "reward": 0.6070148912329265,
+      "cause": "success"
+    },
+    {
+      "ep": 231,
+      "reward": -0.13848688743720944,
+      "cause": "success"
+    },
+    {
+      "ep": 236,
+      "reward": 0.029045918338623578,
+      "cause": "success"
+    },
+    {
+      "ep": 241,
+      "reward": -0.2785056870018596,
+      "cause": "success"
+    },
+    {
+      "ep": 246,
+      "reward": 0.515819168066368,
+      "cause": "success"
+    },
+    {
+      "ep": 251,
+      "reward": 0.4830752092061082,
+      "cause": "success"
+    },
+    {
+      "ep": 256,
+      "reward": 0.49699470187069156,
+      "cause": "success"
+    },
+    {
+      "ep": 261,
+      "reward": -0.09026068064773196,
+      "cause": "success"
+    },
+    {
+      "ep": 266,
+      "reward": -0.4693848157707826,
+      "cause": "success"
+    },
+    {
+      "ep": 271,
+      "reward": 0.527271130398115,
+      "cause": "success"
+    },
+    {
+      "ep": 276,
+      "reward": 0.5751381736051862,
+      "cause": "success"
+    },
+    {
+      "ep": 281,
+      "reward": 0.4720372841615444,
+      "cause": "success"
+    },
+    {
+      "ep": 286,
+      "reward": 0.43765740742903625,
+      "cause": "success"
+    },
+    {
+      "ep": 291,
+      "reward": -0.011186619003279608,
+      "cause": "success"
+    },
+    {
+      "ep": 296,
+      "reward": 0.6048590462058656,
+      "cause": "success"
+    },
+    {
+      "ep": 301,
+      "reward": 0.3104502436783697,
+      "cause": "success"
+    },
+    {
+      "ep": 306,
+      "reward": 0.0582884927819875,
+      "cause": "success"
+    },
+    {
+      "ep": 311,
+      "reward": 0.3130167569238337,
+      "cause": "success"
+    },
+    {
+      "ep": 316,
+      "reward": 0.591773263622084,
+      "cause": "success"
+    },
+    {
+      "ep": 321,
+      "reward": 0.3037268439786085,
+      "cause": "success"
+    },
+    {
+      "ep": 326,
+      "reward": 0.2936254798604948,
+      "cause": "success"
+    },
+    {
+      "ep": 331,
+      "reward": 0.06413728548650327,
+      "cause": "success"
+    },
+    {
+      "ep": 336,
+      "reward": 0.33410474434315823,
+      "cause": "success"
+    },
+    {
+      "ep": 341,
+      "reward": 0.4853769342430692,
+      "cause": "success"
+    },
+    {
+      "ep": 346,
+      "reward": 0.6110545605690397,
+      "cause": "success"
+    },
+    {
+      "ep": 351,
+      "reward": 0.5620288467447694,
+      "cause": "success"
+    },
+    {
+      "ep": 356,
+      "reward": -0.3987163862824692,
+      "cause": "success"
+    },
+    {
+      "ep": 361,
+      "reward": -0.08059652916837007,
+      "cause": "success"
+    },
+    {
+      "ep": 366,
+      "reward": 0.5563107067257838,
+      "cause": "success"
+    },
+    {
+      "ep": 371,
+      "reward": 0.21983353752543233,
+      "cause": "success"
+    },
+    {
+      "ep": 376,
+      "reward": 0.42160493573564783,
+      "cause": "success"
+    },
+    {
+      "ep": 381,
+      "reward": 0.02435688799470892,
+      "cause": "success"
+    },
+    {
+      "ep": 386,
+      "reward": 0.5162174587724502,
+      "cause": "success"
+    },
+    {
+      "ep": 391,
+      "reward": -0.0656231640050125,
+      "cause": "success"
+    },
+    {
+      "ep": 396,
+      "reward": 0.5990903620231468,
+      "cause": "success"
+    },
+    {
+      "ep": 401,
+      "reward": 0.504889509091226,
+      "cause": "success"
+    },
+    {
+      "ep": 406,
+      "reward": 0.35937390704948813,
+      "cause": "success"
+    },
+    {
+      "ep": 411,
+      "reward": 0.545478705741621,
+      "cause": "success"
+    },
+    {
+      "ep": 416,
+      "reward": 0.5851726902473943,
+      "cause": "success"
+    },
+    {
+      "ep": 421,
+      "reward": 0.5437500808223802,
+      "cause": "success"
+    },
+    {
+      "ep": 426,
+      "reward": 0.5991164060829272,
+      "cause": "success"
+    },
+    {
+      "ep": 431,
+      "reward": -0.07541486238292339,
+      "cause": "success"
+    },
+    {
+      "ep": 436,
+      "reward": -0.5863245450851658,
+      "cause": "success"
+    },
+    {
+      "ep": 441,
+      "reward": 0.520672096841871,
+      "cause": "success"
+    },
+    {
+      "ep": 446,
+      "reward": -0.5281232220683914,
+      "cause": "success"
+    },
+    {
+      "ep": 451,
+      "reward": 0.03779143745162239,
+      "cause": "success"
+    },
+    {
+      "ep": 456,
+      "reward": 0.5196742952908215,
+      "cause": "success"
+    },
+    {
+      "ep": 461,
+      "reward": 0.5877394821096927,
+      "cause": "success"
+    },
+    {
+      "ep": 466,
+      "reward": 0.5592488402684332,
+      "cause": "success"
+    },
+    {
+      "ep": 471,
+      "reward": 0.42705329522617763,
+      "cause": "success"
+    },
+    {
+      "ep": 476,
+      "reward": 0.25036763583702304,
+      "cause": "success"
+    },
+    {
+      "ep": 481,
+      "reward": -0.5180553179772729,
+      "cause": "success"
+    },
+    {
+      "ep": 486,
+      "reward": 0.47074033372602975,
+      "cause": "success"
+    },
+    {
+      "ep": 491,
+      "reward": -0.04464850457041725,
+      "cause": "success"
+    },
+    {
+      "ep": 496,
+      "reward": 0.5389624462610586,
+      "cause": "success"
+    },
+    {
+      "ep": 501,
+      "reward": 0.035942095022127696,
+      "cause": "success"
+    },
+    {
+      "ep": 506,
+      "reward": 0.6190916560703205,
+      "cause": "success"
+    },
+    {
+      "ep": 511,
+      "reward": 0.4929160384393554,
+      "cause": "success"
+    },
+    {
+      "ep": 516,
+      "reward": 0.5001657588177513,
+      "cause": "success"
+    },
+    {
+      "ep": 521,
+      "reward": 0.5948715631532755,
+      "cause": "success"
+    },
+    {
+      "ep": 526,
+      "reward": 0.5562894647669081,
+      "cause": "success"
+    },
+    {
+      "ep": 531,
+      "reward": 0.502061812790466,
+      "cause": "success"
+    },
+    {
+      "ep": 536,
+      "reward": 0.6146535774132017,
+      "cause": "success"
+    },
+    {
+      "ep": 541,
+      "reward": 0.5670968506084471,
+      "cause": "success"
+    },
+    {
+      "ep": 546,
+      "reward": 0.5730420105381919,
+      "cause": "success"
+    },
+    {
+      "ep": 551,
+      "reward": 0.4769588909621329,
+      "cause": "success"
+    },
+    {
+      "ep": 556,
+      "reward": 0.6100448720692856,
+      "cause": "success"
+    },
+    {
+      "ep": 561,
+      "reward": -0.530774922215127,
+      "cause": "success"
+    },
+    {
+      "ep": 566,
+      "reward": 0.31718091536680326,
+      "cause": "success"
+    },
+    {
+      "ep": 571,
+      "reward": 0.47479509295648464,
+      "cause": "success"
+    },
+    {
+      "ep": 576,
+      "reward": -0.6945654461809257,
+      "cause": "success"
+    },
+    {
+      "ep": 581,
+      "reward": 0.5855889050507713,
+      "cause": "success"
+    },
+    {
+      "ep": 586,
+      "reward": 0.6147117907440276,
+      "cause": "success"
+    },
+    {
+      "ep": 591,
+      "reward": -0.4641085212047341,
+      "cause": "success"
+    },
+    {
+      "ep": 596,
+      "reward": 0.5278346817850422,
+      "cause": "success"
+    },
+    {
+      "ep": 601,
+      "reward": -0.06034482382855455,
+      "cause": "success"
+    },
+    {
+      "ep": 606,
+      "reward": -0.3764942558833852,
+      "cause": "success"
+    },
+    {
+      "ep": 611,
+      "reward": 0.46496972748886023,
+      "cause": "success"
+    },
+    {
+      "ep": 616,
+      "reward": 0.17320376428946122,
+      "cause": "success"
+    },
+    {
+      "ep": 621,
+      "reward": 0.3065160415529531,
+      "cause": "success"
+    },
+    {
+      "ep": 626,
+      "reward": 0.6340853654162495,
+      "cause": "success"
+    },
+    {
+      "ep": 631,
+      "reward": 0.594580848462708,
+      "cause": "success"
+    },
+    {
+      "ep": 636,
+      "reward": -0.5261337381464488,
+      "cause": "success"
+    },
+    {
+      "ep": 641,
+      "reward": 0.5934530653231688,
+      "cause": "success"
+    },
+    {
+      "ep": 646,
+      "reward": 0.5683997629669241,
+      "cause": "success"
+    },
+    {
+      "ep": 651,
+      "reward": -0.15019009892289903,
+      "cause": "success"
+    },
+    {
+      "ep": 656,
+      "reward": -0.08963059187194089,
+      "cause": "success"
+    },
+    {
+      "ep": 661,
+      "reward": -0.0012892243563502603,
+      "cause": "success"
+    },
+    {
+      "ep": 666,
+      "reward": 0.5384575585699388,
+      "cause": "success"
+    },
+    {
+      "ep": 671,
+      "reward": 0.37613183675067796,
+      "cause": "success"
+    },
+    {
+      "ep": 676,
+      "reward": -0.28143151701709973,
+      "cause": "success"
+    },
+    {
+      "ep": 681,
+      "reward": 0.44044794162594203,
+      "cause": "success"
+    },
+    {
+      "ep": 686,
+      "reward": 0.48500640248948595,
+      "cause": "success"
+    },
+    {
+      "ep": 691,
+      "reward": -0.04345121260135687,
+      "cause": "success"
+    },
+    {
+      "ep": 696,
+      "reward": -0.5058020251952848,
+      "cause": "success"
+    },
+    {
+      "ep": 701,
+      "reward": -0.4878805222537711,
+      "cause": "success"
+    },
+    {
+      "ep": 706,
+      "reward": 0.5510407651045979,
+      "cause": "success"
+    },
+    {
+      "ep": 711,
+      "reward": 0.5052130411463441,
+      "cause": "success"
+    },
+    {
+      "ep": 716,
+      "reward": -0.5441263037562138,
+      "cause": "success"
+    },
+    {
+      "ep": 721,
+      "reward": 0.5313262629172754,
+      "cause": "success"
+    },
+    {
+      "ep": 726,
+      "reward": -0.13516959161525488,
+      "cause": "success"
+    },
+    {
+      "ep": 731,
+      "reward": 0.38255964389438873,
+      "cause": "success"
+    },
+    {
+      "ep": 736,
+      "reward": 0.4947434293870594,
+      "cause": "success"
+    },
+    {
+      "ep": 741,
+      "reward": 0.5680054753370081,
+      "cause": "success"
+    },
+    {
+      "ep": 746,
+      "reward": 0.49285454015641306,
+      "cause": "success"
+    },
+    {
+      "ep": 751,
+      "reward": 0.46267194493611574,
+      "cause": "success"
+    },
+    {
+      "ep": 756,
+      "reward": 0.6038871211062782,
+      "cause": "success"
+    },
+    {
+      "ep": 761,
+      "reward": 0.6452629102592385,
+      "cause": "success"
+    },
+    {
+      "ep": 766,
+      "reward": 0.5020723577073045,
+      "cause": "success"
+    },
+    {
+      "ep": 771,
+      "reward": 0.5787321731512721,
+      "cause": "success"
+    },
+    {
+      "ep": 776,
+      "reward": 0.507042149827523,
+      "cause": "success"
+    },
+    {
+      "ep": 781,
+      "reward": 0.3011273071523049,
+      "cause": "success"
+    },
+    {
+      "ep": 786,
+      "reward": -0.03034515790407355,
+      "cause": "success"
+    },
+    {
+      "ep": 791,
+      "reward": 0.4483246195640824,
+      "cause": "success"
+    },
+    {
+      "ep": 796,
+      "reward": 0.5378662710267824,
+      "cause": "success"
+    },
+    {
+      "ep": 801,
+      "reward": 0.5924474043785032,
+      "cause": "success"
+    },
+    {
+      "ep": 806,
+      "reward": 0.48315133049707826,
+      "cause": "success"
+    },
+    {
+      "ep": 811,
+      "reward": -0.6639438559954906,
+      "cause": "success"
+    },
+    {
+      "ep": 816,
+      "reward": 0.3769801404986476,
+      "cause": "success"
+    },
+    {
+      "ep": 821,
+      "reward": 0.001427857995618731,
+      "cause": "success"
+    },
+    {
+      "ep": 826,
+      "reward": 0.44248587935551287,
+      "cause": "success"
+    },
+    {
+      "ep": 831,
+      "reward": -0.5421997265031488,
+      "cause": "success"
+    },
+    {
+      "ep": 836,
+      "reward": 0.47288875025706345,
+      "cause": "success"
+    },
+    {
+      "ep": 841,
+      "reward": 0.5076885511744321,
+      "cause": "success"
+    },
+    {
+      "ep": 846,
+      "reward": 0.5555133746966042,
+      "cause": "success"
+    },
+    {
+      "ep": 851,
+      "reward": 0.5834872753955472,
+      "cause": "success"
+    },
+    {
+      "ep": 856,
+      "reward": 0.6026085889436241,
+      "cause": "success"
+    },
+    {
+      "ep": 861,
+      "reward": 0.49377934274785323,
+      "cause": "success"
+    },
+    {
+      "ep": 866,
+      "reward": 0.4907755511783448,
+      "cause": "success"
+    },
+    {
+      "ep": 871,
+      "reward": 0.4884235396645598,
+      "cause": "success"
+    },
+    {
+      "ep": 876,
+      "reward": 0.42210797900493113,
+      "cause": "success"
+    },
+    {
+      "ep": 881,
+      "reward": 0.24366107660225156,
+      "cause": "success"
+    },
+    {
+      "ep": 886,
+      "reward": 0.5277534818375166,
+      "cause": "success"
+    },
+    {
+      "ep": 891,
+      "reward": 0.5564106641143608,
+      "cause": "success"
+    },
+    {
+      "ep": 896,
+      "reward": 0.6627933194353316,
+      "cause": "success"
+    },
+    {
+      "ep": 901,
+      "reward": 0.4519322165559795,
+      "cause": "success"
+    },
+    {
+      "ep": 906,
+      "reward": -0.15535401311910058,
+      "cause": "success"
+    },
+    {
+      "ep": 911,
+      "reward": 0.4713183766249021,
+      "cause": "success"
+    },
+    {
+      "ep": 916,
+      "reward": 0.5930253295323957,
+      "cause": "success"
+    },
+    {
+      "ep": 921,
+      "reward": 0.4655890942250615,
+      "cause": "success"
+    },
+    {
+      "ep": 926,
+      "reward": 0.47639642008307537,
+      "cause": "success"
+    },
+    {
+      "ep": 931,
+      "reward": 0.595238108929911,
+      "cause": "success"
+    },
+    {
+      "ep": 936,
+      "reward": 0.5391719269847814,
+      "cause": "success"
+    },
+    {
+      "ep": 941,
+      "reward": 0.03365143575339313,
+      "cause": "success"
+    },
+    {
+      "ep": 946,
+      "reward": -0.06799152711861922,
+      "cause": "success"
+    },
+    {
+      "ep": 951,
+      "reward": 0.5292118282817107,
+      "cause": "success"
+    },
+    {
+      "ep": 956,
+      "reward": -0.4130680026844812,
+      "cause": "success"
+    },
+    {
+      "ep": 961,
+      "reward": -0.5742043101458676,
+      "cause": "success"
+    },
+    {
+      "ep": 966,
+      "reward": 0.5410443119705501,
+      "cause": "success"
+    },
+    {
+      "ep": 971,
+      "reward": 0.6234105216636362,
+      "cause": "success"
+    },
+    {
+      "ep": 976,
+      "reward": 0.4455245510025375,
+      "cause": "success"
+    },
+    {
+      "ep": 981,
+      "reward": 0.5565568775450115,
+      "cause": "success"
+    },
+    {
+      "ep": 986,
+      "reward": 0.5617699140803931,
+      "cause": "success"
+    },
+    {
+      "ep": 991,
+      "reward": 0.5420609199448636,
+      "cause": "success"
+    },
+    {
+      "ep": 996,
+      "reward": 0.5428348253048917,
+      "cause": "success"
+    },
+    {
+      "ep": 1001,
+      "reward": 0.5180036718693843,
+      "cause": "success"
+    },
+    {
+      "ep": 1006,
+      "reward": 0.019690567671829418,
+      "cause": "success"
+    },
+    {
+      "ep": 1011,
+      "reward": 0.4526768975711261,
+      "cause": "success"
+    },
+    {
+      "ep": 1016,
+      "reward": 0.38708681094965885,
+      "cause": "success"
+    },
+    {
+      "ep": 1021,
+      "reward": 0.3996229569775552,
+      "cause": "success"
+    },
+    {
+      "ep": 1026,
+      "reward": 0.45564769069132227,
+      "cause": "success"
+    },
+    {
+      "ep": 1031,
+      "reward": 0.5573234319977364,
+      "cause": "success"
+    },
+    {
+      "ep": 1036,
+      "reward": -0.49727733810455765,
+      "cause": "success"
+    },
+    {
+      "ep": 1041,
+      "reward": 0.4573033786745837,
+      "cause": "success"
+    },
+    {
+      "ep": 1046,
+      "reward": 0.5841555001656542,
+      "cause": "success"
+    },
+    {
+      "ep": 1051,
+      "reward": 0.6101021185695285,
+      "cause": "success"
+    },
+    {
+      "ep": 1056,
+      "reward": 0.5018032032278124,
+      "cause": "success"
+    },
+    {
+      "ep": 1061,
+      "reward": 0.27059673145397745,
+      "cause": "success"
+    },
+    {
+      "ep": 1066,
+      "reward": -0.6655067147980185,
+      "cause": "success"
+    },
+    {
+      "ep": 1071,
+      "reward": 0.4522154848931091,
+      "cause": "success"
+    },
+    {
+      "ep": 1076,
+      "reward": 0.44081772043659084,
+      "cause": "success"
+    },
+    {
+      "ep": 1081,
+      "reward": 0.5145561847859846,
+      "cause": "success"
+    },
+    {
+      "ep": 1086,
+      "reward": 0.5064403874867313,
+      "cause": "success"
+    },
+    {
+      "ep": 1091,
+      "reward": 0.350074166334341,
+      "cause": "success"
+    },
+    {
+      "ep": 1096,
+      "reward": 0.4497952746464744,
+      "cause": "success"
+    },
+    {
+      "ep": 1101,
+      "reward": -0.18753979994794212,
+      "cause": "success"
+    },
+    {
+      "ep": 1106,
+      "reward": -0.5212596697858987,
+      "cause": "success"
+    },
+    {
+      "ep": 1111,
+      "reward": 0.6078916958890452,
+      "cause": "success"
+    },
+    {
+      "ep": 1116,
+      "reward": 0.5949805189282792,
+      "cause": "success"
+    },
+    {
+      "ep": 1121,
+      "reward": 0.35575460363574923,
+      "cause": "success"
+    },
+    {
+      "ep": 1126,
+      "reward": -0.3856003821337919,
+      "cause": "success"
+    },
+    {
+      "ep": 1131,
+      "reward": 0.1811777614517866,
+      "cause": "success"
+    },
+    {
+      "ep": 1136,
+      "reward": 0.4503186988055018,
+      "cause": "success"
+    },
+    {
+      "ep": 1141,
+      "reward": 0.5863941297599016,
+      "cause": "success"
+    },
+    {
+      "ep": 1146,
+      "reward": -0.005190273732853579,
+      "cause": "success"
+    },
+    {
+      "ep": 1151,
+      "reward": 0.5479225144736666,
+      "cause": "success"
+    },
+    {
+      "ep": 1156,
+      "reward": 0.4843572256428551,
+      "cause": "success"
+    },
+    {
+      "ep": 1161,
+      "reward": 0.5393708794248333,
+      "cause": "success"
+    },
+    {
+      "ep": 1166,
+      "reward": 0.6148937168303272,
+      "cause": "success"
+    },
+    {
+      "ep": 1171,
+      "reward": -0.579342108775032,
+      "cause": "success"
+    },
+    {
+      "ep": 1176,
+      "reward": 0.5767390743796121,
+      "cause": "success"
+    },
+    {
+      "ep": 1181,
+      "reward": 0.48895032459302307,
+      "cause": "success"
+    },
+    {
+      "ep": 1186,
+      "reward": -0.12752327098059713,
+      "cause": "success"
+    },
+    {
+      "ep": 1191,
+      "reward": 0.45532965162399164,
+      "cause": "success"
+    },
+    {
+      "ep": 1196,
+      "reward": 0.4846500284066691,
+      "cause": "success"
+    },
+    {
+      "ep": 1201,
+      "reward": 0.5345149309092272,
+      "cause": "success"
+    },
+    {
+      "ep": 1206,
+      "reward": 0.33574327874309073,
+      "cause": "success"
+    },
+    {
+      "ep": 1211,
+      "reward": 0.10364152717773567,
+      "cause": "success"
+    },
+    {
+      "ep": 1216,
+      "reward": 0.5266259661575144,
+      "cause": "success"
+    },
+    {
+      "ep": 1221,
+      "reward": 0.4460022348354878,
+      "cause": "success"
+    },
+    {
+      "ep": 1226,
+      "reward": 0.5488993339961794,
+      "cause": "success"
+    },
+    {
+      "ep": 1231,
+      "reward": 0.6505721066926888,
+      "cause": "success"
+    },
+    {
+      "ep": 1236,
+      "reward": 0.548217128944689,
+      "cause": "success"
+    },
+    {
+      "ep": 1241,
+      "reward": 0.5402127144857993,
+      "cause": "success"
+    },
+    {
+      "ep": 1246,
+      "reward": 0.5889001549856995,
+      "cause": "success"
+    },
+    {
+      "ep": 1251,
+      "reward": -0.11299492762098373,
+      "cause": "success"
+    },
+    {
+      "ep": 1256,
+      "reward": 0.2871787802074033,
+      "cause": "success"
+    },
+    {
+      "ep": 1261,
+      "reward": 0.3579463752993569,
+      "cause": "success"
+    },
+    {
+      "ep": 1266,
+      "reward": 0.6293330764269167,
+      "cause": "success"
+    },
+    {
+      "ep": 1271,
+      "reward": 0.35090628118104716,
+      "cause": "success"
+    },
+    {
+      "ep": 1276,
+      "reward": 0.5777039649675945,
+      "cause": "success"
+    },
+    {
+      "ep": 1281,
+      "reward": 0.39469553176214767,
+      "cause": "success"
+    },
+    {
+      "ep": 1286,
+      "reward": 0.4418234450580242,
+      "cause": "success"
+    },
+    {
+      "ep": 1291,
+      "reward": 0.490362447752781,
+      "cause": "success"
+    },
+    {
+      "ep": 1296,
+      "reward": 0.6097149972221919,
+      "cause": "success"
+    },
+    {
+      "ep": 1301,
+      "reward": 0.47481293162526667,
+      "cause": "success"
+    },
+    {
+      "ep": 1306,
+      "reward": 0.5968827775196811,
+      "cause": "success"
+    },
+    {
+      "ep": 1311,
+      "reward": 0.5302440235181628,
+      "cause": "success"
+    },
+    {
+      "ep": 1316,
+      "reward": 0.36056713994897793,
+      "cause": "success"
+    },
+    {
+      "ep": 1321,
+      "reward": 0.5252023456394038,
+      "cause": "success"
+    },
+    {
+      "ep": 1326,
+      "reward": 0.5343685119918087,
+      "cause": "success"
+    },
+    {
+      "ep": 1331,
+      "reward": 0.12484643067743245,
+      "cause": "success"
+    },
+    {
+      "ep": 1336,
+      "reward": 0.5690660553455223,
+      "cause": "success"
+    },
+    {
+      "ep": 1341,
+      "reward": 0.286735728777101,
+      "cause": "success"
+    },
+    {
+      "ep": 1346,
+      "reward": 0.4334749549410457,
+      "cause": "success"
+    },
+    {
+      "ep": 1351,
+      "reward": -0.008561600894693933,
+      "cause": "success"
+    },
+    {
+      "ep": 1356,
+      "reward": 0.292048026395569,
+      "cause": "success"
+    },
+    {
+      "ep": 1361,
+      "reward": 0.5413162642897287,
+      "cause": "success"
+    },
+    {
+      "ep": 1366,
+      "reward": 0.15063224770467964,
+      "cause": "success"
+    },
+    {
+      "ep": 1371,
+      "reward": -0.03351476872326581,
+      "cause": "success"
+    },
+    {
+      "ep": 1376,
+      "reward": 0.47818355580537375,
+      "cause": "success"
+    },
+    {
+      "ep": 1381,
+      "reward": 0.13241570932917046,
+      "cause": "success"
+    },
+    {
+      "ep": 1386,
+      "reward": -0.3199183712604603,
+      "cause": "success"
+    },
+    {
+      "ep": 1391,
+      "reward": -0.1864963312153538,
+      "cause": "success"
+    },
+    {
+      "ep": 1396,
+      "reward": 0.46421531570391117,
+      "cause": "success"
+    },
+    {
+      "ep": 1401,
+      "reward": 0.5138904122836656,
+      "cause": "success"
+    },
+    {
+      "ep": 1406,
+      "reward": 0.5576031317538691,
+      "cause": "success"
+    },
+    {
+      "ep": 1411,
+      "reward": 0.4327578213475017,
+      "cause": "success"
+    },
+    {
+      "ep": 1416,
+      "reward": 0.6099818752008771,
+      "cause": "success"
+    },
+    {
+      "ep": 1421,
+      "reward": 0.4365506995243797,
+      "cause": "success"
+    },
+    {
+      "ep": 1426,
+      "reward": -0.4898379913187677,
+      "cause": "success"
+    },
+    {
+      "ep": 1431,
+      "reward": -0.30740389910987453,
+      "cause": "success"
+    },
+    {
+      "ep": 1436,
+      "reward": 0.2666148747021701,
+      "cause": "success"
+    },
+    {
+      "ep": 1441,
+      "reward": 0.604005025752248,
+      "cause": "success"
+    },
+    {
+      "ep": 1446,
+      "reward": 0.24587657588585593,
+      "cause": "success"
+    },
+    {
+      "ep": 1451,
+      "reward": 0.46120035936301246,
+      "cause": "success"
+    },
+    {
+      "ep": 1456,
+      "reward": -0.385972940735587,
+      "cause": "success"
+    },
+    {
+      "ep": 1461,
+      "reward": 0.07574142384278382,
+      "cause": "success"
+    },
+    {
+      "ep": 1466,
+      "reward": 0.6407034790265298,
+      "cause": "success"
+    },
+    {
+      "ep": 1471,
+      "reward": 0.5893867950250014,
+      "cause": "success"
+    },
+    {
+      "ep": 1476,
+      "reward": 0.4369306796253859,
+      "cause": "success"
+    },
+    {
+      "ep": 1481,
+      "reward": 0.4720969594166473,
+      "cause": "success"
+    },
+    {
+      "ep": 1486,
+      "reward": 0.5957895712899747,
+      "cause": "success"
+    },
+    {
+      "ep": 1491,
+      "reward": 0.5379442724697212,
+      "cause": "success"
+    },
+    {
+      "ep": 1496,
+      "reward": 0.5045613234371797,
+      "cause": "success"
+    },
+    {
+      "ep": 1501,
+      "reward": 0.5606046560984513,
+      "cause": "success"
+    },
+    {
+      "ep": 1506,
+      "reward": -0.519504080141804,
+      "cause": "success"
+    },
+    {
+      "ep": 1511,
+      "reward": 0.10816258318708549,
+      "cause": "success"
+    },
+    {
+      "ep": 1516,
+      "reward": 0.512759802328335,
+      "cause": "success"
+    },
+    {
+      "ep": 1521,
+      "reward": 0.5992703066780406,
+      "cause": "success"
+    },
+    {
+      "ep": 1526,
+      "reward": 0.5058962928145421,
+      "cause": "success"
+    },
+    {
+      "ep": 1531,
+      "reward": 0.2023062445582018,
+      "cause": "success"
+    },
+    {
+      "ep": 1536,
+      "reward": 0.5006848793626455,
+      "cause": "success"
+    },
+    {
+      "ep": 1541,
+      "reward": 0.6065231930781295,
+      "cause": "success"
+    },
+    {
+      "ep": 1546,
+      "reward": 0.4055988587240086,
+      "cause": "success"
+    },
+    {
+      "ep": 1551,
+      "reward": 0.5580585770224613,
+      "cause": "success"
+    },
+    {
+      "ep": 1556,
+      "reward": -0.08967621131168313,
+      "cause": "success"
+    },
+    {
+      "ep": 1561,
+      "reward": 0.4479191034861431,
+      "cause": "success"
+    },
+    {
+      "ep": 1566,
+      "reward": 0.457465947936022,
+      "cause": "success"
+    },
+    {
+      "ep": 1571,
+      "reward": 0.5299768560144038,
+      "cause": "success"
+    },
+    {
+      "ep": 1576,
+      "reward": 0.4801753002065795,
+      "cause": "success"
+    },
+    {
+      "ep": 1581,
+      "reward": -0.5555066286895893,
+      "cause": "success"
+    },
+    {
+      "ep": 1586,
+      "reward": 0.6241233864064197,
+      "cause": "success"
+    },
+    {
+      "ep": 1591,
+      "reward": 0.4662523629037535,
+      "cause": "success"
+    },
+    {
+      "ep": 1596,
+      "reward": 0.5895364967443402,
+      "cause": "success"
+    },
+    {
+      "ep": 1601,
+      "reward": 0.44837511515975925,
+      "cause": "success"
+    },
+    {
+      "ep": 1606,
+      "reward": 0.47781875281106445,
+      "cause": "success"
+    },
+    {
+      "ep": 1611,
+      "reward": 0.5131017024889503,
+      "cause": "success"
+    },
+    {
+      "ep": 1616,
+      "reward": 0.5682940286582756,
+      "cause": "success"
+    },
+    {
+      "ep": 1621,
+      "reward": 0.5077436274157879,
+      "cause": "success"
+    },
+    {
+      "ep": 1626,
+      "reward": -0.524606599848725,
+      "cause": "success"
+    },
+    {
+      "ep": 1631,
+      "reward": 0.5366108090987486,
+      "cause": "success"
+    },
+    {
+      "ep": 1636,
+      "reward": 0.36212907232136693,
+      "cause": "success"
+    },
+    {
+      "ep": 1641,
+      "reward": 0.41547095964424874,
+      "cause": "success"
+    },
+    {
+      "ep": 1646,
+      "reward": 0.6753965572009549,
+      "cause": "success"
+    },
+    {
+      "ep": 1651,
+      "reward": 0.5498544775100092,
+      "cause": "success"
+    },
+    {
+      "ep": 1656,
+      "reward": 0.538415189851702,
+      "cause": "success"
+    },
+    {
+      "ep": 1661,
+      "reward": 0.5304012894787383,
+      "cause": "success"
+    },
+    {
+      "ep": 1666,
+      "reward": 0.2765646309136073,
+      "cause": "success"
+    },
+    {
+      "ep": 1671,
+      "reward": 0.5795272175814947,
+      "cause": "success"
+    },
+    {
+      "ep": 1676,
+      "reward": 0.5517756610394067,
+      "cause": "success"
+    },
+    {
+      "ep": 1681,
+      "reward": 0.4921657452907646,
+      "cause": "success"
+    },
+    {
+      "ep": 1686,
+      "reward": 0.45215359936509325,
+      "cause": "success"
+    },
+    {
+      "ep": 1691,
+      "reward": 0.5430689020962269,
+      "cause": "success"
+    },
+    {
+      "ep": 1696,
+      "reward": 0.49797622359401716,
+      "cause": "success"
+    },
+    {
+      "ep": 1701,
+      "reward": 0.49577728039751096,
+      "cause": "success"
+    },
+    {
+      "ep": 1706,
+      "reward": 0.20675804804449327,
+      "cause": "success"
+    },
+    {
+      "ep": 1711,
+      "reward": 0.15653552476718957,
+      "cause": "success"
+    },
+    {
+      "ep": 1716,
+      "reward": 0.609893605077464,
+      "cause": "success"
+    },
+    {
+      "ep": 1721,
+      "reward": 0.5304915714237379,
+      "cause": "success"
+    },
+    {
+      "ep": 1726,
+      "reward": 0.5845530266023339,
+      "cause": "success"
+    },
+    {
+      "ep": 1731,
+      "reward": 0.20010831048615085,
+      "cause": "success"
+    },
+    {
+      "ep": 1736,
+      "reward": 0.4489897165498075,
+      "cause": "success"
+    },
+    {
+      "ep": 1741,
+      "reward": 0.5426413219046816,
+      "cause": "success"
+    },
+    {
+      "ep": 1746,
+      "reward": 0.6255237749012241,
+      "cause": "success"
+    },
+    {
+      "ep": 1751,
+      "reward": -0.222317555368243,
+      "cause": "success"
+    },
+    {
+      "ep": 1756,
+      "reward": 0.4623694028331048,
+      "cause": "success"
+    },
+    {
+      "ep": 1761,
+      "reward": 0.5421773687497062,
+      "cause": "success"
+    },
+    {
+      "ep": 1766,
+      "reward": 0.20967947147308486,
+      "cause": "success"
+    },
+    {
+      "ep": 1771,
+      "reward": 0.4844155158205518,
+      "cause": "success"
+    },
+    {
+      "ep": 1776,
+      "reward": 0.4964384375343048,
+      "cause": "success"
+    },
+    {
+      "ep": 1781,
+      "reward": 0.4684717551729336,
+      "cause": "success"
+    },
+    {
+      "ep": 1786,
+      "reward": -0.1637672454090645,
+      "cause": "success"
+    },
+    {
+      "ep": 1791,
+      "reward": 0.49877068579293427,
+      "cause": "success"
+    },
+    {
+      "ep": 1796,
+      "reward": 0.6495045410928516,
+      "cause": "success"
+    },
+    {
+      "ep": 1801,
+      "reward": 0.1636256530845634,
+      "cause": "success"
+    },
+    {
+      "ep": 1806,
+      "reward": 0.6091723504235554,
+      "cause": "success"
+    },
+    {
+      "ep": 1811,
+      "reward": 0.544064421458621,
+      "cause": "success"
+    },
+    {
+      "ep": 1816,
+      "reward": 0.4862141051865958,
+      "cause": "success"
+    },
+    {
+      "ep": 1821,
+      "reward": -0.04054614097638598,
+      "cause": "success"
+    },
+    {
+      "ep": 1826,
+      "reward": 0.5628678328498893,
+      "cause": "success"
+    },
+    {
+      "ep": 1831,
+      "reward": 0.5194065781111059,
+      "cause": "success"
+    },
+    {
+      "ep": 1836,
+      "reward": 0.49606058123893915,
+      "cause": "success"
+    },
+    {
+      "ep": 1841,
+      "reward": 0.5966773259574205,
+      "cause": "success"
+    },
+    {
+      "ep": 1846,
+      "reward": 0.4458879426836519,
+      "cause": "success"
+    },
+    {
+      "ep": 1851,
+      "reward": 0.5120569066497264,
+      "cause": "success"
+    },
+    {
+      "ep": 1856,
+      "reward": 0.6278925415242359,
+      "cause": "success"
+    },
+    {
+      "ep": 1861,
+      "reward": 0.4495459600333037,
+      "cause": "success"
+    },
+    {
+      "ep": 1866,
+      "reward": 0.6246216502219362,
+      "cause": "success"
+    },
+    {
+      "ep": 1871,
+      "reward": 0.5472131934649644,
+      "cause": "success"
+    },
+    {
+      "ep": 1876,
+      "reward": 0.3072678342825129,
+      "cause": "success"
+    },
+    {
+      "ep": 1881,
+      "reward": 0.5382260291777281,
+      "cause": "success"
+    },
+    {
+      "ep": 1886,
+      "reward": 0.6417476270595952,
+      "cause": "success"
+    },
+    {
+      "ep": 1891,
+      "reward": 0.5083248318282272,
+      "cause": "success"
+    },
+    {
+      "ep": 1896,
+      "reward": 0.562914879613937,
+      "cause": "success"
+    },
+    {
+      "ep": 1901,
+      "reward": 0.5948816376614738,
+      "cause": "success"
+    },
+    {
+      "ep": 1906,
+      "reward": 0.5209859870761205,
+      "cause": "success"
+    },
+    {
+      "ep": 1911,
+      "reward": 0.6079723260834515,
+      "cause": "success"
+    },
+    {
+      "ep": 1916,
+      "reward": 0.5845695051071562,
+      "cause": "success"
+    },
+    {
+      "ep": 1921,
+      "reward": -0.21310477053281368,
+      "cause": "success"
+    },
+    {
+      "ep": 1926,
+      "reward": 0.4121616565981513,
+      "cause": "success"
+    },
+    {
+      "ep": 1931,
+      "reward": 0.595650822894521,
+      "cause": "success"
+    },
+    {
+      "ep": 1936,
+      "reward": -0.36584112084628134,
+      "cause": "success"
+    },
+    {
+      "ep": 1941,
+      "reward": 0.5423929736883683,
+      "cause": "success"
+    },
+    {
+      "ep": 1946,
+      "reward": 0.668377874998853,
+      "cause": "success"
+    },
+    {
+      "ep": 1951,
+      "reward": 0.40144040342978116,
+      "cause": "success"
+    },
+    {
+      "ep": 1956,
+      "reward": 0.5880501042739926,
+      "cause": "success"
+    },
+    {
+      "ep": 1961,
+      "reward": 0.5508697234538007,
+      "cause": "success"
+    },
+    {
+      "ep": 1966,
+      "reward": -0.5480104445375497,
+      "cause": "success"
+    },
+    {
+      "ep": 1971,
+      "reward": 0.26668918509822637,
+      "cause": "success"
+    },
+    {
+      "ep": 1976,
+      "reward": 0.6246063189397494,
+      "cause": "success"
+    },
+    {
+      "ep": 1981,
+      "reward": 0.4518388025008956,
+      "cause": "success"
+    },
+    {
+      "ep": 1986,
+      "reward": 0.5694892564845498,
+      "cause": "success"
+    },
+    {
+      "ep": 1991,
+      "reward": 0.4620588945492295,
+      "cause": "success"
+    },
+    {
+      "ep": 1996,
+      "reward": 0.5299952369277604,
+      "cause": "success"
+    },
+    {
+      "ep": 2001,
+      "reward": 0.5170491578255259,
+      "cause": "success"
+    },
+    {
+      "ep": 2006,
+      "reward": 0.609307313989778,
+      "cause": "success"
+    },
+    {
+      "ep": 2011,
+      "reward": 0.6281761615039747,
+      "cause": "success"
+    },
+    {
+      "ep": 2016,
+      "reward": 0.5732473462956927,
+      "cause": "success"
+    },
+    {
+      "ep": 2021,
+      "reward": 0.4754381632817786,
+      "cause": "success"
+    },
+    {
+      "ep": 2026,
+      "reward": 0.6301115155417294,
+      "cause": "success"
+    },
+    {
+      "ep": 2031,
+      "reward": 0.3379208734295795,
+      "cause": "success"
+    },
+    {
+      "ep": 2036,
+      "reward": 0.3484363962977318,
+      "cause": "success"
+    },
+    {
+      "ep": 2041,
+      "reward": 0.5924758163577789,
+      "cause": "success"
+    },
+    {
+      "ep": 2046,
+      "reward": 0.504708218051719,
+      "cause": "success"
+    },
+    {
+      "ep": 2051,
+      "reward": 0.23602620540740754,
+      "cause": "success"
+    },
+    {
+      "ep": 2056,
+      "reward": 0.45433663057373863,
+      "cause": "success"
+    },
+    {
+      "ep": 2061,
+      "reward": 0.45560714033993444,
+      "cause": "success"
+    },
+    {
+      "ep": 2066,
+      "reward": 0.5276778315375327,
+      "cause": "success"
+    },
+    {
+      "ep": 2071,
+      "reward": 0.5017590694966918,
+      "cause": "success"
+    },
+    {
+      "ep": 2076,
+      "reward": -0.15094656173372423,
+      "cause": "success"
+    },
+    {
+      "ep": 2081,
+      "reward": 0.552694219549116,
+      "cause": "success"
+    },
+    {
+      "ep": 2086,
+      "reward": 0.6011096102425986,
+      "cause": "success"
+    },
+    {
+      "ep": 2091,
+      "reward": 0.648732207887541,
+      "cause": "success"
+    },
+    {
+      "ep": 2096,
+      "reward": 0.5688118917287955,
+      "cause": "success"
+    },
+    {
+      "ep": 2101,
+      "reward": 0.42250466207951354,
+      "cause": "success"
+    },
+    {
+      "ep": 2106,
+      "reward": 0.5924835347055504,
+      "cause": "success"
+    },
+    {
+      "ep": 2111,
+      "reward": 0.5310670514286879,
+      "cause": "success"
+    },
+    {
+      "ep": 2116,
+      "reward": 0.505803910154188,
+      "cause": "success"
+    },
+    {
+      "ep": 2121,
+      "reward": 0.056368537418599096,
+      "cause": "success"
+    },
+    {
+      "ep": 2126,
+      "reward": 0.5634263221855681,
+      "cause": "success"
+    },
+    {
+      "ep": 2131,
+      "reward": 0.27932863648164696,
+      "cause": "success"
+    },
+    {
+      "ep": 2136,
+      "reward": 0.5175320646109043,
+      "cause": "success"
+    },
+    {
+      "ep": 2141,
+      "reward": -0.5207577558367751,
+      "cause": "success"
+    },
+    {
+      "ep": 2146,
+      "reward": 0.6637995210083477,
+      "cause": "success"
+    },
+    {
+      "ep": 2151,
+      "reward": 0.627831386899312,
+      "cause": "success"
+    },
+    {
+      "ep": 2156,
+      "reward": 0.592561179187867,
+      "cause": "success"
+    },
+    {
+      "ep": 2161,
+      "reward": 0.5866731729067923,
+      "cause": "success"
+    },
+    {
+      "ep": 2166,
+      "reward": -0.03527263503998995,
+      "cause": "success"
+    },
+    {
+      "ep": 2171,
+      "reward": 0.47044495454572416,
+      "cause": "success"
+    },
+    {
+      "ep": 2176,
+      "reward": 0.281431073365046,
+      "cause": "success"
+    },
+    {
+      "ep": 2181,
+      "reward": 0.3122219589764621,
+      "cause": "success"
+    },
+    {
+      "ep": 2186,
+      "reward": 0.426532807615642,
+      "cause": "success"
+    },
+    {
+      "ep": 2191,
+      "reward": -0.08301742365020226,
+      "cause": "success"
+    },
+    {
+      "ep": 2196,
+      "reward": 0.5273227341068646,
+      "cause": "success"
+    },
+    {
+      "ep": 2201,
+      "reward": 0.13878483386999496,
+      "cause": "success"
+    },
+    {
+      "ep": 2206,
+      "reward": 0.465314224102384,
+      "cause": "success"
+    },
+    {
+      "ep": 2211,
+      "reward": 0.4774606712819358,
+      "cause": "success"
+    },
+    {
+      "ep": 2216,
+      "reward": 0.5140389684532529,
+      "cause": "success"
+    },
+    {
+      "ep": 2221,
+      "reward": 0.6494523375101644,
+      "cause": "success"
+    },
+    {
+      "ep": 2226,
+      "reward": 0.5647218208755689,
+      "cause": "success"
+    },
+    {
+      "ep": 2231,
+      "reward": 0.4432057654407663,
+      "cause": "success"
+    },
+    {
+      "ep": 2236,
+      "reward": 0.5153145039469441,
+      "cause": "success"
+    },
+    {
+      "ep": 2241,
+      "reward": 0.578212338300512,
+      "cause": "success"
+    },
+    {
+      "ep": 2246,
+      "reward": 0.5647681802743085,
+      "cause": "success"
+    },
+    {
+      "ep": 2251,
+      "reward": -0.12854628742026314,
+      "cause": "success"
+    },
+    {
+      "ep": 2256,
+      "reward": 0.5729187492158049,
+      "cause": "success"
+    },
+    {
+      "ep": 2261,
+      "reward": 0.5850784743199446,
+      "cause": "success"
+    },
+    {
+      "ep": 2266,
+      "reward": 0.44342657174023975,
+      "cause": "success"
+    },
+    {
+      "ep": 2271,
+      "reward": 0.5636625171860388,
+      "cause": "success"
+    },
+    {
+      "ep": 2276,
+      "reward": 0.6123299330862471,
+      "cause": "success"
+    },
+    {
+      "ep": 2281,
+      "reward": 0.6218403033254671,
+      "cause": "success"
+    },
+    {
+      "ep": 2286,
+      "reward": 0.1589099907194741,
+      "cause": "success"
+    },
+    {
+      "ep": 2291,
+      "reward": -0.3004154531127844,
+      "cause": "success"
+    },
+    {
+      "ep": 2296,
+      "reward": 0.37712604509270975,
+      "cause": "success"
+    },
+    {
+      "ep": 2301,
+      "reward": 0.10310957349248084,
+      "cause": "success"
+    },
+    {
+      "ep": 2306,
+      "reward": 0.5673890947013717,
+      "cause": "success"
+    },
+    {
+      "ep": 2311,
+      "reward": 0.5269424650366061,
+      "cause": "success"
+    },
+    {
+      "ep": 2316,
+      "reward": 0.1680085189841733,
+      "cause": "success"
+    },
+    {
+      "ep": 2321,
+      "reward": 0.5750519022380781,
+      "cause": "success"
+    },
+    {
+      "ep": 2326,
+      "reward": 0.533622815592231,
+      "cause": "success"
+    },
+    {
+      "ep": 2331,
+      "reward": 0.4867077370864314,
+      "cause": "success"
+    },
+    {
+      "ep": 2336,
+      "reward": 0.6367621426938892,
+      "cause": "success"
+    },
+    {
+      "ep": 2341,
+      "reward": 0.49766091753815783,
+      "cause": "success"
+    },
+    {
+      "ep": 2346,
+      "reward": 0.27071818886618987,
+      "cause": "success"
+    },
+    {
+      "ep": 2351,
+      "reward": -0.531522594937204,
+      "cause": "success"
+    },
+    {
+      "ep": 2356,
+      "reward": 0.47917615188475265,
+      "cause": "success"
+    },
+    {
+      "ep": 2361,
+      "reward": 0.5679738625755789,
+      "cause": "success"
+    },
+    {
+      "ep": 2366,
+      "reward": 0.5288055653848733,
+      "cause": "success"
+    },
+    {
+      "ep": 2371,
+      "reward": -0.09444670269437377,
+      "cause": "success"
+    },
+    {
+      "ep": 2376,
+      "reward": 0.5482857763157918,
+      "cause": "success"
+    },
+    {
+      "ep": 2381,
+      "reward": -0.04505398318858189,
+      "cause": "success"
+    },
+    {
+      "ep": 2386,
+      "reward": 0.6001306328410966,
+      "cause": "success"
+    },
+    {
+      "ep": 2391,
+      "reward": 0.04040820274720236,
+      "cause": "success"
+    },
+    {
+      "ep": 2396,
+      "reward": 0.4467308024671912,
+      "cause": "success"
+    },
+    {
+      "ep": 2401,
+      "reward": 0.44239162857865566,
+      "cause": "success"
+    },
+    {
+      "ep": 2406,
+      "reward": 0.4859900311997546,
+      "cause": "success"
+    },
+    {
+      "ep": 2411,
+      "reward": 0.5860206293954998,
+      "cause": "success"
+    },
+    {
+      "ep": 2416,
+      "reward": 0.5971697641509075,
+      "cause": "success"
+    },
+    {
+      "ep": 2421,
+      "reward": -0.3635534699063434,
+      "cause": "success"
+    },
+    {
+      "ep": 2426,
+      "reward": 0.5413863761495163,
+      "cause": "success"
+    },
+    {
+      "ep": 2431,
+      "reward": 0.3040744907448576,
+      "cause": "success"
+    },
+    {
+      "ep": 2436,
+      "reward": 0.45839534309041824,
+      "cause": "success"
+    },
+    {
+      "ep": 2441,
+      "reward": 0.08820138479660167,
+      "cause": "success"
+    },
+    {
+      "ep": 2446,
+      "reward": 0.5206599881579165,
+      "cause": "success"
+    },
+    {
+      "ep": 2451,
+      "reward": 0.5122649791046687,
+      "cause": "success"
+    },
+    {
+      "ep": 2456,
+      "reward": -0.6593891539511494,
+      "cause": "success"
+    },
+    {
+      "ep": 2461,
+      "reward": 0.6147463630193281,
+      "cause": "success"
+    },
+    {
+      "ep": 2466,
+      "reward": 0.6029096368310726,
+      "cause": "success"
+    },
+    {
+      "ep": 2471,
+      "reward": 0.5796086330763855,
+      "cause": "success"
+    },
+    {
+      "ep": 2476,
+      "reward": 0.5080167271555893,
+      "cause": "success"
+    },
+    {
+      "ep": 2481,
+      "reward": 0.5952142151536817,
+      "cause": "success"
+    },
+    {
+      "ep": 2486,
+      "reward": 0.6633288542597787,
+      "cause": "success"
+    },
+    {
+      "ep": 2491,
+      "reward": 0.6208668620512664,
+      "cause": "success"
+    },
+    {
+      "ep": 2496,
+      "reward": 0.47470911933913745,
+      "cause": "success"
+    },
+    {
+      "ep": 2501,
+      "reward": 0.4539413378454731,
+      "cause": "success"
+    },
+    {
+      "ep": 2506,
+      "reward": -1.5,
+      "cause": "collision"
+    },
+    {
+      "ep": 2511,
+      "reward": 0.47486423044451237,
+      "cause": "success"
+    },
+    {
+      "ep": 2516,
+      "reward": 0.03562428352924463,
+      "cause": "success"
+    },
+    {
+      "ep": 2521,
+      "reward": 0.5260220092755377,
+      "cause": "success"
+    },
+    {
+      "ep": 2526,
+      "reward": 0.5347302899598826,
+      "cause": "success"
+    },
+    {
+      "ep": 2531,
+      "reward": 0.47751460072068413,
+      "cause": "success"
+    },
+    {
+      "ep": 2536,
+      "reward": 0.5741889888143364,
+      "cause": "success"
+    },
+    {
+      "ep": 2541,
+      "reward": 0.6244908606960893,
+      "cause": "success"
+    },
+    {
+      "ep": 2546,
+      "reward": 0.5024352350003761,
+      "cause": "success"
+    },
+    {
+      "ep": 2551,
+      "reward": 0.5956956108603231,
+      "cause": "success"
+    },
+    {
+      "ep": 2556,
+      "reward": 0.46582023907759396,
+      "cause": "success"
+    },
+    {
+      "ep": 2561,
+      "reward": 0.5259146223055938,
+      "cause": "success"
+    },
+    {
+      "ep": 2566,
+      "reward": 0.5791312929182708,
+      "cause": "success"
+    },
+    {
+      "ep": 2571,
+      "reward": -0.590180372810494,
+      "cause": "success"
+    },
+    {
+      "ep": 2576,
+      "reward": 0.48827699650342465,
+      "cause": "success"
+    },
+    {
+      "ep": 2581,
+      "reward": 0.5821037549955754,
+      "cause": "success"
+    },
+    {
+      "ep": 2586,
+      "reward": -0.28501555612866136,
+      "cause": "success"
+    },
+    {
+      "ep": 2591,
+      "reward": 0.5381486535400672,
+      "cause": "success"
+    },
+    {
+      "ep": 2596,
+      "reward": 0.6154927656086658,
+      "cause": "success"
+    },
+    {
+      "ep": 2601,
+      "reward": 0.4489307724075838,
+      "cause": "success"
+    },
+    {
+      "ep": 2606,
+      "reward": 0.5821429639907996,
+      "cause": "success"
+    },
+    {
+      "ep": 2611,
+      "reward": 0.5153763812636614,
+      "cause": "success"
+    },
+    {
+      "ep": 2616,
+      "reward": 0.6009145520743147,
+      "cause": "success"
+    },
+    {
+      "ep": 2621,
+      "reward": 0.4619211640524456,
+      "cause": "success"
+    },
+    {
+      "ep": 2626,
+      "reward": 0.6337110201759781,
+      "cause": "success"
+    },
+    {
+      "ep": 2631,
+      "reward": 0.5475568260271786,
+      "cause": "success"
+    },
+    {
+      "ep": 2636,
+      "reward": 0.45777006133323533,
+      "cause": "success"
+    },
+    {
+      "ep": 2641,
+      "reward": 0.5562485333839644,
+      "cause": "success"
+    },
+    {
+      "ep": 2646,
+      "reward": 0.5187764182179165,
+      "cause": "success"
+    },
+    {
+      "ep": 2651,
+      "reward": 0.5272526474922989,
+      "cause": "success"
+    },
+    {
+      "ep": 2656,
+      "reward": 0.5335772744755549,
+      "cause": "success"
+    },
+    {
+      "ep": 2661,
+      "reward": 0.1834936257342964,
+      "cause": "success"
+    },
+    {
+      "ep": 2666,
+      "reward": 0.6095614749136659,
+      "cause": "success"
+    },
+    {
+      "ep": 2671,
+      "reward": 0.6356393822445369,
+      "cause": "success"
+    },
+    {
+      "ep": 2676,
+      "reward": 0.5596121450908981,
+      "cause": "success"
+    },
+    {
+      "ep": 2681,
+      "reward": 0.4982616153813268,
+      "cause": "success"
+    },
+    {
+      "ep": 2686,
+      "reward": 0.0552722903883196,
+      "cause": "success"
+    },
+    {
+      "ep": 2691,
+      "reward": 0.4967974374395948,
+      "cause": "success"
+    },
+    {
+      "ep": 2696,
+      "reward": -0.004671405819896557,
+      "cause": "success"
+    },
+    {
+      "ep": 2701,
+      "reward": 0.4788171253929894,
+      "cause": "success"
+    },
+    {
+      "ep": 2706,
+      "reward": 0.49223452310720195,
+      "cause": "success"
+    },
+    {
+      "ep": 2711,
+      "reward": 0.48223037676594954,
+      "cause": "success"
+    },
+    {
+      "ep": 2716,
+      "reward": -0.29460710817961905,
+      "cause": "success"
+    },
+    {
+      "ep": 2721,
+      "reward": -1.5,
+      "cause": "collision"
+    },
+    {
+      "ep": 2726,
+      "reward": 0.6201431026202968,
+      "cause": "success"
+    },
+    {
+      "ep": 2731,
+      "reward": 0.6111060856936492,
+      "cause": "success"
+    },
+    {
+      "ep": 2736,
+      "reward": 0.4360006501573723,
+      "cause": "success"
+    },
+    {
+      "ep": 2741,
+      "reward": 0.28900614116571466,
+      "cause": "success"
+    },
+    {
+      "ep": 2746,
+      "reward": 0.2923979726713428,
+      "cause": "success"
+    },
+    {
+      "ep": 2751,
+      "reward": 0.5525817317047392,
+      "cause": "success"
+    },
+    {
+      "ep": 2756,
+      "reward": 0.4853091261181987,
+      "cause": "success"
+    },
+    {
+      "ep": 2761,
+      "reward": 0.44476582310702384,
+      "cause": "success"
+    },
+    {
+      "ep": 2766,
+      "reward": 0.5780460463763705,
+      "cause": "success"
+    },
+    {
+      "ep": 2771,
+      "reward": 0.037844711108635964,
+      "cause": "success"
+    },
+    {
+      "ep": 2776,
+      "reward": 0.6170592047639013,
+      "cause": "success"
+    },
+    {
+      "ep": 2781,
+      "reward": 0.5465799494260009,
+      "cause": "success"
+    },
+    {
+      "ep": 2786,
+      "reward": -0.32046944142144107,
+      "cause": "success"
+    },
+    {
+      "ep": 2791,
+      "reward": 0.4725548896866907,
+      "cause": "success"
+    },
+    {
+      "ep": 2796,
+      "reward": 0.3441954521249446,
+      "cause": "success"
+    },
+    {
+      "ep": 2801,
+      "reward": 0.6340288064946712,
+      "cause": "success"
+    },
+    {
+      "ep": 2806,
+      "reward": 0.5530452862393279,
+      "cause": "success"
+    },
+    {
+      "ep": 2811,
+      "reward": 0.5566719886363285,
+      "cause": "success"
+    },
+    {
+      "ep": 2816,
+      "reward": 0.6097799158689109,
+      "cause": "success"
+    },
+    {
+      "ep": 2821,
+      "reward": 0.5777535821717418,
+      "cause": "success"
+    },
+    {
+      "ep": 2826,
+      "reward": -0.2223588783047571,
+      "cause": "success"
+    },
+    {
+      "ep": 2831,
+      "reward": 0.4779975261853219,
+      "cause": "success"
+    },
+    {
+      "ep": 2836,
+      "reward": 0.468248048735029,
+      "cause": "success"
+    },
+    {
+      "ep": 2841,
+      "reward": 0.5625621575473654,
+      "cause": "success"
+    },
+    {
+      "ep": 2846,
+      "reward": 0.4642489844681527,
+      "cause": "success"
+    },
+    {
+      "ep": 2851,
+      "reward": 0.5408433804630706,
+      "cause": "success"
+    },
+    {
+      "ep": 2856,
+      "reward": 0.41134930414109816,
+      "cause": "success"
+    },
+    {
+      "ep": 2861,
+      "reward": 0.5197074633330553,
+      "cause": "success"
+    },
+    {
+      "ep": 2866,
+      "reward": 0.6026349346997112,
+      "cause": "success"
+    },
+    {
+      "ep": 2871,
+      "reward": 0.6209611548367924,
+      "cause": "success"
+    },
+    {
+      "ep": 2876,
+      "reward": 0.6070810017457058,
+      "cause": "success"
+    },
+    {
+      "ep": 2881,
+      "reward": 0.4732909119374416,
+      "cause": "success"
+    },
+    {
+      "ep": 2886,
+      "reward": 0.5289602755226248,
+      "cause": "success"
+    },
+    {
+      "ep": 2891,
+      "reward": 0.5536387591181565,
+      "cause": "success"
+    },
+    {
+      "ep": 2896,
+      "reward": 0.6202875919668206,
+      "cause": "success"
+    },
+    {
+      "ep": 2901,
+      "reward": 0.5775753899455802,
+      "cause": "success"
+    },
+    {
+      "ep": 2906,
+      "reward": 0.5260716654896472,
+      "cause": "success"
+    },
+    {
+      "ep": 2911,
+      "reward": 0.5798774569821415,
+      "cause": "success"
+    },
+    {
+      "ep": 2916,
+      "reward": 0.12217668155899691,
+      "cause": "success"
+    },
+    {
+      "ep": 2921,
+      "reward": 0.6267949505580095,
+      "cause": "success"
+    },
+    {
+      "ep": 2926,
+      "reward": 0.62621018446654,
+      "cause": "success"
+    },
+    {
+      "ep": 2931,
+      "reward": 0.47417690454117867,
+      "cause": "success"
+    },
+    {
+      "ep": 2936,
+      "reward": 0.44567215882382144,
+      "cause": "success"
+    },
+    {
+      "ep": 2941,
+      "reward": 0.46807830956223023,
+      "cause": "success"
+    },
+    {
+      "ep": 2946,
+      "reward": 0.4557955079634344,
+      "cause": "success"
+    },
+    {
+      "ep": 2951,
+      "reward": 0.5512024886877283,
+      "cause": "success"
+    },
+    {
+      "ep": 2956,
+      "reward": 0.48854091113278486,
+      "cause": "success"
+    },
+    {
+      "ep": 2961,
+      "reward": 0.6405820453796544,
+      "cause": "success"
+    },
+    {
+      "ep": 2966,
+      "reward": 0.6044795104334016,
+      "cause": "success"
+    },
+    {
+      "ep": 2971,
+      "reward": 0.6243532611415529,
+      "cause": "success"
+    },
+    {
+      "ep": 2976,
+      "reward": 0.4814285377737999,
+      "cause": "success"
+    },
+    {
+      "ep": 2981,
+      "reward": -0.44064595735921636,
+      "cause": "success"
+    },
+    {
+      "ep": 2986,
+      "reward": 0.5253247909768018,
+      "cause": "success"
+    },
+    {
+      "ep": 2991,
+      "reward": 0.5272600499434772,
+      "cause": "success"
+    },
+    {
+      "ep": 2996,
+      "reward": -0.5740063602271719,
+      "cause": "success"
+    },
+    {
+      "ep": 3001,
+      "reward": 0.6041841785434203,
+      "cause": "success"
+    },
+    {
+      "ep": 3006,
+      "reward": 0.6083711223182601,
+      "cause": "success"
+    },
+    {
+      "ep": 3011,
+      "reward": 0.5949201602138083,
+      "cause": "success"
+    },
+    {
+      "ep": 3016,
+      "reward": 0.6328120425960289,
+      "cause": "success"
+    },
+    {
+      "ep": 3021,
+      "reward": -0.5292890273232548,
+      "cause": "success"
+    },
+    {
+      "ep": 3026,
+      "reward": 0.472316438454668,
+      "cause": "success"
+    },
+    {
+      "ep": 3031,
+      "reward": 0.5537623613848855,
+      "cause": "success"
+    },
+    {
+      "ep": 3036,
+      "reward": -0.3974352658657022,
+      "cause": "success"
+    },
+    {
+      "ep": 3041,
+      "reward": 0.6121981052097144,
+      "cause": "success"
+    },
+    {
+      "ep": 3046,
+      "reward": 0.45601192710188987,
+      "cause": "success"
+    },
+    {
+      "ep": 3051,
+      "reward": -0.5626681301898593,
+      "cause": "success"
+    },
+    {
+      "ep": 3056,
+      "reward": 0.5441830028315991,
+      "cause": "success"
+    },
+    {
+      "ep": 3061,
+      "reward": 0.5115624708126245,
+      "cause": "success"
+    },
+    {
+      "ep": 3066,
+      "reward": 0.4815007114164485,
+      "cause": "success"
+    },
+    {
+      "ep": 3071,
+      "reward": 0.5692604488225375,
+      "cause": "success"
+    },
+    {
+      "ep": 3076,
+      "reward": 0.32467733247421376,
+      "cause": "success"
+    },
+    {
+      "ep": 3081,
+      "reward": 0.1916299382114932,
+      "cause": "success"
+    },
+    {
+      "ep": 3086,
+      "reward": 0.419101790098548,
+      "cause": "success"
+    },
+    {
+      "ep": 3091,
+      "reward": 0.3427162159315405,
+      "cause": "success"
+    },
+    {
+      "ep": 3096,
+      "reward": 0.6420743103752825,
+      "cause": "success"
+    },
+    {
+      "ep": 3101,
+      "reward": 0.4964780829968659,
+      "cause": "success"
+    },
+    {
+      "ep": 3106,
+      "reward": 0.5412388554675253,
+      "cause": "success"
+    },
+    {
+      "ep": 3111,
+      "reward": 0.5584881936651332,
+      "cause": "success"
+    },
+    {
+      "ep": 3116,
+      "reward": 0.04046780732237326,
+      "cause": "success"
+    },
+    {
+      "ep": 3121,
+      "reward": 0.618284798876144,
+      "cause": "success"
+    },
+    {
+      "ep": 3126,
+      "reward": 0.6777153246457057,
+      "cause": "success"
+    },
+    {
+      "ep": 3131,
+      "reward": 0.5813766307889388,
+      "cause": "success"
+    },
+    {
+      "ep": 3136,
+      "reward": 0.6618686266683144,
+      "cause": "success"
+    },
+    {
+      "ep": 3141,
+      "reward": 0.49059935150559736,
+      "cause": "success"
+    },
+    {
+      "ep": 3146,
+      "reward": 0.22845842230081692,
+      "cause": "success"
+    },
+    {
+      "ep": 3151,
+      "reward": 0.5174645942226365,
+      "cause": "success"
+    },
+    {
+      "ep": 3156,
+      "reward": 0.5266083225354522,
+      "cause": "success"
+    },
+    {
+      "ep": 3161,
+      "reward": 0.1120071642851288,
+      "cause": "success"
+    },
+    {
+      "ep": 3166,
+      "reward": 0.56299484000445,
+      "cause": "success"
+    },
+    {
+      "ep": 3171,
+      "reward": 0.21818587386730404,
+      "cause": "success"
+    },
+    {
+      "ep": 3176,
+      "reward": 0.09473929009973803,
+      "cause": "success"
+    },
+    {
+      "ep": 3181,
+      "reward": 0.539240391074116,
+      "cause": "success"
+    },
+    {
+      "ep": 3186,
+      "reward": 0.6337148505512702,
+      "cause": "success"
+    },
+    {
+      "ep": 3191,
+      "reward": -0.52567602417814,
+      "cause": "success"
+    },
+    {
+      "ep": 3196,
+      "reward": 0.6052334981961893,
+      "cause": "success"
+    },
+    {
+      "ep": 3201,
+      "reward": 0.5747819065586128,
+      "cause": "success"
+    },
+    {
+      "ep": 3206,
+      "reward": 0.6759934700732094,
+      "cause": "success"
+    },
+    {
+      "ep": 3211,
+      "reward": 0.6201810576863824,
+      "cause": "success"
+    },
+    {
+      "ep": 3216,
+      "reward": 0.33378170609729413,
+      "cause": "success"
+    },
+    {
+      "ep": 3221,
+      "reward": 0.4933763658024734,
+      "cause": "success"
+    },
+    {
+      "ep": 3226,
+      "reward": 0.545305393868089,
+      "cause": "success"
+    },
+    {
+      "ep": 3231,
+      "reward": 0.5534890312885417,
+      "cause": "success"
+    },
+    {
+      "ep": 3236,
+      "reward": 0.16411423698534483,
+      "cause": "success"
+    },
+    {
+      "ep": 3241,
+      "reward": 0.5486160567350025,
+      "cause": "success"
+    },
+    {
+      "ep": 3246,
+      "reward": 0.4029455126163467,
+      "cause": "success"
+    },
+    {
+      "ep": 3251,
+      "reward": -0.44251667269186146,
+      "cause": "success"
+    },
+    {
+      "ep": 3256,
+      "reward": 0.5274641573730264,
+      "cause": "success"
+    },
+    {
+      "ep": 3261,
+      "reward": 0.45993430427933696,
+      "cause": "success"
+    },
+    {
+      "ep": 3266,
+      "reward": 0.60448178349252,
+      "cause": "success"
+    },
+    {
+      "ep": 3271,
+      "reward": 0.2855329565094826,
+      "cause": "success"
+    },
+    {
+      "ep": 3276,
+      "reward": 0.645523709207418,
+      "cause": "success"
+    },
+    {
+      "ep": 3281,
+      "reward": 0.5299200684179013,
+      "cause": "success"
+    },
+    {
+      "ep": 3286,
+      "reward": 0.522238414595369,
+      "cause": "success"
+    },
+    {
+      "ep": 3291,
+      "reward": 0.49957051531842744,
+      "cause": "success"
+    },
+    {
+      "ep": 3296,
+      "reward": 0.503267216687583,
+      "cause": "success"
+    },
+    {
+      "ep": 3301,
+      "reward": 0.552168277515696,
+      "cause": "success"
+    },
+    {
+      "ep": 3306,
+      "reward": -0.488005936158514,
+      "cause": "success"
+    },
+    {
+      "ep": 3311,
+      "reward": 0.46461141286517127,
+      "cause": "success"
+    },
+    {
+      "ep": 3316,
+      "reward": 0.4285619103381627,
+      "cause": "success"
+    },
+    {
+      "ep": 3321,
+      "reward": 0.602166964115554,
+      "cause": "success"
+    },
+    {
+      "ep": 3326,
+      "reward": 0.6392451289107868,
+      "cause": "success"
+    },
+    {
+      "ep": 3331,
+      "reward": 0.5294587519630999,
+      "cause": "success"
+    },
+    {
+      "ep": 3336,
+      "reward": 0.5275377162543109,
+      "cause": "success"
+    },
+    {
+      "ep": 3341,
+      "reward": 0.6360814966533429,
+      "cause": "success"
+    },
+    {
+      "ep": 3346,
+      "reward": 0.5908312385817122,
+      "cause": "success"
+    },
+    {
+      "ep": 3351,
+      "reward": 0.40720489568007656,
+      "cause": "success"
+    },
+    {
+      "ep": 3356,
+      "reward": 0.49690348203885737,
+      "cause": "success"
+    },
+    {
+      "ep": 3361,
+      "reward": 0.5238017150420872,
+      "cause": "success"
+    },
+    {
+      "ep": 3366,
+      "reward": 0.6047909055392277,
+      "cause": "success"
+    },
+    {
+      "ep": 3371,
+      "reward": 0.44856441747447395,
+      "cause": "success"
+    },
+    {
+      "ep": 3376,
+      "reward": -0.16028089844467241,
+      "cause": "success"
+    },
+    {
+      "ep": 3381,
+      "reward": 0.6032686304275565,
+      "cause": "success"
+    },
+    {
+      "ep": 3386,
+      "reward": 0.5491846326622767,
+      "cause": "success"
+    },
+    {
+      "ep": 3391,
+      "reward": 0.49090022667934413,
+      "cause": "success"
+    },
+    {
+      "ep": 3396,
+      "reward": 0.5925888967605084,
+      "cause": "success"
+    },
+    {
+      "ep": 3401,
+      "reward": 0.5026724225713297,
+      "cause": "success"
+    },
+    {
+      "ep": 3406,
+      "reward": 0.5870519409373088,
+      "cause": "success"
+    },
+    {
+      "ep": 3411,
+      "reward": 0.49707999204230796,
+      "cause": "success"
+    },
+    {
+      "ep": 3416,
+      "reward": -0.07115856595254477,
+      "cause": "success"
+    },
+    {
+      "ep": 3421,
+      "reward": 0.28096150561030586,
+      "cause": "success"
+    },
+    {
+      "ep": 3426,
+      "reward": 0.6300368477121056,
+      "cause": "success"
+    },
+    {
+      "ep": 3431,
+      "reward": 0.6437813546865836,
+      "cause": "success"
+    },
+    {
+      "ep": 3436,
+      "reward": 0.557150634437225,
+      "cause": "success"
+    },
+    {
+      "ep": 3441,
+      "reward": 0.2565410514918586,
+      "cause": "success"
+    },
+    {
+      "ep": 3446,
+      "reward": 0.6495464681975242,
+      "cause": "success"
+    },
+    {
+      "ep": 3451,
+      "reward": 0.5941596688879635,
+      "cause": "success"
+    },
+    {
+      "ep": 3456,
+      "reward": 0.15899628884674688,
+      "cause": "success"
+    },
+    {
+      "ep": 3461,
+      "reward": 0.4344360783155556,
+      "cause": "success"
+    },
+    {
+      "ep": 3466,
+      "reward": 0.5232489410475213,
+      "cause": "success"
+    },
+    {
+      "ep": 3471,
+      "reward": 0.48282178324395614,
+      "cause": "success"
+    },
+    {
+      "ep": 3476,
+      "reward": 0.46504660504058143,
+      "cause": "success"
+    },
+    {
+      "ep": 3481,
+      "reward": 0.596961128577975,
+      "cause": "success"
+    },
+    {
+      "ep": 3486,
+      "reward": 0.5896853318904942,
+      "cause": "success"
+    },
+    {
+      "ep": 3491,
+      "reward": 0.6239164950642822,
+      "cause": "success"
+    },
+    {
+      "ep": 3496,
+      "reward": 0.5031611527170041,
+      "cause": "success"
+    },
+    {
+      "ep": 3501,
+      "reward": 0.20195853530667074,
+      "cause": "success"
+    },
+    {
+      "ep": 3506,
+      "reward": 0.5599756200668045,
+      "cause": "success"
+    },
+    {
+      "ep": 3511,
+      "reward": 0.2617885025347618,
+      "cause": "success"
+    },
+    {
+      "ep": 3516,
+      "reward": 0.6181114313921923,
+      "cause": "success"
+    },
+    {
+      "ep": 3521,
+      "reward": 0.5435613869927987,
+      "cause": "success"
+    },
+    {
+      "ep": 3526,
+      "reward": -0.04835461387090245,
+      "cause": "success"
+    },
+    {
+      "ep": 3531,
+      "reward": 0.540248421353843,
+      "cause": "success"
+    },
+    {
+      "ep": 3536,
+      "reward": 0.557737108233607,
+      "cause": "success"
+    },
+    {
+      "ep": 3541,
+      "reward": 0.5347836497413858,
+      "cause": "success"
+    },
+    {
+      "ep": 3546,
+      "reward": 0.6046604622963745,
+      "cause": "success"
+    },
+    {
+      "ep": 3551,
+      "reward": 0.38203304412165745,
+      "cause": "success"
+    },
+    {
+      "ep": 3556,
+      "reward": 0.6312722030894082,
+      "cause": "success"
+    },
+    {
+      "ep": 3561,
+      "reward": 0.5795900425049841,
+      "cause": "success"
+    },
+    {
+      "ep": 3566,
+      "reward": 0.5375067834506746,
+      "cause": "success"
+    },
+    {
+      "ep": 3571,
+      "reward": 0.4699805033808812,
+      "cause": "success"
+    },
+    {
+      "ep": 3576,
+      "reward": 0.5175137628350368,
+      "cause": "success"
+    },
+    {
+      "ep": 3581,
+      "reward": 0.49015753610031265,
+      "cause": "success"
+    },
+    {
+      "ep": 3586,
+      "reward": 0.5233791697177997,
+      "cause": "success"
+    },
+    {
+      "ep": 3591,
+      "reward": 0.5960349602892434,
+      "cause": "success"
+    },
+    {
+      "ep": 3596,
+      "reward": 0.6026042754685808,
+      "cause": "success"
+    },
+    {
+      "ep": 3601,
+      "reward": 0.4342158987166031,
+      "cause": "success"
+    },
+    {
+      "ep": 3606,
+      "reward": 0.58739567295486,
+      "cause": "success"
+    },
+    {
+      "ep": 3611,
+      "reward": 0.5550302058229178,
+      "cause": "success"
+    },
+    {
+      "ep": 3616,
+      "reward": -0.35949463239278284,
+      "cause": "success"
+    },
+    {
+      "ep": 3621,
+      "reward": 0.5647131341701114,
+      "cause": "success"
+    },
+    {
+      "ep": 3626,
+      "reward": 0.4924337281124528,
+      "cause": "success"
+    },
+    {
+      "ep": 3631,
+      "reward": 0.4083356363543549,
+      "cause": "success"
+    },
+    {
+      "ep": 3636,
+      "reward": 0.45778639567102053,
+      "cause": "success"
+    },
+    {
+      "ep": 3641,
+      "reward": 0.4496688569227818,
+      "cause": "success"
+    },
+    {
+      "ep": 3646,
+      "reward": 0.1945422698057111,
+      "cause": "success"
+    },
+    {
+      "ep": 3651,
+      "reward": 0.5296925529458562,
+      "cause": "success"
+    },
+    {
+      "ep": 3656,
+      "reward": 0.4698961316770557,
+      "cause": "success"
+    },
+    {
+      "ep": 3661,
+      "reward": 0.6396508332541253,
+      "cause": "success"
+    },
+    {
+      "ep": 3666,
+      "reward": 0.2596011081540035,
+      "cause": "success"
+    },
+    {
+      "ep": 3671,
+      "reward": 0.5766312314618243,
+      "cause": "success"
+    },
+    {
+      "ep": 3676,
+      "reward": 0.4736465774353902,
+      "cause": "success"
+    },
+    {
+      "ep": 3681,
+      "reward": 0.4250512627342798,
+      "cause": "success"
+    },
+    {
+      "ep": 3686,
+      "reward": 0.524408437558104,
+      "cause": "success"
+    },
+    {
+      "ep": 3691,
+      "reward": 0.4571144651243103,
+      "cause": "success"
+    },
+    {
+      "ep": 3696,
+      "reward": 0.5298708169932315,
+      "cause": "success"
+    },
+    {
+      "ep": 3701,
+      "reward": 0.5749531248634869,
+      "cause": "success"
+    },
+    {
+      "ep": 3706,
+      "reward": 0.618501473050034,
+      "cause": "success"
+    },
+    {
+      "ep": 3711,
+      "reward": -0.2268615450153037,
+      "cause": "success"
+    },
+    {
+      "ep": 3716,
+      "reward": 0.5283288982092044,
+      "cause": "success"
+    },
+    {
+      "ep": 3721,
+      "reward": 0.6344811239323888,
+      "cause": "success"
+    },
+    {
+      "ep": 3726,
+      "reward": 0.5420498173918696,
+      "cause": "success"
+    },
+    {
+      "ep": 3731,
+      "reward": 0.4311734320735366,
+      "cause": "success"
+    },
+    {
+      "ep": 3736,
+      "reward": 0.18945522598080977,
+      "cause": "success"
+    },
+    {
+      "ep": 3741,
+      "reward": 0.5446914318527564,
+      "cause": "success"
+    },
+    {
+      "ep": 3746,
+      "reward": 0.4800084325357069,
+      "cause": "success"
+    },
+    {
+      "ep": 3751,
+      "reward": 0.2421192380874751,
+      "cause": "success"
+    },
+    {
+      "ep": 3756,
+      "reward": 0.5773360945109733,
+      "cause": "success"
+    },
+    {
+      "ep": 3761,
+      "reward": 0.6579292016996021,
+      "cause": "success"
+    },
+    {
+      "ep": 3766,
+      "reward": 0.5834068817986865,
+      "cause": "success"
+    },
+    {
+      "ep": 3771,
+      "reward": 0.5187263475954551,
+      "cause": "success"
+    },
+    {
+      "ep": 3776,
+      "reward": 0.5733793040784068,
+      "cause": "success"
+    },
+    {
+      "ep": 3781,
+      "reward": 0.3408786962995839,
+      "cause": "success"
+    },
+    {
+      "ep": 3786,
+      "reward": 0.5947344412892319,
+      "cause": "success"
+    },
+    {
+      "ep": 3791,
+      "reward": 0.6615296632564989,
+      "cause": "success"
+    },
+    {
+      "ep": 3796,
+      "reward": 0.6220451983337167,
+      "cause": "success"
+    },
+    {
+      "ep": 3801,
+      "reward": -0.07032576798267814,
+      "cause": "success"
+    },
+    {
+      "ep": 3806,
+      "reward": 0.5153011264394811,
+      "cause": "success"
+    },
+    {
+      "ep": 3811,
+      "reward": 0.585412955860268,
+      "cause": "success"
+    },
+    {
+      "ep": 3816,
+      "reward": 0.6074130850890773,
+      "cause": "success"
+    },
+    {
+      "ep": 3821,
+      "reward": 0.6111018300575073,
+      "cause": "success"
+    },
+    {
+      "ep": 3826,
+      "reward": 0.4382610812973396,
+      "cause": "success"
+    },
+    {
+      "ep": 3831,
+      "reward": 0.584240998021599,
+      "cause": "success"
+    },
+    {
+      "ep": 3836,
+      "reward": 0.5258844648778158,
+      "cause": "success"
+    },
+    {
+      "ep": 3841,
+      "reward": 0.42598733419661144,
+      "cause": "success"
+    },
+    {
+      "ep": 3846,
+      "reward": 0.23399025096447523,
+      "cause": "success"
+    },
+    {
+      "ep": 3851,
+      "reward": 0.39049219711141947,
+      "cause": "success"
+    },
+    {
+      "ep": 3856,
+      "reward": -0.5299684259773548,
+      "cause": "success"
+    },
+    {
+      "ep": 3861,
+      "reward": 0.36906928664648564,
+      "cause": "success"
+    },
+    {
+      "ep": 3866,
+      "reward": 0.45981150648426417,
+      "cause": "success"
+    },
+    {
+      "ep": 3871,
+      "reward": -0.2061384684156155,
+      "cause": "success"
+    },
+    {
+      "ep": 3876,
+      "reward": 0.5448911196875453,
+      "cause": "success"
+    },
+    {
+      "ep": 3881,
+      "reward": 0.49880869145832385,
+      "cause": "success"
+    },
+    {
+      "ep": 3886,
+      "reward": 0.49535632739619967,
+      "cause": "success"
+    },
+    {
+      "ep": 3891,
+      "reward": 0.5780732399844927,
+      "cause": "success"
+    },
+    {
+      "ep": 3896,
+      "reward": 0.4918931567113224,
+      "cause": "success"
+    },
+    {
+      "ep": 3901,
+      "reward": 0.5527635519271787,
+      "cause": "success"
+    },
+    {
+      "ep": 3906,
+      "reward": 0.4978580677741806,
+      "cause": "success"
+    },
+    {
+      "ep": 3911,
+      "reward": 0.5623601149415874,
+      "cause": "success"
+    },
+    {
+      "ep": 3916,
+      "reward": 0.2572566062322081,
+      "cause": "success"
+    },
+    {
+      "ep": 3921,
+      "reward": 0.49856639050505663,
+      "cause": "success"
+    },
+    {
+      "ep": 3926,
+      "reward": 0.024181219781775343,
+      "cause": "success"
+    },
+    {
+      "ep": 3931,
+      "reward": 0.4650347235844736,
+      "cause": "success"
+    },
+    {
+      "ep": 3936,
+      "reward": 0.450533216915898,
+      "cause": "success"
+    },
+    {
+      "ep": 3941,
+      "reward": 0.5583363775823932,
+      "cause": "success"
+    },
+    {
+      "ep": 3946,
+      "reward": 0.4696803070354275,
+      "cause": "success"
+    },
+    {
+      "ep": 3951,
+      "reward": 0.4996834900273518,
+      "cause": "success"
+    },
+    {
+      "ep": 3956,
+      "reward": 0.09211396802081995,
+      "cause": "success"
+    },
+    {
+      "ep": 3961,
+      "reward": 0.6372817270248583,
+      "cause": "success"
+    },
+    {
+      "ep": 3966,
+      "reward": 0.5019635311484689,
+      "cause": "success"
+    },
+    {
+      "ep": 3971,
+      "reward": 0.5787340184145575,
+      "cause": "success"
+    },
+    {
+      "ep": 3976,
+      "reward": 0.1121660959348969,
+      "cause": "success"
+    },
+    {
+      "ep": 3981,
+      "reward": 0.5212157321255928,
+      "cause": "success"
+    },
+    {
+      "ep": 3986,
+      "reward": 0.2442747319684193,
+      "cause": "success"
+    },
+    {
+      "ep": 3991,
+      "reward": 0.5519526505753918,
+      "cause": "success"
+    },
+    {
+      "ep": 3996,
+      "reward": 0.5642484788860084,
+      "cause": "success"
+    },
+    {
+      "ep": 4001,
+      "reward": 0.6116583419221966,
+      "cause": "success"
+    },
+    {
+      "ep": 4006,
+      "reward": 0.5132079316102325,
+      "cause": "success"
+    },
+    {
+      "ep": 4011,
+      "reward": 0.5511744255595242,
+      "cause": "success"
+    },
+    {
+      "ep": 4016,
+      "reward": 0.3981352408451013,
+      "cause": "success"
+    },
+    {
+      "ep": 4021,
+      "reward": 0.630759061296194,
+      "cause": "success"
+    },
+    {
+      "ep": 4026,
+      "reward": 0.5405419709822628,
+      "cause": "success"
+    },
+    {
+      "ep": 4031,
+      "reward": -0.4397548181740649,
+      "cause": "success"
+    },
+    {
+      "ep": 4036,
+      "reward": 0.45366005198332865,
+      "cause": "success"
+    },
+    {
+      "ep": 4041,
+      "reward": 0.2932936322774081,
+      "cause": "success"
+    },
+    {
+      "ep": 4046,
+      "reward": 0.4614329981362257,
+      "cause": "success"
+    },
+    {
+      "ep": 4051,
+      "reward": 0.6423441333884085,
+      "cause": "success"
+    },
+    {
+      "ep": 4056,
+      "reward": 0.5221184209904582,
+      "cause": "success"
+    },
+    {
+      "ep": 4061,
+      "reward": 0.629838993485959,
+      "cause": "success"
+    },
+    {
+      "ep": 4066,
+      "reward": 0.5510399192865355,
+      "cause": "success"
+    },
+    {
+      "ep": 4071,
+      "reward": 0.6112392994888791,
+      "cause": "success"
+    },
+    {
+      "ep": 4076,
+      "reward": -0.2159803674893005,
+      "cause": "success"
+    },
+    {
+      "ep": 4081,
+      "reward": -0.22524008769699522,
+      "cause": "success"
+    },
+    {
+      "ep": 4086,
+      "reward": 0.5722662511658763,
+      "cause": "success"
+    },
+    {
+      "ep": 4091,
+      "reward": 0.6014983873190232,
+      "cause": "success"
+    },
+    {
+      "ep": 4096,
+      "reward": 0.605567810401878,
+      "cause": "success"
+    },
+    {
+      "ep": 4101,
+      "reward": 0.614372711837036,
+      "cause": "success"
+    },
+    {
+      "ep": 4106,
+      "reward": 0.5185581359707301,
+      "cause": "success"
+    },
+    {
+      "ep": 4111,
+      "reward": 0.6380752462290806,
+      "cause": "success"
+    },
+    {
+      "ep": 4116,
+      "reward": 0.5829656515020779,
+      "cause": "success"
+    },
+    {
+      "ep": 4121,
+      "reward": 0.47992435803971045,
+      "cause": "success"
+    },
+    {
+      "ep": 4126,
+      "reward": 0.5916504016108534,
+      "cause": "success"
+    },
+    {
+      "ep": 4131,
+      "reward": 0.5795660830982254,
+      "cause": "success"
+    },
+    {
+      "ep": 4136,
+      "reward": 0.6028625897145554,
+      "cause": "success"
+    },
+    {
+      "ep": 4141,
+      "reward": 0.49726356506280767,
+      "cause": "success"
+    },
+    {
+      "ep": 4146,
+      "reward": 0.19234552073521782,
+      "cause": "success"
+    },
+    {
+      "ep": 4151,
+      "reward": 0.5177289617966483,
+      "cause": "success"
+    },
+    {
+      "ep": 4156,
+      "reward": 0.4944251914201469,
+      "cause": "success"
+    },
+    {
+      "ep": 4161,
+      "reward": 0.4580990578771912,
+      "cause": "success"
+    },
+    {
+      "ep": 4166,
+      "reward": 0.5552619338773428,
+      "cause": "success"
+    },
+    {
+      "ep": 4171,
+      "reward": 0.5768075487487645,
+      "cause": "success"
+    },
+    {
+      "ep": 4176,
+      "reward": 0.5139524255106137,
+      "cause": "success"
+    },
+    {
+      "ep": 4181,
+      "reward": 0.5558244577281065,
+      "cause": "success"
+    },
+    {
+      "ep": 4186,
+      "reward": 0.5020038267633592,
+      "cause": "success"
+    },
+    {
+      "ep": 4191,
+      "reward": 0.5850648096492767,
+      "cause": "success"
+    },
+    {
+      "ep": 4196,
+      "reward": 0.6122669520237748,
+      "cause": "success"
+    },
+    {
+      "ep": 4201,
+      "reward": 0.5493216277705076,
+      "cause": "success"
+    },
+    {
+      "ep": 4206,
+      "reward": 0.5729654774228969,
+      "cause": "success"
+    },
+    {
+      "ep": 4211,
+      "reward": 0.5134992318381488,
+      "cause": "success"
+    },
+    {
+      "ep": 4216,
+      "reward": 0.4485421567739364,
+      "cause": "success"
+    },
+    {
+      "ep": 4221,
+      "reward": 0.6070350263648283,
+      "cause": "success"
+    },
+    {
+      "ep": 4226,
+      "reward": 0.5521676232406751,
+      "cause": "success"
+    },
+    {
+      "ep": 4231,
+      "reward": 0.5810361684143448,
+      "cause": "success"
+    },
+    {
+      "ep": 4236,
+      "reward": 0.5982721809702564,
+      "cause": "success"
+    },
+    {
+      "ep": 4241,
+      "reward": 0.5628466205673733,
+      "cause": "success"
+    },
+    {
+      "ep": 4246,
+      "reward": 0.6268750381046062,
+      "cause": "success"
+    },
+    {
+      "ep": 4251,
+      "reward": 0.530973426013096,
+      "cause": "success"
+    },
+    {
+      "ep": 4256,
+      "reward": 0.4895082839324965,
+      "cause": "success"
+    },
+    {
+      "ep": 4261,
+      "reward": 0.5755201065508785,
+      "cause": "success"
+    },
+    {
+      "ep": 4266,
+      "reward": 0.4372501819945662,
+      "cause": "success"
+    },
+    {
+      "ep": 4271,
+      "reward": 0.5898932693966805,
+      "cause": "success"
+    },
+    {
+      "ep": 4276,
+      "reward": 0.5866278025922017,
+      "cause": "success"
+    },
+    {
+      "ep": 4281,
+      "reward": 0.4898526200212204,
+      "cause": "success"
+    },
+    {
+      "ep": 4286,
+      "reward": 0.18034830802545504,
+      "cause": "success"
+    },
+    {
+      "ep": 4291,
+      "reward": 0.48903822036127487,
+      "cause": "success"
+    },
+    {
+      "ep": 4296,
+      "reward": 0.5627375437421013,
+      "cause": "success"
+    },
+    {
+      "ep": 4301,
+      "reward": 0.4905704315595153,
+      "cause": "success"
+    },
+    {
+      "ep": 4306,
+      "reward": 0.5218488857123045,
+      "cause": "success"
+    },
+    {
+      "ep": 4311,
+      "reward": 0.6225043106132833,
+      "cause": "success"
+    },
+    {
+      "ep": 4316,
+      "reward": 0.5352726083698128,
+      "cause": "success"
+    },
+    {
+      "ep": 4321,
+      "reward": 0.4599808939551172,
+      "cause": "success"
+    },
+    {
+      "ep": 4326,
+      "reward": 0.1218274157852422,
+      "cause": "success"
+    },
+    {
+      "ep": 4331,
+      "reward": 0.5565866027288042,
+      "cause": "success"
+    },
+    {
+      "ep": 4336,
+      "reward": 0.23384371067423726,
+      "cause": "success"
+    },
+    {
+      "ep": 4341,
+      "reward": 0.6172501788400125,
+      "cause": "success"
+    },
+    {
+      "ep": 4346,
+      "reward": 0.6062403536478774,
+      "cause": "success"
+    },
+    {
+      "ep": 4351,
+      "reward": 0.6455844840311844,
+      "cause": "success"
+    },
+    {
+      "ep": 4356,
+      "reward": 0.5778599349578591,
+      "cause": "success"
+    },
+    {
+      "ep": 4361,
+      "reward": 0.5297917944477113,
+      "cause": "success"
+    },
+    {
+      "ep": 4366,
+      "reward": 0.09129966321397331,
+      "cause": "success"
+    },
+    {
+      "ep": 4371,
+      "reward": 0.5769317954220105,
+      "cause": "success"
+    },
+    {
+      "ep": 4376,
+      "reward": 0.49261520077662246,
+      "cause": "success"
+    },
+    {
+      "ep": 4381,
+      "reward": 0.5175664295532526,
+      "cause": "success"
+    },
+    {
+      "ep": 4386,
+      "reward": 0.06981074117820396,
+      "cause": "success"
+    },
+    {
+      "ep": 4391,
+      "reward": 0.18401060153291582,
+      "cause": "success"
+    },
+    {
+      "ep": 4396,
+      "reward": 0.6274794985398163,
+      "cause": "success"
+    },
+    {
+      "ep": 4401,
+      "reward": 0.5572735954808963,
+      "cause": "success"
+    },
+    {
+      "ep": 4406,
+      "reward": 0.5884459566562938,
+      "cause": "success"
+    },
+    {
+      "ep": 4411,
+      "reward": 0.5580240648445584,
+      "cause": "success"
+    },
+    {
+      "ep": 4416,
+      "reward": 0.575404297862305,
+      "cause": "success"
+    },
+    {
+      "ep": 4421,
+      "reward": 0.5084076053744779,
+      "cause": "success"
+    },
+    {
+      "ep": 4426,
+      "reward": 0.5802257382774912,
+      "cause": "success"
+    },
+    {
+      "ep": 4431,
+      "reward": 0.5182721885629512,
+      "cause": "success"
+    },
+    {
+      "ep": 4436,
+      "reward": 0.4300948626722048,
+      "cause": "success"
+    },
+    {
+      "ep": 4441,
+      "reward": 0.5982502247946309,
+      "cause": "success"
+    },
+    {
+      "ep": 4446,
+      "reward": 0.6297483216738634,
+      "cause": "success"
+    },
+    {
+      "ep": 4451,
+      "reward": 0.4717395672548865,
+      "cause": "success"
+    },
+    {
+      "ep": 4456,
+      "reward": 0.5543080954524223,
+      "cause": "success"
+    },
+    {
+      "ep": 4461,
+      "reward": 0.5116894701930677,
+      "cause": "success"
+    },
+    {
+      "ep": 4466,
+      "reward": 0.31815780156988527,
+      "cause": "success"
+    },
+    {
+      "ep": 4471,
+      "reward": 0.4838712916783795,
+      "cause": "success"
+    },
+    {
+      "ep": 4476,
+      "reward": 0.5904243051350323,
+      "cause": "success"
+    },
+    {
+      "ep": 4481,
+      "reward": 0.6186825533246629,
+      "cause": "success"
+    },
+    {
+      "ep": 4486,
+      "reward": 0.5734717098506283,
+      "cause": "success"
+    },
+    {
+      "ep": 4491,
+      "reward": 0.19169991702637823,
+      "cause": "success"
+    },
+    {
+      "ep": 4496,
+      "reward": 0.635637617266179,
+      "cause": "success"
+    },
+    {
+      "ep": 4501,
+      "reward": 0.5871305374459571,
+      "cause": "success"
+    },
+    {
+      "ep": 4506,
+      "reward": 0.6038016639152083,
+      "cause": "success"
+    },
+    {
+      "ep": 4511,
+      "reward": 0.5677246609272308,
+      "cause": "success"
+    },
+    {
+      "ep": 4516,
+      "reward": 0.591567439726739,
+      "cause": "success"
+    },
+    {
+      "ep": 4521,
+      "reward": 0.33420292089285475,
+      "cause": "success"
+    },
+    {
+      "ep": 4526,
+      "reward": 0.5475713285763115,
+      "cause": "success"
+    },
+    {
+      "ep": 4531,
+      "reward": 0.5670107842618275,
+      "cause": "success"
+    },
+    {
+      "ep": 4536,
+      "reward": 0.6323574226310035,
+      "cause": "success"
+    },
+    {
+      "ep": 4541,
+      "reward": 0.4825448739386071,
+      "cause": "success"
+    },
+    {
+      "ep": 4546,
+      "reward": 0.3049507700022521,
+      "cause": "success"
+    },
+    {
+      "ep": 4551,
+      "reward": 0.5667355739969389,
+      "cause": "success"
+    },
+    {
+      "ep": 4556,
+      "reward": 0.6225587495181507,
+      "cause": "success"
+    },
+    {
+      "ep": 4561,
+      "reward": 0.26237468552697607,
+      "cause": "success"
+    },
+    {
+      "ep": 4566,
+      "reward": 0.5341977346378634,
+      "cause": "success"
+    },
+    {
+      "ep": 4571,
+      "reward": 0.4806358232262183,
+      "cause": "success"
+    },
+    {
+      "ep": 4576,
+      "reward": 0.45144252025667053,
+      "cause": "success"
+    },
+    {
+      "ep": 4581,
+      "reward": 0.552065713483298,
+      "cause": "success"
+    },
+    {
+      "ep": 4586,
+      "reward": 0.43727516411110257,
+      "cause": "success"
+    },
+    {
+      "ep": 4591,
+      "reward": 0.522270647995445,
+      "cause": "success"
+    },
+    {
+      "ep": 4596,
+      "reward": 0.5994589902820041,
+      "cause": "success"
+    },
+    {
+      "ep": 4601,
+      "reward": 0.5256416032302518,
+      "cause": "success"
+    },
+    {
+      "ep": 4606,
+      "reward": -0.30794768332447764,
+      "cause": "success"
+    },
+    {
+      "ep": 4611,
+      "reward": 0.5680131710380459,
+      "cause": "success"
+    },
+    {
+      "ep": 4616,
+      "reward": 0.3947470643343195,
+      "cause": "success"
+    },
+    {
+      "ep": 4621,
+      "reward": 0.5729750252045858,
+      "cause": "success"
+    },
+    {
+      "ep": 4626,
+      "reward": 0.5189018398230947,
+      "cause": "success"
+    },
+    {
+      "ep": 4631,
+      "reward": 0.6153093928105258,
+      "cause": "success"
+    },
+    {
+      "ep": 4636,
+      "reward": 0.4642213445623838,
+      "cause": "success"
+    },
+    {
+      "ep": 4641,
+      "reward": 0.5633221219858919,
+      "cause": "success"
+    },
+    {
+      "ep": 4646,
+      "reward": 0.6173830039330594,
+      "cause": "success"
+    },
+    {
+      "ep": 4651,
+      "reward": 0.6106609237066335,
+      "cause": "success"
+    },
+    {
+      "ep": 4656,
+      "reward": 0.4430642616448649,
+      "cause": "success"
+    },
+    {
+      "ep": 4661,
+      "reward": 0.6020308146708587,
+      "cause": "success"
+    },
+    {
+      "ep": 4666,
+      "reward": -0.06943998042328225,
+      "cause": "success"
+    },
+    {
+      "ep": 4671,
+      "reward": 0.5156212488212967,
+      "cause": "success"
+    },
+    {
+      "ep": 4676,
+      "reward": 0.6130222879480586,
+      "cause": "success"
+    },
+    {
+      "ep": 4681,
+      "reward": 0.5468318099982714,
+      "cause": "success"
+    },
+    {
+      "ep": 4686,
+      "reward": 0.5332416989216615,
+      "cause": "success"
+    },
+    {
+      "ep": 4691,
+      "reward": -0.33239745434895424,
+      "cause": "success"
+    },
+    {
+      "ep": 4696,
+      "reward": 0.5293510844493061,
+      "cause": "success"
+    },
+    {
+      "ep": 4701,
+      "reward": 0.5443859466036556,
+      "cause": "success"
+    },
+    {
+      "ep": 4706,
+      "reward": 0.5990516606673526,
+      "cause": "success"
+    },
+    {
+      "ep": 4711,
+      "reward": 0.5130016676217729,
+      "cause": "success"
+    },
+    {
+      "ep": 4716,
+      "reward": 0.5468349161338169,
+      "cause": "success"
+    },
+    {
+      "ep": 4721,
+      "reward": 0.48907651475558034,
+      "cause": "success"
+    },
+    {
+      "ep": 4726,
+      "reward": 0.5625669258012145,
+      "cause": "success"
+    },
+    {
+      "ep": 4731,
+      "reward": 0.5133502749682785,
+      "cause": "success"
+    },
+    {
+      "ep": 4736,
+      "reward": 0.41189371189117896,
+      "cause": "success"
+    },
+    {
+      "ep": 4741,
+      "reward": 0.4161712097864344,
+      "cause": "success"
+    },
+    {
+      "ep": 4746,
+      "reward": 0.6228955453122028,
+      "cause": "success"
+    },
+    {
+      "ep": 4751,
+      "reward": 0.009977319832435771,
+      "cause": "success"
+    },
+    {
+      "ep": 4756,
+      "reward": 0.5711425274405119,
+      "cause": "success"
+    },
+    {
+      "ep": 4761,
+      "reward": 0.5672547354076631,
+      "cause": "success"
+    },
+    {
+      "ep": 4766,
+      "reward": 0.5388905863236841,
+      "cause": "success"
+    },
+    {
+      "ep": 4771,
+      "reward": 0.5826634036879587,
+      "cause": "success"
+    },
+    {
+      "ep": 4776,
+      "reward": 0.6272453564165262,
+      "cause": "success"
+    },
+    {
+      "ep": 4781,
+      "reward": 0.23878171184151797,
+      "cause": "success"
+    },
+    {
+      "ep": 4786,
+      "reward": 0.5763215815193695,
+      "cause": "success"
+    },
+    {
+      "ep": 4791,
+      "reward": 0.5040750127516069,
+      "cause": "success"
+    },
+    {
+      "ep": 4796,
+      "reward": 0.5341548038590013,
+      "cause": "success"
+    },
+    {
+      "ep": 4801,
+      "reward": -0.364067247566061,
+      "cause": "success"
+    },
+    {
+      "ep": 4806,
+      "reward": 0.6236924741703535,
+      "cause": "success"
+    },
+    {
+      "ep": 4811,
+      "reward": 0.5588739492789028,
+      "cause": "success"
+    },
+    {
+      "ep": 4816,
+      "reward": 0.5294204488269268,
+      "cause": "success"
+    },
+    {
+      "ep": 4821,
+      "reward": 0.6625618117488226,
+      "cause": "success"
+    },
+    {
+      "ep": 4826,
+      "reward": 0.45052513466209665,
+      "cause": "success"
+    },
+    {
+      "ep": 4831,
+      "reward": -0.5428905416835694,
+      "cause": "success"
+    },
+    {
+      "ep": 4836,
+      "reward": 0.4764551862611159,
+      "cause": "success"
+    },
+    {
+      "ep": 4841,
+      "reward": 0.6359808846473866,
+      "cause": "success"
+    },
+    {
+      "ep": 4846,
+      "reward": 0.46573402835104033,
+      "cause": "success"
+    },
+    {
+      "ep": 4851,
+      "reward": 0.13891963318415645,
+      "cause": "success"
+    },
+    {
+      "ep": 4856,
+      "reward": 0.4752712864621936,
+      "cause": "success"
+    },
+    {
+      "ep": 4861,
+      "reward": 0.47086833618710466,
+      "cause": "success"
+    },
+    {
+      "ep": 4866,
+      "reward": 0.5094704180873213,
+      "cause": "success"
+    },
+    {
+      "ep": 4871,
+      "reward": 0.483946030832933,
+      "cause": "success"
+    },
+    {
+      "ep": 4876,
+      "reward": 0.500945332606981,
+      "cause": "success"
+    },
+    {
+      "ep": 4881,
+      "reward": 0.38179258727336857,
+      "cause": "success"
+    },
+    {
+      "ep": 4886,
+      "reward": -0.6145521521857007,
+      "cause": "success"
+    },
+    {
+      "ep": 4891,
+      "reward": 0.5986984770875344,
+      "cause": "success"
+    },
+    {
+      "ep": 4896,
+      "reward": 0.5903386395359518,
+      "cause": "success"
+    },
+    {
+      "ep": 4901,
+      "reward": 0.4937149599574151,
+      "cause": "success"
+    },
+    {
+      "ep": 4906,
+      "reward": 0.6162151330494421,
+      "cause": "success"
+    },
+    {
+      "ep": 4911,
+      "reward": 0.6346322294417317,
+      "cause": "success"
+    },
+    {
+      "ep": 4916,
+      "reward": 0.5741218855399087,
+      "cause": "success"
+    },
+    {
+      "ep": 4921,
+      "reward": 0.1993754971006788,
+      "cause": "success"
+    },
+    {
+      "ep": 4926,
+      "reward": 0.39650526471145364,
+      "cause": "success"
+    },
+    {
+      "ep": 4931,
+      "reward": 0.5357468787766388,
+      "cause": "success"
+    },
+    {
+      "ep": 4936,
+      "reward": 0.5100048992519738,
+      "cause": "success"
+    },
+    {
+      "ep": 4941,
+      "reward": 0.136543612676286,
+      "cause": "success"
+    },
+    {
+      "ep": 4946,
+      "reward": 0.37747064075763315,
+      "cause": "success"
+    },
+    {
+      "ep": 4951,
+      "reward": 0.6046955806453925,
+      "cause": "success"
+    },
+    {
+      "ep": 4956,
+      "reward": 0.6021205335522577,
+      "cause": "success"
+    },
+    {
+      "ep": 4961,
+      "reward": 0.27328083991799346,
+      "cause": "success"
+    },
+    {
+      "ep": 4966,
+      "reward": 0.5725447882432189,
+      "cause": "success"
+    },
+    {
+      "ep": 4971,
+      "reward": 0.6045524051029176,
+      "cause": "success"
+    },
+    {
+      "ep": 4976,
+      "reward": 0.4422071793220978,
+      "cause": "success"
+    },
+    {
+      "ep": 4981,
+      "reward": 0.4902400872541307,
+      "cause": "success"
+    },
+    {
+      "ep": 4986,
+      "reward": 0.444210163373994,
+      "cause": "success"
+    },
+    {
+      "ep": 4991,
+      "reward": 0.242651390836629,
+      "cause": "success"
+    },
+    {
+      "ep": 4996,
+      "reward": 0.5496081586284132,
+      "cause": "success"
+    },
+    {
+      "ep": 5001,
+      "reward": 0.5336560550813362,
+      "cause": "success"
+    },
+    {
+      "ep": 5006,
+      "reward": 0.6371331866783324,
+      "cause": "success"
+    },
+    {
+      "ep": 5011,
+      "reward": 0.5474590780969362,
+      "cause": "success"
+    },
+    {
+      "ep": 5016,
+      "reward": 0.34490115574684066,
+      "cause": "success"
+    },
+    {
+      "ep": 5021,
+      "reward": 0.36063634144524614,
+      "cause": "success"
+    },
+    {
+      "ep": 5026,
+      "reward": 0.6333288960397048,
+      "cause": "success"
+    },
+    {
+      "ep": 5031,
+      "reward": 0.5881368871213892,
+      "cause": "success"
+    },
+    {
+      "ep": 5036,
+      "reward": 0.553666704289017,
+      "cause": "success"
+    },
+    {
+      "ep": 5041,
+      "reward": 0.4587865818429702,
+      "cause": "success"
+    },
+    {
+      "ep": 5046,
+      "reward": 0.4989387628265806,
+      "cause": "success"
+    },
+    {
+      "ep": 5051,
+      "reward": 0.5126502493792208,
+      "cause": "success"
+    },
+    {
+      "ep": 5056,
+      "reward": 0.6158187673166093,
+      "cause": "success"
+    },
+    {
+      "ep": 5061,
+      "reward": -0.47396959068691447,
+      "cause": "success"
+    },
+    {
+      "ep": 5066,
+      "reward": 0.49821974884355463,
+      "cause": "success"
+    },
+    {
+      "ep": 5071,
+      "reward": 0.5659338167274283,
+      "cause": "success"
+    },
+    {
+      "ep": 5076,
+      "reward": 0.5577109987643623,
+      "cause": "success"
+    },
+    {
+      "ep": 5081,
+      "reward": 0.5350947101899582,
+      "cause": "success"
+    },
+    {
+      "ep": 5086,
+      "reward": 0.6249739889556277,
+      "cause": "success"
+    },
+    {
+      "ep": 5091,
+      "reward": 0.5339337393871985,
+      "cause": "success"
+    },
+    {
+      "ep": 5096,
+      "reward": 0.5431703399125921,
+      "cause": "success"
+    },
+    {
+      "ep": 5101,
+      "reward": 0.2555545909381694,
+      "cause": "success"
+    },
+    {
+      "ep": 5106,
+      "reward": 0.06875630163662438,
+      "cause": "success"
+    },
+    {
+      "ep": 5111,
+      "reward": 0.477889892272485,
+      "cause": "success"
+    },
+    {
+      "ep": 5116,
+      "reward": 0.5296096730140335,
+      "cause": "success"
+    },
+    {
+      "ep": 5121,
+      "reward": 0.5777355717184333,
+      "cause": "success"
+    },
+    {
+      "ep": 5126,
+      "reward": 0.5248296075873118,
+      "cause": "success"
+    },
+    {
+      "ep": 5131,
+      "reward": 0.4969065820726292,
+      "cause": "success"
+    },
+    {
+      "ep": 5136,
+      "reward": 0.570901253809945,
+      "cause": "success"
+    },
+    {
+      "ep": 5141,
+      "reward": 0.5403319630991571,
+      "cause": "success"
+    },
+    {
+      "ep": 5146,
+      "reward": 0.6172185848819315,
+      "cause": "success"
+    },
+    {
+      "ep": 5151,
+      "reward": 0.5185621502275912,
+      "cause": "success"
+    },
+    {
+      "ep": 5156,
+      "reward": 0.40833918505445377,
+      "cause": "success"
+    },
+    {
+      "ep": 5161,
+      "reward": 0.5661500052470835,
+      "cause": "success"
+    },
+    {
+      "ep": 5166,
+      "reward": 0.6218355954640413,
+      "cause": "success"
+    },
+    {
+      "ep": 5171,
+      "reward": 0.6443714327695466,
+      "cause": "success"
+    },
+    {
+      "ep": 5176,
+      "reward": 0.21493409646992312,
+      "cause": "success"
+    },
+    {
+      "ep": 5181,
+      "reward": -0.2935096911283692,
+      "cause": "success"
+    },
+    {
+      "ep": 5186,
+      "reward": 0.5493873326759883,
+      "cause": "success"
+    },
+    {
+      "ep": 5191,
+      "reward": 0.2962207006399916,
+      "cause": "success"
+    },
+    {
+      "ep": 5196,
+      "reward": 0.5561135221179191,
+      "cause": "success"
+    },
+    {
+      "ep": 5201,
+      "reward": 0.4755038211246497,
+      "cause": "success"
+    },
+    {
+      "ep": 5206,
+      "reward": 0.23019246954249295,
+      "cause": "success"
+    },
+    {
+      "ep": 5211,
+      "reward": 0.47542840102126055,
+      "cause": "success"
+    },
+    {
+      "ep": 5216,
+      "reward": 0.6246842336760322,
+      "cause": "success"
+    },
+    {
+      "ep": 5221,
+      "reward": 0.6135127029629672,
+      "cause": "success"
+    },
+    {
+      "ep": 5226,
+      "reward": 0.5423866912460655,
+      "cause": "success"
+    },
+    {
+      "ep": 5231,
+      "reward": 0.5762380111282476,
+      "cause": "success"
+    },
+    {
+      "ep": 5236,
+      "reward": 0.4543163468199061,
+      "cause": "success"
+    },
+    {
+      "ep": 5241,
+      "reward": 0.48962322848891426,
+      "cause": "success"
+    },
+    {
+      "ep": 5246,
+      "reward": 0.5969946865212018,
+      "cause": "success"
+    },
+    {
+      "ep": 5251,
+      "reward": 0.5588744232301905,
+      "cause": "success"
+    },
+    {
+      "ep": 5256,
+      "reward": -0.05226153903177372,
+      "cause": "success"
+    },
+    {
+      "ep": 5261,
+      "reward": -0.33207599460914267,
+      "cause": "success"
+    },
+    {
+      "ep": 5266,
+      "reward": 0.6834247344402962,
+      "cause": "success"
+    },
+    {
+      "ep": 5271,
+      "reward": 0.5185389609267691,
+      "cause": "success"
+    },
+    {
+      "ep": 5276,
+      "reward": 0.540285094968945,
+      "cause": "success"
+    },
+    {
+      "ep": 5281,
+      "reward": 0.4717685240619884,
+      "cause": "success"
+    },
+    {
+      "ep": 5286,
+      "reward": 0.4622739911921967,
+      "cause": "success"
+    },
+    {
+      "ep": 5291,
+      "reward": 0.5770600264623137,
+      "cause": "success"
+    },
+    {
+      "ep": 5296,
+      "reward": 0.6433496059525962,
+      "cause": "success"
+    },
+    {
+      "ep": 5301,
+      "reward": 0.6417521308675265,
+      "cause": "success"
+    },
+    {
+      "ep": 5306,
+      "reward": 0.5467838159246775,
+      "cause": "success"
+    },
+    {
+      "ep": 5311,
+      "reward": 0.6252455916572369,
+      "cause": "success"
+    },
+    {
+      "ep": 5316,
+      "reward": 0.615416596325532,
+      "cause": "success"
+    },
+    {
+      "ep": 5321,
+      "reward": 0.5911647012992538,
+      "cause": "success"
+    },
+    {
+      "ep": 5326,
+      "reward": 0.5028969556383267,
+      "cause": "success"
+    },
+    {
+      "ep": 5331,
+      "reward": 0.605912442863563,
+      "cause": "success"
+    },
+    {
+      "ep": 5336,
+      "reward": 0.6110878421005164,
+      "cause": "success"
+    },
+    {
+      "ep": 5341,
+      "reward": 0.5739073418527036,
+      "cause": "success"
+    },
+    {
+      "ep": 5346,
+      "reward": 0.5212798966214338,
+      "cause": "success"
+    },
+    {
+      "ep": 5351,
+      "reward": 0.47092362122193304,
+      "cause": "success"
+    },
+    {
+      "ep": 5356,
+      "reward": -0.11953277030599496,
+      "cause": "success"
+    },
+    {
+      "ep": 5361,
+      "reward": 0.19872340135864897,
+      "cause": "success"
+    },
+    {
+      "ep": 5366,
+      "reward": 0.6069495344935272,
+      "cause": "success"
+    },
+    {
+      "ep": 5371,
+      "reward": 0.5626117464423759,
+      "cause": "success"
+    },
+    {
+      "ep": 5376,
+      "reward": 0.5982083918622864,
+      "cause": "success"
+    },
+    {
+      "ep": 5381,
+      "reward": 0.6244366966962481,
+      "cause": "success"
+    },
+    {
+      "ep": 5386,
+      "reward": 0.37803518192130836,
+      "cause": "success"
+    },
+    {
+      "ep": 5391,
+      "reward": 0.5100115340899702,
+      "cause": "success"
+    },
+    {
+      "ep": 5396,
+      "reward": 0.5290373078654574,
+      "cause": "success"
+    },
+    {
+      "ep": 5401,
+      "reward": 0.2507068751182605,
+      "cause": "success"
+    },
+    {
+      "ep": 5406,
+      "reward": 0.3165694629803668,
+      "cause": "success"
+    },
+    {
+      "ep": 5411,
+      "reward": 0.5509107096326751,
+      "cause": "success"
+    },
+    {
+      "ep": 5416,
+      "reward": 0.5165404363334654,
+      "cause": "success"
+    },
+    {
+      "ep": 5421,
+      "reward": 0.22694178870464082,
+      "cause": "success"
+    },
+    {
+      "ep": 5426,
+      "reward": 0.5861415448074554,
+      "cause": "success"
+    },
+    {
+      "ep": 5431,
+      "reward": 0.5655890043594034,
+      "cause": "success"
+    },
+    {
+      "ep": 5436,
+      "reward": 0.39944536861267,
+      "cause": "success"
+    },
+    {
+      "ep": 5441,
+      "reward": 0.44791064513042234,
+      "cause": "success"
+    },
+    {
+      "ep": 5446,
+      "reward": 0.5814701717789214,
+      "cause": "success"
+    },
+    {
+      "ep": 5451,
+      "reward": 0.6160179265668391,
+      "cause": "success"
+    },
+    {
+      "ep": 5456,
+      "reward": 0.5730748661463373,
+      "cause": "success"
+    },
+    {
+      "ep": 5461,
+      "reward": 0.5083176414191035,
+      "cause": "success"
+    },
+    {
+      "ep": 5466,
+      "reward": 0.5034596203128432,
+      "cause": "success"
+    },
+    {
+      "ep": 5471,
+      "reward": 0.5489370050297222,
+      "cause": "success"
+    },
+    {
+      "ep": 5476,
+      "reward": 0.10016381957491804,
+      "cause": "success"
+    },
+    {
+      "ep": 5481,
+      "reward": 0.6083648993878086,
+      "cause": "success"
+    },
+    {
+      "ep": 5486,
+      "reward": 0.5697344224962327,
+      "cause": "success"
+    },
+    {
+      "ep": 5491,
+      "reward": 0.5778028768335646,
+      "cause": "success"
+    },
+    {
+      "ep": 5496,
+      "reward": 0.47601465319739245,
+      "cause": "success"
+    },
+    {
+      "ep": 5501,
+      "reward": 0.6172488442869032,
+      "cause": "success"
+    },
+    {
+      "ep": 5506,
+      "reward": 0.3217111949585147,
+      "cause": "success"
+    },
+    {
+      "ep": 5511,
+      "reward": 0.3815583428596573,
+      "cause": "success"
+    },
+    {
+      "ep": 5516,
+      "reward": 0.5169779173905446,
+      "cause": "success"
+    },
+    {
+      "ep": 5521,
+      "reward": 0.23615759684830062,
+      "cause": "success"
+    },
+    {
+      "ep": 5526,
+      "reward": 0.5732176266538522,
+      "cause": "success"
+    },
+    {
+      "ep": 5531,
+      "reward": 0.5675046897305517,
+      "cause": "success"
+    },
+    {
+      "ep": 5536,
+      "reward": 0.5742460227861169,
+      "cause": "success"
+    },
+    {
+      "ep": 5541,
+      "reward": 0.5268332515388919,
+      "cause": "success"
+    },
+    {
+      "ep": 5546,
+      "reward": 0.4572998330098589,
+      "cause": "success"
+    },
+    {
+      "ep": 5551,
+      "reward": 0.6350667673960775,
+      "cause": "success"
+    },
+    {
+      "ep": 5556,
+      "reward": 0.46942146305663884,
+      "cause": "success"
+    },
+    {
+      "ep": 5561,
+      "reward": 0.599893293835449,
+      "cause": "success"
+    },
+    {
+      "ep": 5566,
+      "reward": 0.6323616378837851,
+      "cause": "success"
+    },
+    {
+      "ep": 5571,
+      "reward": 0.15191060308255827,
+      "cause": "success"
+    },
+    {
+      "ep": 5576,
+      "reward": 0.632820225550787,
+      "cause": "success"
+    },
+    {
+      "ep": 5581,
+      "reward": 0.6019885680699537,
+      "cause": "success"
+    },
+    {
+      "ep": 5586,
+      "reward": 0.6099506792175601,
+      "cause": "success"
+    },
+    {
+      "ep": 5591,
+      "reward": 0.23029536133440198,
+      "cause": "success"
+    },
+    {
+      "ep": 5596,
+      "reward": 0.5955044367957658,
+      "cause": "success"
+    },
+    {
+      "ep": 5601,
+      "reward": 0.5914003608612864,
+      "cause": "success"
+    },
+    {
+      "ep": 5606,
+      "reward": -1.5,
+      "cause": "collision"
+    },
+    {
+      "ep": 5611,
+      "reward": 0.6270623727368857,
+      "cause": "success"
+    },
+    {
+      "ep": 5616,
+      "reward": 0.4920535765421839,
+      "cause": "success"
+    },
+    {
+      "ep": 5621,
+      "reward": 0.5582116564070001,
+      "cause": "success"
+    },
+    {
+      "ep": 5626,
+      "reward": 0.5896580954542007,
+      "cause": "success"
+    },
+    {
+      "ep": 5631,
+      "reward": 0.409997858097013,
+      "cause": "success"
+    },
+    {
+      "ep": 5636,
+      "reward": 0.6194748986944887,
+      "cause": "success"
+    },
+    {
+      "ep": 5641,
+      "reward": 0.6195001211051689,
+      "cause": "success"
+    },
+    {
+      "ep": 5646,
+      "reward": 0.5068025529854989,
+      "cause": "success"
+    },
+    {
+      "ep": 5651,
+      "reward": 0.4953371532806779,
+      "cause": "success"
+    },
+    {
+      "ep": 5656,
+      "reward": 0.3682157985049673,
+      "cause": "success"
+    },
+    {
+      "ep": 5661,
+      "reward": 0.5511555159192056,
+      "cause": "success"
+    },
+    {
+      "ep": 5666,
+      "reward": 0.31037867487818005,
+      "cause": "success"
+    },
+    {
+      "ep": 5671,
+      "reward": 0.659751012495486,
+      "cause": "success"
+    },
+    {
+      "ep": 5676,
+      "reward": 0.5241807914614439,
+      "cause": "success"
+    },
+    {
+      "ep": 5681,
+      "reward": 0.5161218362953777,
+      "cause": "success"
+    },
+    {
+      "ep": 5686,
+      "reward": 0.48971666173158157,
+      "cause": "success"
+    },
+    {
+      "ep": 5691,
+      "reward": 0.4948733287541984,
+      "cause": "success"
+    },
+    {
+      "ep": 5696,
+      "reward": 0.6142572938472659,
+      "cause": "success"
+    },
+    {
+      "ep": 5701,
+      "reward": 0.5200725422727656,
+      "cause": "success"
+    },
+    {
+      "ep": 5706,
+      "reward": 0.5255832849907894,
+      "cause": "success"
+    },
+    {
+      "ep": 5711,
+      "reward": 0.06207297734030165,
+      "cause": "success"
+    },
+    {
+      "ep": 5716,
+      "reward": 0.33907909685015614,
+      "cause": "success"
+    },
+    {
+      "ep": 5721,
+      "reward": 0.5309774440797128,
+      "cause": "success"
+    },
+    {
+      "ep": 5726,
+      "reward": 0.3202274820979544,
+      "cause": "success"
+    },
+    {
+      "ep": 5731,
+      "reward": -0.02172296792702605,
+      "cause": "success"
+    },
+    {
+      "ep": 5736,
+      "reward": 0.5098237530176596,
+      "cause": "success"
+    },
+    {
+      "ep": 5741,
+      "reward": 0.5814740651604613,
+      "cause": "success"
+    },
+    {
+      "ep": 5746,
+      "reward": 0.07579168558809118,
+      "cause": "success"
+    },
+    {
+      "ep": 5751,
+      "reward": 0.5089955656943683,
+      "cause": "success"
+    },
+    {
+      "ep": 5756,
+      "reward": 0.5869522912340628,
+      "cause": "success"
+    },
+    {
+      "ep": 5761,
+      "reward": 0.5835283296253768,
+      "cause": "success"
+    },
+    {
+      "ep": 5766,
+      "reward": 0.5911135089270982,
+      "cause": "success"
+    },
+    {
+      "ep": 5771,
+      "reward": 0.5808939695496222,
+      "cause": "success"
+    },
+    {
+      "ep": 5776,
+      "reward": 0.6049105864811398,
+      "cause": "success"
+    },
+    {
+      "ep": 5781,
+      "reward": 0.5958084868130186,
+      "cause": "success"
+    },
+    {
+      "ep": 5786,
+      "reward": 0.5204992287661512,
+      "cause": "success"
+    },
+    {
+      "ep": 5791,
+      "reward": 0.4927861277347501,
+      "cause": "success"
+    },
+    {
+      "ep": 5796,
+      "reward": 0.47156024124488294,
+      "cause": "success"
+    },
+    {
+      "ep": 5801,
+      "reward": -0.1510440437494912,
+      "cause": "success"
+    },
+    {
+      "ep": 5806,
+      "reward": 0.5524110553939178,
+      "cause": "success"
+    },
+    {
+      "ep": 5811,
+      "reward": 0.5422606185590908,
+      "cause": "success"
+    },
+    {
+      "ep": 5816,
+      "reward": 0.5915644946898442,
+      "cause": "success"
+    },
+    {
+      "ep": 5821,
+      "reward": 0.1615105806767132,
+      "cause": "success"
+    },
+    {
+      "ep": 5826,
+      "reward": 0.5219504942298177,
+      "cause": "success"
+    },
+    {
+      "ep": 5831,
+      "reward": 0.5809150609915339,
+      "cause": "success"
+    },
+    {
+      "ep": 5836,
+      "reward": 0.5584049142580338,
+      "cause": "success"
+    },
+    {
+      "ep": 5841,
+      "reward": 0.6068387439303341,
+      "cause": "success"
+    },
+    {
+      "ep": 5846,
+      "reward": 0.5011456473290624,
+      "cause": "success"
+    },
+    {
+      "ep": 5851,
+      "reward": 0.6239948260616967,
+      "cause": "success"
+    },
+    {
+      "ep": 5856,
+      "reward": 0.5257692509640637,
+      "cause": "success"
+    },
+    {
+      "ep": 5861,
+      "reward": 0.48901882964222887,
+      "cause": "success"
+    },
+    {
+      "ep": 5866,
+      "reward": 0.6390076541867029,
+      "cause": "success"
+    },
+    {
+      "ep": 5871,
+      "reward": 0.5254423353979902,
+      "cause": "success"
+    },
+    {
+      "ep": 5876,
+      "reward": 0.6396234088278498,
+      "cause": "success"
+    },
+    {
+      "ep": 5881,
+      "reward": 0.561917985642414,
+      "cause": "success"
+    },
+    {
+      "ep": 5886,
+      "reward": 0.5888409976239465,
+      "cause": "success"
+    },
+    {
+      "ep": 5891,
+      "reward": 0.57892289295284,
+      "cause": "success"
+    },
+    {
+      "ep": 5896,
+      "reward": 0.6172874199058187,
+      "cause": "success"
+    },
+    {
+      "ep": 5901,
+      "reward": 0.6631196427944566,
+      "cause": "success"
+    },
+    {
+      "ep": 5906,
+      "reward": 0.6476169833789033,
+      "cause": "success"
+    },
+    {
+      "ep": 5911,
+      "reward": 0.5087414060083006,
+      "cause": "success"
+    },
+    {
+      "ep": 5916,
+      "reward": 0.6674883810249822,
+      "cause": "success"
+    },
+    {
+      "ep": 5921,
+      "reward": 0.5249241126096258,
+      "cause": "success"
+    },
+    {
+      "ep": 5926,
+      "reward": 0.5513710536392386,
+      "cause": "success"
+    },
+    {
+      "ep": 5931,
+      "reward": 0.5144260709208459,
+      "cause": "success"
+    },
+    {
+      "ep": 5936,
+      "reward": 0.6126971870796454,
+      "cause": "success"
+    },
+    {
+      "ep": 5941,
+      "reward": 0.29727111328281003,
+      "cause": "success"
+    },
+    {
+      "ep": 5946,
+      "reward": 0.17187569691855442,
+      "cause": "success"
+    },
+    {
+      "ep": 5951,
+      "reward": 0.5531739846432105,
+      "cause": "success"
+    },
+    {
+      "ep": 5956,
+      "reward": 0.5827013445008561,
+      "cause": "success"
+    },
+    {
+      "ep": 5961,
+      "reward": 0.5843132922528581,
+      "cause": "success"
+    },
+    {
+      "ep": 5966,
+      "reward": 0.5631759320572496,
+      "cause": "success"
+    },
+    {
+      "ep": 5971,
+      "reward": 0.5771682508651871,
+      "cause": "success"
+    },
+    {
+      "ep": 5976,
+      "reward": 0.6047464036783793,
+      "cause": "success"
+    },
+    {
+      "ep": 5981,
+      "reward": 0.5308927620809248,
+      "cause": "success"
+    },
+    {
+      "ep": 5986,
+      "reward": 0.5821109258227218,
+      "cause": "success"
+    },
+    {
+      "ep": 5991,
+      "reward": 0.4750822903221751,
+      "cause": "success"
+    },
+    {
+      "ep": 5996,
+      "reward": 0.5875222471029564,
+      "cause": "success"
+    },
+    {
+      "ep": 6001,
+      "reward": 0.5053341059593913,
+      "cause": "success"
+    },
+    {
+      "ep": 6006,
+      "reward": 0.613873001463721,
+      "cause": "success"
+    },
+    {
+      "ep": 6011,
+      "reward": 0.5543713161002095,
+      "cause": "success"
+    },
+    {
+      "ep": 6016,
+      "reward": 0.47909406551135797,
+      "cause": "success"
+    },
+    {
+      "ep": 6021,
+      "reward": 0.6550954734574825,
+      "cause": "success"
+    },
+    {
+      "ep": 6026,
+      "reward": 0.45991655605506343,
+      "cause": "success"
+    },
+    {
+      "ep": 6031,
+      "reward": 0.635077355709585,
+      "cause": "success"
+    },
+    {
+      "ep": 6036,
+      "reward": 0.6114175225012819,
+      "cause": "success"
+    },
+    {
+      "ep": 6041,
+      "reward": 0.5614535324524724,
+      "cause": "success"
+    },
+    {
+      "ep": 6046,
+      "reward": 0.5569712093557789,
+      "cause": "success"
+    },
+    {
+      "ep": 6051,
+      "reward": 0.4967170530124472,
+      "cause": "success"
+    },
+    {
+      "ep": 6056,
+      "reward": 0.5749621376964291,
+      "cause": "success"
+    },
+    {
+      "ep": 6061,
+      "reward": 0.6014296795164651,
+      "cause": "success"
+    },
+    {
+      "ep": 6066,
+      "reward": 0.5541189487287029,
+      "cause": "success"
+    },
+    {
+      "ep": 6071,
+      "reward": 0.49050579496550123,
+      "cause": "success"
+    },
+    {
+      "ep": 6076,
+      "reward": 0.4880379423251975,
+      "cause": "success"
+    },
+    {
+      "ep": 6081,
+      "reward": 0.6347746009875225,
+      "cause": "success"
+    },
+    {
+      "ep": 6086,
+      "reward": 0.5765203595321888,
+      "cause": "success"
+    },
+    {
+      "ep": 6091,
+      "reward": 0.5203158685043384,
+      "cause": "success"
+    },
+    {
+      "ep": 6096,
+      "reward": 0.4974391158390585,
+      "cause": "success"
+    },
+    {
+      "ep": 6101,
+      "reward": 0.48092686255968553,
+      "cause": "success"
+    },
+    {
+      "ep": 6106,
+      "reward": 0.4518983908718478,
+      "cause": "success"
+    },
+    {
+      "ep": 6111,
+      "reward": 0.6128448419845051,
+      "cause": "success"
+    },
+    {
+      "ep": 6116,
+      "reward": 0.601650553398236,
+      "cause": "success"
+    },
+    {
+      "ep": 6121,
+      "reward": 0.5877489858085931,
+      "cause": "success"
+    },
+    {
+      "ep": 6126,
+      "reward": 0.4792704524887137,
+      "cause": "success"
+    },
+    {
+      "ep": 6131,
+      "reward": 0.5431027016872023,
+      "cause": "success"
+    },
+    {
+      "ep": 6136,
+      "reward": 0.5893311935820315,
+      "cause": "success"
+    },
+    {
+      "ep": 6141,
+      "reward": 0.584279475129574,
+      "cause": "success"
+    },
+    {
+      "ep": 6146,
+      "reward": 0.4711848442065716,
+      "cause": "success"
+    },
+    {
+      "ep": 6151,
+      "reward": 0.5813961397195435,
+      "cause": "success"
+    },
+    {
+      "ep": 6156,
+      "reward": 0.4116590321463178,
+      "cause": "success"
+    },
+    {
+      "ep": 6161,
+      "reward": 0.568333290149325,
+      "cause": "success"
+    },
+    {
+      "ep": 6166,
+      "reward": 0.6134887183781931,
+      "cause": "success"
+    },
+    {
+      "ep": 6171,
+      "reward": 0.5813237751190985,
+      "cause": "success"
+    },
+    {
+      "ep": 6176,
+      "reward": 0.48841153490926287,
+      "cause": "success"
+    },
+    {
+      "ep": 6181,
+      "reward": 0.53372616803112,
+      "cause": "success"
+    },
+    {
+      "ep": 6186,
+      "reward": 0.5280266640200477,
+      "cause": "success"
+    },
+    {
+      "ep": 6191,
+      "reward": 0.49487107355659404,
+      "cause": "success"
+    },
+    {
+      "ep": 6196,
+      "reward": 0.5092187197697886,
+      "cause": "success"
+    },
+    {
+      "ep": 6201,
+      "reward": 0.5701070579208796,
+      "cause": "success"
+    },
+    {
+      "ep": 6206,
+      "reward": 0.5562084567313733,
+      "cause": "success"
+    },
+    {
+      "ep": 6211,
+      "reward": 0.5919776624699624,
+      "cause": "success"
+    },
+    {
+      "ep": 6216,
+      "reward": 0.6422460830338399,
+      "cause": "success"
+    },
+    {
+      "ep": 6221,
+      "reward": 0.5248964189708883,
+      "cause": "success"
+    },
+    {
+      "ep": 6226,
+      "reward": 0.5566751172418092,
+      "cause": "success"
+    },
+    {
+      "ep": 6231,
+      "reward": 0.3604292203753484,
+      "cause": "success"
+    },
+    {
+      "ep": 6236,
+      "reward": 0.4624351951659462,
+      "cause": "success"
+    },
+    {
+      "ep": 6241,
+      "reward": 0.47830990099408244,
+      "cause": "success"
+    },
+    {
+      "ep": 6246,
+      "reward": 0.5295447271006869,
+      "cause": "success"
+    },
+    {
+      "ep": 6251,
+      "reward": 0.3353605164350385,
+      "cause": "success"
+    },
+    {
+      "ep": 6256,
+      "reward": 0.2258490022754137,
+      "cause": "success"
+    },
+    {
+      "ep": 6261,
+      "reward": 0.583854521771931,
+      "cause": "success"
+    },
+    {
+      "ep": 6266,
+      "reward": 0.5892993489354114,
+      "cause": "success"
+    },
+    {
+      "ep": 6271,
+      "reward": 0.46392726663824857,
+      "cause": "success"
+    },
+    {
+      "ep": 6276,
+      "reward": 0.5692879932155989,
+      "cause": "success"
+    },
+    {
+      "ep": 6281,
+      "reward": 0.6383013033366091,
+      "cause": "success"
+    },
+    {
+      "ep": 6286,
+      "reward": 0.4916672802080758,
+      "cause": "success"
+    },
+    {
+      "ep": 6291,
+      "reward": 0.5214891563182869,
+      "cause": "success"
+    },
+    {
+      "ep": 6296,
+      "reward": 0.5653235602021344,
+      "cause": "success"
+    },
+    {
+      "ep": 6301,
+      "reward": 0.6231682930580074,
+      "cause": "success"
+    },
+    {
+      "ep": 6306,
+      "reward": 0.48645568828763497,
+      "cause": "success"
+    },
+    {
+      "ep": 6311,
+      "reward": 0.6030827953937639,
+      "cause": "success"
+    },
+    {
+      "ep": 6316,
+      "reward": 0.5876031012530419,
+      "cause": "success"
+    },
+    {
+      "ep": 6321,
+      "reward": 0.4184923173767232,
+      "cause": "success"
+    },
+    {
+      "ep": 6326,
+      "reward": 0.5634591004457062,
+      "cause": "success"
+    },
+    {
+      "ep": 6331,
+      "reward": 0.49048187696329043,
+      "cause": "success"
+    },
+    {
+      "ep": 6336,
+      "reward": 0.6089334237386606,
+      "cause": "success"
+    },
+    {
+      "ep": 6341,
+      "reward": -0.19994933923262892,
+      "cause": "success"
+    },
+    {
+      "ep": 6346,
+      "reward": 0.6143717069119705,
+      "cause": "success"
+    },
+    {
+      "ep": 6351,
+      "reward": 0.4633629665417847,
+      "cause": "success"
+    },
+    {
+      "ep": 6356,
+      "reward": 0.48995862937364476,
+      "cause": "success"
+    },
+    {
+      "ep": 6361,
+      "reward": 0.5022966505815777,
+      "cause": "success"
+    },
+    {
+      "ep": 6366,
+      "reward": 0.6028693705643818,
+      "cause": "success"
+    },
+    {
+      "ep": 6371,
+      "reward": 0.4570170744525361,
+      "cause": "success"
+    },
+    {
+      "ep": 6376,
+      "reward": 0.5926817145991621,
+      "cause": "success"
+    },
+    {
+      "ep": 6381,
+      "reward": 0.5604870861020753,
+      "cause": "success"
+    },
+    {
+      "ep": 6386,
+      "reward": 0.49367429172698746,
+      "cause": "success"
+    },
+    {
+      "ep": 6391,
+      "reward": 0.47403723574868,
+      "cause": "success"
+    },
+    {
+      "ep": 6396,
+      "reward": 0.6445861566092421,
+      "cause": "success"
+    },
+    {
+      "ep": 6401,
+      "reward": 0.5331126252193293,
+      "cause": "success"
+    },
+    {
+      "ep": 6406,
+      "reward": 0.5420929765877638,
+      "cause": "success"
+    },
+    {
+      "ep": 6411,
+      "reward": 0.6539029119695821,
+      "cause": "success"
+    },
+    {
+      "ep": 6416,
+      "reward": 0.4757786411949956,
+      "cause": "success"
+    },
+    {
+      "ep": 6421,
+      "reward": 0.5122072333732708,
+      "cause": "success"
+    },
+    {
+      "ep": 6426,
+      "reward": 0.5107390284630378,
+      "cause": "success"
+    },
+    {
+      "ep": 6431,
+      "reward": 0.4179815415452298,
+      "cause": "success"
+    },
+    {
+      "ep": 6436,
+      "reward": 0.4826425291251259,
+      "cause": "success"
+    },
+    {
+      "ep": 6441,
+      "reward": 0.520760482933386,
+      "cause": "success"
+    },
+    {
+      "ep": 6446,
+      "reward": 0.538362463357086,
+      "cause": "success"
+    },
+    {
+      "ep": 6451,
+      "reward": 0.5662905259488196,
+      "cause": "success"
+    },
+    {
+      "ep": 6456,
+      "reward": 0.5646125693550146,
+      "cause": "success"
+    },
+    {
+      "ep": 6461,
+      "reward": 0.5280358853579608,
+      "cause": "success"
+    },
+    {
+      "ep": 6466,
+      "reward": 0.5456927862967709,
+      "cause": "success"
+    },
+    {
+      "ep": 6471,
+      "reward": 0.5265628090992878,
+      "cause": "success"
+    },
+    {
+      "ep": 6476,
+      "reward": 0.5855662053843181,
+      "cause": "success"
+    },
+    {
+      "ep": 6481,
+      "reward": 0.6058970539118023,
+      "cause": "success"
+    },
+    {
+      "ep": 6486,
+      "reward": 0.5813264870277841,
+      "cause": "success"
+    },
+    {
+      "ep": 6491,
+      "reward": 0.5985866037528585,
+      "cause": "success"
+    },
+    {
+      "ep": 6496,
+      "reward": 0.5973423465889004,
+      "cause": "success"
+    },
+    {
+      "ep": 6501,
+      "reward": 0.3743885595177848,
+      "cause": "success"
+    },
+    {
+      "ep": 6506,
+      "reward": 0.4249487498617912,
+      "cause": "success"
+    },
+    {
+      "ep": 6511,
+      "reward": 0.5678850711915278,
+      "cause": "success"
+    },
+    {
+      "ep": 6516,
+      "reward": 0.5168550629488913,
+      "cause": "success"
+    },
+    {
+      "ep": 6521,
+      "reward": 0.4868173456388417,
+      "cause": "success"
+    },
+    {
+      "ep": 6526,
+      "reward": 0.49906466182041376,
+      "cause": "success"
+    },
+    {
+      "ep": 6531,
+      "reward": 0.6120912658518397,
+      "cause": "success"
+    },
+    {
+      "ep": 6536,
+      "reward": 0.42069761781685316,
+      "cause": "success"
+    },
+    {
+      "ep": 6541,
+      "reward": 0.539569812059426,
+      "cause": "success"
+    },
+    {
+      "ep": 6546,
+      "reward": 0.3115804778911564,
+      "cause": "success"
+    },
+    {
+      "ep": 6551,
+      "reward": 0.5549826374140441,
+      "cause": "success"
+    },
+    {
+      "ep": 6556,
+      "reward": 0.5830272889718048,
+      "cause": "success"
+    },
+    {
+      "ep": 6561,
+      "reward": 0.5813831185999292,
+      "cause": "success"
+    },
+    {
+      "ep": 6566,
+      "reward": 0.5619191181152454,
+      "cause": "success"
+    },
+    {
+      "ep": 6571,
+      "reward": 0.46815833968541304,
+      "cause": "success"
+    },
+    {
+      "ep": 6576,
+      "reward": 0.576487625999249,
+      "cause": "success"
+    },
+    {
+      "ep": 6581,
+      "reward": 0.6200668277441022,
+      "cause": "success"
+    },
+    {
+      "ep": 6586,
+      "reward": 0.31221426621208986,
+      "cause": "success"
+    },
+    {
+      "ep": 6591,
+      "reward": 0.0261026702532699,
+      "cause": "success"
+    },
+    {
+      "ep": 6596,
+      "reward": 0.5155732534320276,
+      "cause": "success"
+    },
+    {
+      "ep": 6601,
+      "reward": 0.509986385746563,
+      "cause": "success"
+    },
+    {
+      "ep": 6606,
+      "reward": 0.41972969252583814,
+      "cause": "success"
+    },
+    {
+      "ep": 6611,
+      "reward": 0.44169761064113244,
+      "cause": "success"
+    },
+    {
+      "ep": 6616,
+      "reward": 0.582907731165476,
+      "cause": "success"
+    },
+    {
+      "ep": 6621,
+      "reward": 0.5996289109048205,
+      "cause": "success"
+    },
+    {
+      "ep": 6626,
+      "reward": 0.5776149152153214,
+      "cause": "success"
+    },
+    {
+      "ep": 6631,
+      "reward": 0.6073706950609584,
+      "cause": "success"
+    },
+    {
+      "ep": 6636,
+      "reward": 0.14096205821369556,
+      "cause": "success"
+    },
+    {
+      "ep": 6641,
+      "reward": 0.6434312724206457,
+      "cause": "success"
+    },
+    {
+      "ep": 6646,
+      "reward": 0.5281296219075475,
+      "cause": "success"
+    },
+    {
+      "ep": 6651,
+      "reward": 0.5652935956842954,
+      "cause": "success"
+    },
+    {
+      "ep": 6656,
+      "reward": 0.5081703714103387,
+      "cause": "success"
+    },
+    {
+      "ep": 6661,
+      "reward": 0.5628151736574885,
+      "cause": "success"
+    },
+    {
+      "ep": 6666,
+      "reward": 0.5936753620048735,
+      "cause": "success"
+    },
+    {
+      "ep": 6671,
+      "reward": 0.6516760281332676,
+      "cause": "success"
+    },
+    {
+      "ep": 6676,
+      "reward": 0.6227213411368423,
+      "cause": "success"
+    },
+    {
+      "ep": 6681,
+      "reward": 0.6024527078092008,
+      "cause": "success"
+    },
+    {
+      "ep": 6686,
+      "reward": 0.18304482332598293,
+      "cause": "success"
+    },
+    {
+      "ep": 6691,
+      "reward": 0.5687977009878186,
+      "cause": "success"
+    },
+    {
+      "ep": 6696,
+      "reward": 0.5653515739126741,
+      "cause": "success"
+    },
+    {
+      "ep": 6701,
+      "reward": 0.4854472439012897,
+      "cause": "success"
+    },
+    {
+      "ep": 6706,
+      "reward": 0.42164006603737775,
+      "cause": "success"
+    },
+    {
+      "ep": 6711,
+      "reward": 0.5244069964133867,
+      "cause": "success"
+    },
+    {
+      "ep": 6716,
+      "reward": 0.5896892676532552,
+      "cause": "success"
+    },
+    {
+      "ep": 6721,
+      "reward": 0.659817097683534,
+      "cause": "success"
+    },
+    {
+      "ep": 6726,
+      "reward": 0.46240437332663625,
+      "cause": "success"
+    },
+    {
+      "ep": 6731,
+      "reward": 0.6089398451294887,
+      "cause": "success"
+    },
+    {
+      "ep": 6736,
+      "reward": 0.6783379208204338,
+      "cause": "success"
+    },
+    {
+      "ep": 6741,
+      "reward": 0.5686373650727647,
+      "cause": "success"
+    },
+    {
+      "ep": 6746,
+      "reward": 0.6488505333176046,
+      "cause": "success"
+    },
+    {
+      "ep": 6751,
+      "reward": 0.5236765530760589,
+      "cause": "success"
+    },
+    {
+      "ep": 6756,
+      "reward": 0.35161531220102427,
+      "cause": "success"
+    },
+    {
+      "ep": 6761,
+      "reward": 0.5493691428229178,
+      "cause": "success"
+    },
+    {
+      "ep": 6766,
+      "reward": 0.5278898885079483,
+      "cause": "success"
+    },
+    {
+      "ep": 6771,
+      "reward": 0.6119563819392273,
+      "cause": "success"
+    },
+    {
+      "ep": 6776,
+      "reward": 0.3838270146928854,
+      "cause": "success"
+    },
+    {
+      "ep": 6781,
+      "reward": 0.5520012248112033,
+      "cause": "success"
+    },
+    {
+      "ep": 6786,
+      "reward": 0.6068414545312639,
+      "cause": "success"
+    },
+    {
+      "ep": 6791,
+      "reward": -0.09735504928652772,
+      "cause": "success"
+    },
+    {
+      "ep": 6796,
+      "reward": 0.49023349595110255,
+      "cause": "success"
+    },
+    {
+      "ep": 6801,
+      "reward": 0.5107526162886249,
+      "cause": "success"
+    },
+    {
+      "ep": 6806,
+      "reward": 0.00885072912266166,
+      "cause": "success"
+    },
+    {
+      "ep": 6811,
+      "reward": 0.6708924812425786,
+      "cause": "success"
+    },
+    {
+      "ep": 6816,
+      "reward": 0.2817579479883734,
+      "cause": "success"
+    },
+    {
+      "ep": 6821,
+      "reward": 0.5435179482575981,
+      "cause": "success"
+    },
+    {
+      "ep": 6826,
+      "reward": 0.5810324178000591,
+      "cause": "success"
+    },
+    {
+      "ep": 6831,
+      "reward": 0.5665117909856666,
+      "cause": "success"
+    },
+    {
+      "ep": 6836,
+      "reward": -0.049060614701156746,
+      "cause": "success"
+    },
+    {
+      "ep": 6841,
+      "reward": 0.59577623768325,
+      "cause": "success"
+    },
+    {
+      "ep": 6846,
+      "reward": 0.6234793637979648,
+      "cause": "success"
+    },
+    {
+      "ep": 6851,
+      "reward": 0.4741866294324012,
+      "cause": "success"
+    },
+    {
+      "ep": 6856,
+      "reward": 0.47716692143014217,
+      "cause": "success"
+    },
+    {
+      "ep": 6861,
+      "reward": 0.5822283327886354,
+      "cause": "success"
+    },
+    {
+      "ep": 6866,
+      "reward": 0.5303012906055543,
+      "cause": "success"
+    },
+    {
+      "ep": 6871,
+      "reward": 0.27527400151776826,
+      "cause": "success"
+    },
+    {
+      "ep": 6876,
+      "reward": -0.12844264760209667,
+      "cause": "success"
+    },
+    {
+      "ep": 6881,
+      "reward": 0.5546447310009107,
+      "cause": "success"
+    },
+    {
+      "ep": 6886,
+      "reward": 0.20471803628502894,
+      "cause": "success"
+    },
+    {
+      "ep": 6891,
+      "reward": 0.546945250319717,
+      "cause": "success"
+    },
+    {
+      "ep": 6896,
+      "reward": 0.5615788387160082,
+      "cause": "success"
+    },
+    {
+      "ep": 6901,
+      "reward": 0.5500841927851156,
+      "cause": "success"
+    },
+    {
+      "ep": 6906,
+      "reward": 0.616112236248364,
+      "cause": "success"
+    },
+    {
+      "ep": 6911,
+      "reward": 0.35672936249087567,
+      "cause": "success"
+    },
+    {
+      "ep": 6916,
+      "reward": 0.4686169467176763,
+      "cause": "success"
+    },
+    {
+      "ep": 6921,
+      "reward": 0.626118563624835,
+      "cause": "success"
+    },
+    {
+      "ep": 6926,
+      "reward": 0.6229764908647606,
+      "cause": "success"
+    },
+    {
+      "ep": 6931,
+      "reward": 0.5446471670229639,
+      "cause": "success"
+    },
+    {
+      "ep": 6936,
+      "reward": 0.6221858048487278,
+      "cause": "success"
+    },
+    {
+      "ep": 6941,
+      "reward": 0.5698753091018298,
+      "cause": "success"
+    },
+    {
+      "ep": 6946,
+      "reward": 0.5105641516785728,
+      "cause": "success"
+    },
+    {
+      "ep": 6951,
+      "reward": 0.6325672580054329,
+      "cause": "success"
+    },
+    {
+      "ep": 6956,
+      "reward": 0.5261180486366561,
+      "cause": "success"
+    },
+    {
+      "ep": 6961,
+      "reward": 0.5886250193165523,
+      "cause": "success"
+    },
+    {
+      "ep": 6966,
+      "reward": 0.5624874272441652,
+      "cause": "success"
+    },
+    {
+      "ep": 6971,
+      "reward": 0.5993727861270588,
+      "cause": "success"
+    },
+    {
+      "ep": 6976,
+      "reward": 0.6026774851129187,
+      "cause": "success"
+    },
+    {
+      "ep": 6981,
+      "reward": 0.6039900376881858,
+      "cause": "success"
+    },
+    {
+      "ep": 6986,
+      "reward": 0.6472986358901169,
+      "cause": "success"
+    },
+    {
+      "ep": 6991,
+      "reward": 0.5926059535884625,
+      "cause": "success"
+    },
+    {
+      "ep": 6996,
+      "reward": 0.6178573034308577,
+      "cause": "success"
+    },
+    {
+      "ep": 7001,
+      "reward": 0.5466004140503391,
+      "cause": "success"
+    },
+    {
+      "ep": 7006,
+      "reward": 0.6020621685758211,
+      "cause": "success"
+    },
+    {
+      "ep": 7011,
+      "reward": 0.6006720005761499,
+      "cause": "success"
+    },
+    {
+      "ep": 7016,
+      "reward": 0.6251904838763888,
+      "cause": "success"
+    },
+    {
+      "ep": 7021,
+      "reward": 0.44595845171154974,
+      "cause": "success"
+    },
+    {
+      "ep": 7026,
+      "reward": 0.5429537760107404,
+      "cause": "success"
+    },
+    {
+      "ep": 7031,
+      "reward": 0.07375299768769078,
+      "cause": "success"
+    },
+    {
+      "ep": 7036,
+      "reward": 0.4649569343120654,
+      "cause": "success"
+    },
+    {
+      "ep": 7041,
+      "reward": 0.5080026625191176,
+      "cause": "success"
+    },
+    {
+      "ep": 7046,
+      "reward": 0.5872862672493373,
+      "cause": "success"
+    },
+    {
+      "ep": 7051,
+      "reward": 0.5411560488196777,
+      "cause": "success"
+    },
+    {
+      "ep": 7056,
+      "reward": 0.5583014726434193,
+      "cause": "success"
+    },
+    {
+      "ep": 7061,
+      "reward": 0.5589888887743489,
+      "cause": "success"
+    },
+    {
+      "ep": 7066,
+      "reward": 0.6014458801181768,
+      "cause": "success"
+    },
+    {
+      "ep": 7071,
+      "reward": 0.5492859935344939,
+      "cause": "success"
+    },
+    {
+      "ep": 7076,
+      "reward": 0.5414245923133666,
+      "cause": "success"
+    },
+    {
+      "ep": 7081,
+      "reward": 0.5307835517243429,
+      "cause": "success"
+    },
+    {
+      "ep": 7086,
+      "reward": 0.48121740392131984,
+      "cause": "success"
+    },
+    {
+      "ep": 7091,
+      "reward": 0.64431610617018,
+      "cause": "success"
+    },
+    {
+      "ep": 7096,
+      "reward": 0.5726003351422302,
+      "cause": "success"
+    },
+    {
+      "ep": 7101,
+      "reward": 0.6013831167815558,
+      "cause": "success"
+    },
+    {
+      "ep": 7106,
+      "reward": 0.5243707006767462,
+      "cause": "success"
+    },
+    {
+      "ep": 7111,
+      "reward": 0.6106174918067616,
+      "cause": "success"
+    },
+    {
+      "ep": 7116,
+      "reward": 0.6271001586901483,
+      "cause": "success"
+    },
+    {
+      "ep": 7121,
+      "reward": 0.623281755188171,
+      "cause": "success"
+    },
+    {
+      "ep": 7126,
+      "reward": 0.44829638699644403,
+      "cause": "success"
+    },
+    {
+      "ep": 7131,
+      "reward": 0.49996579057637425,
+      "cause": "success"
+    },
+    {
+      "ep": 7136,
+      "reward": 0.223737863731855,
+      "cause": "success"
+    },
+    {
+      "ep": 7141,
+      "reward": 0.5216631697213575,
+      "cause": "success"
+    },
+    {
+      "ep": 7146,
+      "reward": 0.6408505970962927,
+      "cause": "success"
+    },
+    {
+      "ep": 7151,
+      "reward": 0.596881421947931,
+      "cause": "success"
+    },
+    {
+      "ep": 7156,
+      "reward": 0.5374869007462045,
+      "cause": "success"
+    },
+    {
+      "ep": 7161,
+      "reward": 0.5820745576275711,
+      "cause": "success"
+    },
+    {
+      "ep": 7166,
+      "reward": 0.6917915614189976,
+      "cause": "success"
+    },
+    {
+      "ep": 7171,
+      "reward": 0.449612094325748,
+      "cause": "success"
+    },
+    {
+      "ep": 7176,
+      "reward": 0.5038976886889486,
+      "cause": "success"
+    },
+    {
+      "ep": 7181,
+      "reward": 0.5040070589479101,
+      "cause": "success"
+    },
+    {
+      "ep": 7186,
+      "reward": 0.4973012185601535,
+      "cause": "success"
+    },
+    {
+      "ep": 7191,
+      "reward": 0.6435182703819071,
+      "cause": "success"
+    },
+    {
+      "ep": 7196,
+      "reward": 0.602761240590811,
+      "cause": "success"
+    },
+    {
+      "ep": 7201,
+      "reward": 0.5673620108358861,
+      "cause": "success"
+    },
+    {
+      "ep": 7206,
+      "reward": 0.5666747265468238,
+      "cause": "success"
+    },
+    {
+      "ep": 7211,
+      "reward": 0.5119931733579126,
+      "cause": "success"
+    },
+    {
+      "ep": 7216,
+      "reward": 0.5128034265097985,
+      "cause": "success"
+    },
+    {
+      "ep": 7221,
+      "reward": 0.6196909636010122,
+      "cause": "success"
+    },
+    {
+      "ep": 7226,
+      "reward": 0.548861479521036,
+      "cause": "success"
+    },
+    {
+      "ep": 7231,
+      "reward": 0.5457944797535876,
+      "cause": "success"
+    },
+    {
+      "ep": 7236,
+      "reward": 0.5130138566911202,
+      "cause": "success"
+    },
+    {
+      "ep": 7241,
+      "reward": 0.609810666399213,
+      "cause": "success"
+    },
+    {
+      "ep": 7246,
+      "reward": 0.5096408287273151,
+      "cause": "success"
+    },
+    {
+      "ep": 7251,
+      "reward": 0.5843053353809923,
+      "cause": "success"
+    },
+    {
+      "ep": 7256,
+      "reward": 0.44844588777185046,
+      "cause": "success"
+    },
+    {
+      "ep": 7261,
+      "reward": 0.36383080511904486,
+      "cause": "success"
+    },
+    {
+      "ep": 7266,
+      "reward": 0.624028362586082,
+      "cause": "success"
+    },
+    {
+      "ep": 7271,
+      "reward": 0.16202808854495399,
+      "cause": "success"
+    },
+    {
+      "ep": 7276,
+      "reward": 0.588695119006035,
+      "cause": "success"
+    },
+    {
+      "ep": 7281,
+      "reward": 0.6158088257472797,
+      "cause": "success"
+    },
+    {
+      "ep": 7286,
+      "reward": 0.5063648665720935,
+      "cause": "success"
+    },
+    {
+      "ep": 7291,
+      "reward": 0.642273075980032,
+      "cause": "success"
+    },
+    {
+      "ep": 7296,
+      "reward": 0.6144170512506357,
+      "cause": "success"
+    },
+    {
+      "ep": 7301,
+      "reward": 0.5235337417330614,
+      "cause": "success"
+    },
+    {
+      "ep": 7306,
+      "reward": 0.573890302272605,
+      "cause": "success"
+    },
+    {
+      "ep": 7311,
+      "reward": 0.49287388824082984,
+      "cause": "success"
+    },
+    {
+      "ep": 7316,
+      "reward": 0.6234808605348618,
+      "cause": "success"
+    },
+    {
+      "ep": 7321,
+      "reward": 0.6242286300816426,
+      "cause": "success"
+    },
+    {
+      "ep": 7326,
+      "reward": 0.5105226367114871,
+      "cause": "success"
+    },
+    {
+      "ep": 7331,
+      "reward": 0.24971349204572413,
+      "cause": "success"
+    },
+    {
+      "ep": 7336,
+      "reward": 0.5053845903741372,
+      "cause": "success"
+    },
+    {
+      "ep": 7341,
+      "reward": 0.4496995306643347,
+      "cause": "success"
+    },
+    {
+      "ep": 7346,
+      "reward": 0.6196115808731065,
+      "cause": "success"
+    },
+    {
+      "ep": 7351,
+      "reward": 0.2039073776059276,
+      "cause": "success"
+    },
+    {
+      "ep": 7356,
+      "reward": 0.6220481645641049,
+      "cause": "success"
+    },
+    {
+      "ep": 7361,
+      "reward": 0.41181073178023786,
+      "cause": "success"
+    },
+    {
+      "ep": 7366,
+      "reward": 0.6323335423338,
+      "cause": "success"
+    },
+    {
+      "ep": 7371,
+      "reward": 0.5893496348771637,
+      "cause": "success"
+    },
+    {
+      "ep": 7376,
+      "reward": 0.6145720017671757,
+      "cause": "success"
+    },
+    {
+      "ep": 7381,
+      "reward": 0.6677153472824767,
+      "cause": "success"
+    },
+    {
+      "ep": 7386,
+      "reward": 0.5117720311132016,
+      "cause": "success"
+    },
+    {
+      "ep": 7391,
+      "reward": 0.4537941304909289,
+      "cause": "success"
+    },
+    {
+      "ep": 7396,
+      "reward": 0.5162618134438974,
+      "cause": "success"
+    },
+    {
+      "ep": 7401,
+      "reward": 0.5438061626220104,
+      "cause": "success"
+    },
+    {
+      "ep": 7406,
+      "reward": 0.5515981260445884,
+      "cause": "success"
+    },
+    {
+      "ep": 7411,
+      "reward": 0.2676728838619101,
+      "cause": "success"
+    },
+    {
+      "ep": 7416,
+      "reward": 0.47914790324033757,
+      "cause": "success"
+    },
+    {
+      "ep": 7421,
+      "reward": 0.6557838731617908,
+      "cause": "success"
+    },
+    {
+      "ep": 7426,
+      "reward": 0.55323671197789,
+      "cause": "success"
+    },
+    {
+      "ep": 7431,
+      "reward": 0.6440209088239905,
+      "cause": "success"
+    },
+    {
+      "ep": 7436,
+      "reward": 0.5780281241148241,
+      "cause": "success"
+    },
+    {
+      "ep": 7441,
+      "reward": 0.6354148067034363,
+      "cause": "success"
+    },
+    {
+      "ep": 7446,
+      "reward": 0.6352687737740967,
+      "cause": "success"
+    },
+    {
+      "ep": 7451,
+      "reward": 0.2315217566543693,
+      "cause": "success"
+    },
+    {
+      "ep": 7456,
+      "reward": 0.6108139487059152,
+      "cause": "success"
+    },
+    {
+      "ep": 7461,
+      "reward": 0.5450614619115679,
+      "cause": "success"
+    },
+    {
+      "ep": 7466,
+      "reward": 0.5841034827557884,
+      "cause": "success"
+    },
+    {
+      "ep": 7471,
+      "reward": 0.6295521190265864,
+      "cause": "success"
+    },
+    {
+      "ep": 7476,
+      "reward": 0.44471078980527456,
+      "cause": "success"
+    },
+    {
+      "ep": 7481,
+      "reward": 0.36011779616826434,
+      "cause": "success"
+    },
+    {
+      "ep": 7486,
+      "reward": 0.4792099312761261,
+      "cause": "success"
+    },
+    {
+      "ep": 7491,
+      "reward": 0.5234650471339641,
+      "cause": "success"
+    },
+    {
+      "ep": 7496,
+      "reward": 0.5538431155657173,
+      "cause": "success"
+    },
+    {
+      "ep": 7501,
+      "reward": 0.6357106853373284,
+      "cause": "success"
+    },
+    {
+      "ep": 7506,
+      "reward": 0.5129436961481391,
+      "cause": "success"
+    },
+    {
+      "ep": 7511,
+      "reward": 0.5464510584812909,
+      "cause": "success"
+    },
+    {
+      "ep": 7516,
+      "reward": 0.6210094099545089,
+      "cause": "success"
+    },
+    {
+      "ep": 7521,
+      "reward": 0.5585674814353184,
+      "cause": "success"
+    },
+    {
+      "ep": 7526,
+      "reward": 0.6411749962187476,
+      "cause": "success"
+    },
+    {
+      "ep": 7531,
+      "reward": 0.5727464843379746,
+      "cause": "success"
+    },
+    {
+      "ep": 7536,
+      "reward": 0.5916959102054674,
+      "cause": "success"
+    },
+    {
+      "ep": 7541,
+      "reward": 0.44632760888585943,
+      "cause": "success"
+    },
+    {
+      "ep": 7546,
+      "reward": 0.5195432948128185,
+      "cause": "success"
+    },
+    {
+      "ep": 7551,
+      "reward": 0.5754998346368425,
+      "cause": "success"
+    },
+    {
+      "ep": 7556,
+      "reward": 0.5711568767331345,
+      "cause": "success"
+    },
+    {
+      "ep": 7561,
+      "reward": 0.5671998552963035,
+      "cause": "success"
+    },
+    {
+      "ep": 7566,
+      "reward": 0.6191792341249894,
+      "cause": "success"
+    },
+    {
+      "ep": 7571,
+      "reward": 0.5751518416094629,
+      "cause": "success"
+    },
+    {
+      "ep": 7576,
+      "reward": 0.5094913360772604,
+      "cause": "success"
+    },
+    {
+      "ep": 7581,
+      "reward": 0.6190185109267069,
+      "cause": "success"
+    },
+    {
+      "ep": 7586,
+      "reward": 0.5086317495650597,
+      "cause": "success"
+    },
+    {
+      "ep": 7591,
+      "reward": 0.5025947784928367,
+      "cause": "success"
+    },
+    {
+      "ep": 7596,
+      "reward": 0.5727350189460907,
+      "cause": "success"
+    },
+    {
+      "ep": 7601,
+      "reward": 0.5943387847922355,
+      "cause": "success"
+    },
+    {
+      "ep": 7606,
+      "reward": 0.5901789187848138,
+      "cause": "success"
+    },
+    {
+      "ep": 7611,
+      "reward": 0.5996843854385303,
+      "cause": "success"
+    },
+    {
+      "ep": 7616,
+      "reward": 0.5509153583672323,
+      "cause": "success"
+    },
+    {
+      "ep": 7621,
+      "reward": 0.44263246606765383,
+      "cause": "success"
+    },
+    {
+      "ep": 7626,
+      "reward": 0.6444620424167974,
+      "cause": "success"
+    },
+    {
+      "ep": 7631,
+      "reward": 0.5067205278721597,
+      "cause": "success"
+    },
+    {
+      "ep": 7636,
+      "reward": 0.6064728348987962,
+      "cause": "success"
+    },
+    {
+      "ep": 7641,
+      "reward": 0.6474369067027549,
+      "cause": "success"
+    },
+    {
+      "ep": 7646,
+      "reward": 0.5543957719695454,
+      "cause": "success"
+    },
+    {
+      "ep": 7651,
+      "reward": 0.031236131676459278,
+      "cause": "success"
+    },
+    {
+      "ep": 7656,
+      "reward": 0.5212549280866159,
+      "cause": "success"
+    },
+    {
+      "ep": 7661,
+      "reward": 0.5665206635619842,
+      "cause": "success"
+    },
+    {
+      "ep": 7666,
+      "reward": 0.5923314572608814,
+      "cause": "success"
+    },
+    {
+      "ep": 7671,
+      "reward": 0.5727153392714757,
+      "cause": "success"
+    },
+    {
+      "ep": 7676,
+      "reward": 0.5300850166749206,
+      "cause": "success"
+    },
+    {
+      "ep": 7681,
+      "reward": 0.5742835479544305,
+      "cause": "success"
+    },
+    {
+      "ep": 7686,
+      "reward": 0.5219748407325674,
+      "cause": "success"
+    },
+    {
+      "ep": 7691,
+      "reward": 0.381084899969382,
+      "cause": "success"
+    },
+    {
+      "ep": 7696,
+      "reward": 0.6106809626224569,
+      "cause": "success"
+    },
+    {
+      "ep": 7701,
+      "reward": 0.47158232896294716,
+      "cause": "success"
+    },
+    {
+      "ep": 7706,
+      "reward": 0.5584736185615213,
+      "cause": "success"
+    },
+    {
+      "ep": 7711,
+      "reward": 0.5357850597919636,
+      "cause": "success"
+    },
+    {
+      "ep": 7716,
+      "reward": 0.297419469340616,
+      "cause": "success"
+    },
+    {
+      "ep": 7721,
+      "reward": 0.5902227125847024,
+      "cause": "success"
+    },
+    {
+      "ep": 7726,
+      "reward": 0.6183119106000476,
+      "cause": "success"
+    },
+    {
+      "ep": 7731,
+      "reward": 0.6338868045484369,
+      "cause": "success"
+    },
+    {
+      "ep": 7736,
+      "reward": 0.5653323363965536,
+      "cause": "success"
+    },
+    {
+      "ep": 7741,
+      "reward": 0.5689791053669635,
+      "cause": "success"
+    },
+    {
+      "ep": 7746,
+      "reward": 0.569243814234129,
+      "cause": "success"
+    },
+    {
+      "ep": 7751,
+      "reward": 0.6062155613729925,
+      "cause": "success"
+    },
+    {
+      "ep": 7756,
+      "reward": 0.5082652416022914,
+      "cause": "success"
+    },
+    {
+      "ep": 7761,
+      "reward": 0.46295859437627973,
+      "cause": "success"
+    },
+    {
+      "ep": 7766,
+      "reward": 0.5833839313259936,
+      "cause": "success"
+    },
+    {
+      "ep": 7771,
+      "reward": 0.6278554683358903,
+      "cause": "success"
+    },
+    {
+      "ep": 7776,
+      "reward": 0.5679757598625776,
+      "cause": "success"
+    },
+    {
+      "ep": 7781,
+      "reward": 0.6447417935943639,
+      "cause": "success"
+    },
+    {
+      "ep": 7786,
+      "reward": 0.4220615709775545,
+      "cause": "success"
+    },
+    {
+      "ep": 7791,
+      "reward": 0.49309565588952153,
+      "cause": "success"
+    },
+    {
+      "ep": 7796,
+      "reward": 0.4624309951003527,
+      "cause": "success"
+    },
+    {
+      "ep": 7801,
+      "reward": 0.576209061794914,
+      "cause": "success"
+    },
+    {
+      "ep": 7806,
+      "reward": 0.6183458121375627,
+      "cause": "success"
+    },
+    {
+      "ep": 7811,
+      "reward": 0.49144919740303,
+      "cause": "success"
+    },
+    {
+      "ep": 7816,
+      "reward": 0.602819455217815,
+      "cause": "success"
+    },
+    {
+      "ep": 7821,
+      "reward": 0.5504951121008311,
+      "cause": "success"
+    },
+    {
+      "ep": 7826,
+      "reward": 0.5291964750952814,
+      "cause": "success"
+    },
+    {
+      "ep": 7831,
+      "reward": 0.43059271207800337,
+      "cause": "success"
+    },
+    {
+      "ep": 7836,
+      "reward": 0.6426761515227274,
+      "cause": "success"
+    },
+    {
+      "ep": 7841,
+      "reward": 0.5876491098547074,
+      "cause": "success"
+    },
+    {
+      "ep": 7846,
+      "reward": 0.4802854144933359,
+      "cause": "success"
+    },
+    {
+      "ep": 7851,
+      "reward": 0.6480743873870348,
+      "cause": "success"
+    },
+    {
+      "ep": 7856,
+      "reward": 0.6070233782705233,
+      "cause": "success"
+    },
+    {
+      "ep": 7861,
+      "reward": 0.3018086488807551,
+      "cause": "success"
+    },
+    {
+      "ep": 7866,
+      "reward": 0.5541167455365422,
+      "cause": "success"
+    },
+    {
+      "ep": 7871,
+      "reward": 0.58038858207019,
+      "cause": "success"
+    },
+    {
+      "ep": 7876,
+      "reward": 0.6133016672790584,
+      "cause": "success"
+    },
+    {
+      "ep": 7881,
+      "reward": 0.420751116867564,
+      "cause": "success"
+    },
+    {
+      "ep": 7886,
+      "reward": 0.22465956974772583,
+      "cause": "success"
+    },
+    {
+      "ep": 7891,
+      "reward": 0.14958144463737322,
+      "cause": "success"
+    },
+    {
+      "ep": 7896,
+      "reward": -0.354310327299181,
+      "cause": "success"
+    },
+    {
+      "ep": 7901,
+      "reward": 0.5906067748766556,
+      "cause": "success"
+    },
+    {
+      "ep": 7906,
+      "reward": 0.4923854704020867,
+      "cause": "success"
+    },
+    {
+      "ep": 7911,
+      "reward": 0.5619896535349905,
+      "cause": "success"
+    },
+    {
+      "ep": 7916,
+      "reward": 0.6095835329567956,
+      "cause": "success"
+    },
+    {
+      "ep": 7921,
+      "reward": 0.6382826977585607,
+      "cause": "success"
+    },
+    {
+      "ep": 7926,
+      "reward": 0.56424564053598,
+      "cause": "success"
+    },
+    {
+      "ep": 7931,
+      "reward": 0.5618376584806775,
+      "cause": "success"
+    },
+    {
+      "ep": 7936,
+      "reward": 0.48764921488531865,
+      "cause": "success"
+    },
+    {
+      "ep": 7941,
+      "reward": 0.5097544042057054,
+      "cause": "success"
+    },
+    {
+      "ep": 7946,
+      "reward": 0.5242883409768843,
+      "cause": "success"
+    },
+    {
+      "ep": 7951,
+      "reward": 0.6186878378782088,
+      "cause": "success"
+    },
+    {
+      "ep": 7956,
+      "reward": -0.4670755185105055,
+      "cause": "success"
+    },
+    {
+      "ep": 7961,
+      "reward": 0.6212637852997275,
+      "cause": "success"
+    },
+    {
+      "ep": 7966,
+      "reward": 0.6103957248524725,
+      "cause": "success"
+    },
+    {
+      "ep": 7971,
+      "reward": 0.45951735986846076,
+      "cause": "success"
+    },
+    {
+      "ep": 7976,
+      "reward": 0.6391783678294664,
+      "cause": "success"
+    },
+    {
+      "ep": 7981,
+      "reward": 0.5660907752730948,
+      "cause": "success"
+    },
+    {
+      "ep": 7986,
+      "reward": 0.5830142059130327,
+      "cause": "success"
+    },
+    {
+      "ep": 7991,
+      "reward": 0.5587252374150646,
+      "cause": "success"
+    },
+    {
+      "ep": 7996,
+      "reward": 0.6208057990684067,
+      "cause": "success"
+    },
+    {
+      "ep": 8001,
+      "reward": 0.5038782853493433,
+      "cause": "success"
+    },
+    {
+      "ep": 8006,
+      "reward": 0.48592782860799777,
+      "cause": "success"
+    },
+    {
+      "ep": 8011,
+      "reward": 0.48245453530057475,
+      "cause": "success"
+    },
+    {
+      "ep": 8016,
+      "reward": 0.4773042038790737,
+      "cause": "success"
+    },
+    {
+      "ep": 8021,
+      "reward": 0.6059918739242609,
+      "cause": "success"
+    },
+    {
+      "ep": 8026,
+      "reward": 0.6342244103498028,
+      "cause": "success"
+    },
+    {
+      "ep": 8031,
+      "reward": -0.06072678194293751,
+      "cause": "success"
+    },
+    {
+      "ep": 8036,
+      "reward": 0.6125252194799325,
+      "cause": "success"
+    },
+    {
+      "ep": 8041,
+      "reward": 0.5083081975077391,
+      "cause": "success"
+    },
+    {
+      "ep": 8046,
+      "reward": 0.6614182182787343,
+      "cause": "success"
+    },
+    {
+      "ep": 8051,
+      "reward": 0.6443105131550547,
+      "cause": "success"
+    },
+    {
+      "ep": 8056,
+      "reward": 0.5391800465969396,
+      "cause": "success"
+    },
+    {
+      "ep": 8061,
+      "reward": 0.5678535495073775,
+      "cause": "success"
+    },
+    {
+      "ep": 8066,
+      "reward": -0.19955130686373046,
+      "cause": "success"
+    },
+    {
+      "ep": 8071,
+      "reward": 0.4890057204226337,
+      "cause": "success"
+    },
+    {
+      "ep": 8076,
+      "reward": 0.5200363454251278,
+      "cause": "success"
+    },
+    {
+      "ep": 8081,
+      "reward": 0.0009428746754773232,
+      "cause": "success"
+    },
+    {
+      "ep": 8086,
+      "reward": 0.6378844325707715,
+      "cause": "success"
+    },
+    {
+      "ep": 8091,
+      "reward": 0.6238152254693615,
+      "cause": "success"
+    },
+    {
+      "ep": 8096,
+      "reward": 0.4777120043897672,
+      "cause": "success"
+    },
+    {
+      "ep": 8101,
+      "reward": 0.5747113333653072,
+      "cause": "success"
+    },
+    {
+      "ep": 8106,
+      "reward": 0.6613008794028947,
+      "cause": "success"
+    },
+    {
+      "ep": 8111,
+      "reward": 0.5396837545419878,
+      "cause": "success"
+    },
+    {
+      "ep": 8116,
+      "reward": 0.6062251889121274,
+      "cause": "success"
+    },
+    {
+      "ep": 8121,
+      "reward": 0.543603039693961,
+      "cause": "success"
+    },
+    {
+      "ep": 8126,
+      "reward": 0.6249267968927468,
+      "cause": "success"
+    },
+    {
+      "ep": 8131,
+      "reward": 0.5751133560169429,
+      "cause": "success"
+    },
+    {
+      "ep": 8136,
+      "reward": 0.4617046983822989,
+      "cause": "success"
+    },
+    {
+      "ep": 8141,
+      "reward": 0.4311851736448799,
+      "cause": "success"
+    },
+    {
+      "ep": 8146,
+      "reward": 0.625175156368204,
+      "cause": "success"
+    },
+    {
+      "ep": 8151,
+      "reward": 0.5268304233518621,
+      "cause": "success"
+    },
+    {
+      "ep": 8156,
+      "reward": 0.5297636208284078,
+      "cause": "success"
+    },
+    {
+      "ep": 8161,
+      "reward": 0.49103663062942093,
+      "cause": "success"
+    },
+    {
+      "ep": 8166,
+      "reward": 0.4731213477287932,
+      "cause": "success"
+    },
+    {
+      "ep": 8171,
+      "reward": 0.6733767650975846,
+      "cause": "success"
+    },
+    {
+      "ep": 8176,
+      "reward": 0.5583042621395552,
+      "cause": "success"
+    },
+    {
+      "ep": 8181,
+      "reward": 0.6032615572184384,
+      "cause": "success"
+    },
+    {
+      "ep": 8186,
+      "reward": -0.016321242494625743,
+      "cause": "success"
+    },
+    {
+      "ep": 8191,
+      "reward": 0.5511264791125137,
+      "cause": "success"
+    },
+    {
+      "ep": 8196,
+      "reward": 0.5467553702329516,
+      "cause": "success"
+    },
+    {
+      "ep": 8201,
+      "reward": 0.5429527779345577,
+      "cause": "success"
+    },
+    {
+      "ep": 8206,
+      "reward": 0.5864443767440701,
+      "cause": "success"
+    },
+    {
+      "ep": 8211,
+      "reward": 0.6832822601316867,
+      "cause": "success"
+    },
+    {
+      "ep": 8216,
+      "reward": 0.4334008257156843,
+      "cause": "success"
+    },
+    {
+      "ep": 8221,
+      "reward": 0.44560017682957437,
+      "cause": "success"
+    },
+    {
+      "ep": 8226,
+      "reward": 0.4655677318850297,
+      "cause": "success"
+    },
+    {
+      "ep": 8231,
+      "reward": 0.5712762282382241,
+      "cause": "success"
+    },
+    {
+      "ep": 8236,
+      "reward": 0.286808844884308,
+      "cause": "success"
+    },
+    {
+      "ep": 8241,
+      "reward": 0.2939625398150214,
+      "cause": "success"
+    },
+    {
+      "ep": 8246,
+      "reward": 0.5296088594060677,
+      "cause": "success"
+    },
+    {
+      "ep": 8251,
+      "reward": 0.5268989090834264,
+      "cause": "success"
+    },
+    {
+      "ep": 8256,
+      "reward": 0.5962632727899821,
+      "cause": "success"
+    },
+    {
+      "ep": 8261,
+      "reward": 0.5439413311537358,
+      "cause": "success"
+    },
+    {
+      "ep": 8266,
+      "reward": 0.5851547012174922,
+      "cause": "success"
+    },
+    {
+      "ep": 8271,
+      "reward": 0.6126946890683667,
+      "cause": "success"
+    },
+    {
+      "ep": 8276,
+      "reward": 0.612262688814842,
+      "cause": "success"
+    },
+    {
+      "ep": 8281,
+      "reward": 0.5534630392604747,
+      "cause": "success"
+    },
+    {
+      "ep": 8286,
+      "reward": 0.6568828727190487,
+      "cause": "success"
+    },
+    {
+      "ep": 8291,
+      "reward": 0.601725860206352,
+      "cause": "success"
+    },
+    {
+      "ep": 8296,
+      "reward": 0.6180226310007585,
+      "cause": "success"
+    },
+    {
+      "ep": 8301,
+      "reward": 0.5701723475249293,
+      "cause": "success"
+    },
+    {
+      "ep": 8306,
+      "reward": 0.5340173764360552,
+      "cause": "success"
+    },
+    {
+      "ep": 8311,
+      "reward": 0.5909293326882612,
+      "cause": "success"
+    },
+    {
+      "ep": 8316,
+      "reward": 0.5598232236775932,
+      "cause": "success"
+    },
+    {
+      "ep": 8321,
+      "reward": 0.5809705505504075,
+      "cause": "success"
+    },
+    {
+      "ep": 8326,
+      "reward": 0.6562160337638813,
+      "cause": "success"
+    },
+    {
+      "ep": 8331,
+      "reward": 0.5927397151388235,
+      "cause": "success"
+    },
+    {
+      "ep": 8336,
+      "reward": 0.10970859349739587,
+      "cause": "success"
+    },
+    {
+      "ep": 8341,
+      "reward": 0.5724278054810594,
+      "cause": "success"
+    },
+    {
+      "ep": 8346,
+      "reward": 0.6637666918315714,
+      "cause": "success"
+    },
+    {
+      "ep": 8351,
+      "reward": 0.5625352478505531,
+      "cause": "success"
+    },
+    {
+      "ep": 8356,
+      "reward": 0.5596355789585667,
+      "cause": "success"
+    },
+    {
+      "ep": 8361,
+      "reward": 0.45392891977010874,
+      "cause": "success"
+    },
+    {
+      "ep": 8366,
+      "reward": -0.5400128784676327,
+      "cause": "success"
+    },
+    {
+      "ep": 8371,
+      "reward": 0.5872500716721819,
+      "cause": "success"
+    },
+    {
+      "ep": 8376,
+      "reward": 0.6374599910914532,
+      "cause": "success"
+    },
+    {
+      "ep": 8381,
+      "reward": 0.5073205094797412,
+      "cause": "success"
+    },
+    {
+      "ep": 8386,
+      "reward": 0.5999135746143791,
+      "cause": "success"
+    },
+    {
+      "ep": 8391,
+      "reward": 0.49802723945481486,
+      "cause": "success"
+    },
+    {
+      "ep": 8396,
+      "reward": 0.23458434298603648,
+      "cause": "success"
+    },
+    {
+      "ep": 8401,
+      "reward": 0.4018739588888105,
+      "cause": "success"
+    },
+    {
+      "ep": 8406,
+      "reward": 0.5241354148948678,
+      "cause": "success"
+    },
+    {
+      "ep": 8411,
+      "reward": 0.6134772170374914,
+      "cause": "success"
+    },
+    {
+      "ep": 8416,
+      "reward": -0.1114558266853869,
+      "cause": "success"
+    },
+    {
+      "ep": 8421,
+      "reward": 0.551974644048782,
+      "cause": "success"
+    },
+    {
+      "ep": 8426,
+      "reward": 0.6068609942314265,
+      "cause": "success"
+    },
+    {
+      "ep": 8431,
+      "reward": 0.578457699550754,
+      "cause": "success"
+    },
+    {
+      "ep": 8436,
+      "reward": 0.626765353704744,
+      "cause": "success"
+    },
+    {
+      "ep": 8441,
+      "reward": 0.4402616124943882,
+      "cause": "success"
+    },
+    {
+      "ep": 8446,
+      "reward": 0.6054775767693822,
+      "cause": "success"
+    },
+    {
+      "ep": 8451,
+      "reward": 0.5794263627133432,
+      "cause": "success"
+    },
+    {
+      "ep": 8456,
+      "reward": 0.6282023108060508,
+      "cause": "success"
+    },
+    {
+      "ep": 8461,
+      "reward": 0.5927441995739451,
+      "cause": "success"
+    },
+    {
+      "ep": 8466,
+      "reward": 0.5962969578073087,
+      "cause": "success"
+    },
+    {
+      "ep": 8471,
+      "reward": 0.6203939895334964,
+      "cause": "success"
+    },
+    {
+      "ep": 8476,
+      "reward": 0.5193667622832722,
+      "cause": "success"
+    },
+    {
+      "ep": 8481,
+      "reward": 0.5092613224339152,
+      "cause": "success"
+    },
+    {
+      "ep": 8486,
+      "reward": 0.5273671740457329,
+      "cause": "success"
+    },
+    {
+      "ep": 8491,
+      "reward": 0.6311636851162478,
+      "cause": "success"
+    },
+    {
+      "ep": 8496,
+      "reward": 0.5898752141368799,
+      "cause": "success"
+    },
+    {
+      "ep": 8501,
+      "reward": 0.6547135684144085,
+      "cause": "success"
+    },
+    {
+      "ep": 8506,
+      "reward": 0.6135587301289265,
+      "cause": "success"
+    },
+    {
+      "ep": 8511,
+      "reward": 0.49729305470719065,
+      "cause": "success"
+    },
+    {
+      "ep": 8516,
+      "reward": 0.5917267886296131,
+      "cause": "success"
+    },
+    {
+      "ep": 8521,
+      "reward": 0.6340603501402049,
+      "cause": "success"
+    },
+    {
+      "ep": 8526,
+      "reward": 0.5226925584862565,
+      "cause": "success"
+    },
+    {
+      "ep": 8531,
+      "reward": 0.48485845395144317,
+      "cause": "success"
+    },
+    {
+      "ep": 8536,
+      "reward": 0.5935585382824126,
+      "cause": "success"
+    },
+    {
+      "ep": 8541,
+      "reward": 0.6231790390016458,
+      "cause": "success"
+    },
+    {
+      "ep": 8546,
+      "reward": 0.6494922761116395,
+      "cause": "success"
+    },
+    {
+      "ep": 8551,
+      "reward": 0.5902211309178379,
+      "cause": "success"
+    },
+    {
+      "ep": 8556,
+      "reward": -0.2553212841702626,
+      "cause": "success"
+    },
+    {
+      "ep": 8561,
+      "reward": 0.600633462704455,
+      "cause": "success"
+    },
+    {
+      "ep": 8566,
+      "reward": 0.6650370051785496,
+      "cause": "success"
+    },
+    {
+      "ep": 8571,
+      "reward": 0.41717345864496785,
+      "cause": "success"
+    },
+    {
+      "ep": 8576,
+      "reward": 0.5780735329266578,
+      "cause": "success"
+    },
+    {
+      "ep": 8581,
+      "reward": 0.6092808100680556,
+      "cause": "success"
+    },
+    {
+      "ep": 8586,
+      "reward": -0.6439804683642458,
+      "cause": "success"
+    },
+    {
+      "ep": 8591,
+      "reward": 0.6482525204795972,
+      "cause": "success"
+    },
+    {
+      "ep": 8596,
+      "reward": 0.6429608988606662,
+      "cause": "success"
+    },
+    {
+      "ep": 8601,
+      "reward": 0.5753045021577287,
+      "cause": "success"
+    },
+    {
+      "ep": 8606,
+      "reward": 0.5816562448062876,
+      "cause": "success"
+    },
+    {
+      "ep": 8611,
+      "reward": 0.6263654602166222,
+      "cause": "success"
+    },
+    {
+      "ep": 8616,
+      "reward": 0.5755344442015973,
+      "cause": "success"
+    },
+    {
+      "ep": 8621,
+      "reward": 0.6188699241527582,
+      "cause": "success"
+    },
+    {
+      "ep": 8626,
+      "reward": 0.6086450720484817,
+      "cause": "success"
+    },
+    {
+      "ep": 8631,
+      "reward": 0.5386493589134228,
+      "cause": "success"
+    },
+    {
+      "ep": 8636,
+      "reward": 0.5837965230402137,
+      "cause": "success"
+    },
+    {
+      "ep": 8641,
+      "reward": 0.029275106717990496,
+      "cause": "success"
+    },
+    {
+      "ep": 8646,
+      "reward": 0.44096488407690054,
+      "cause": "success"
+    },
+    {
+      "ep": 8651,
+      "reward": 0.47261709909957683,
+      "cause": "success"
+    },
+    {
+      "ep": 8656,
+      "reward": 0.6220271179667922,
+      "cause": "success"
+    },
+    {
+      "ep": 8661,
+      "reward": 0.5023744116172773,
+      "cause": "success"
+    },
+    {
+      "ep": 8666,
+      "reward": 0.5539959651720086,
+      "cause": "success"
+    },
+    {
+      "ep": 8671,
+      "reward": 0.43780061054614583,
+      "cause": "success"
+    },
+    {
+      "ep": 8676,
+      "reward": 0.6527754026674086,
+      "cause": "success"
+    },
+    {
+      "ep": 8681,
+      "reward": 0.524919317372402,
+      "cause": "success"
+    },
+    {
+      "ep": 8686,
+      "reward": 0.6157348169710966,
+      "cause": "success"
+    },
+    {
+      "ep": 8691,
+      "reward": 0.5747256210395755,
+      "cause": "success"
+    },
+    {
+      "ep": 8696,
+      "reward": -0.5981942093390397,
+      "cause": "success"
+    },
+    {
+      "ep": 8701,
+      "reward": 0.4569639473709006,
+      "cause": "success"
+    },
+    {
+      "ep": 8706,
+      "reward": 0.6546813190953109,
+      "cause": "success"
+    },
+    {
+      "ep": 8711,
+      "reward": 0.5636149440916178,
+      "cause": "success"
+    },
+    {
+      "ep": 8716,
+      "reward": 0.5106255827128228,
+      "cause": "success"
+    },
+    {
+      "ep": 8721,
+      "reward": 0.5375047379475324,
+      "cause": "success"
+    },
+    {
+      "ep": 8726,
+      "reward": 0.607040063169152,
+      "cause": "success"
+    },
+    {
+      "ep": 8731,
+      "reward": 0.5944750596631087,
+      "cause": "success"
+    },
+    {
+      "ep": 8736,
+      "reward": 0.49643377652811116,
+      "cause": "success"
+    },
+    {
+      "ep": 8741,
+      "reward": 0.45518152706111303,
+      "cause": "success"
+    },
+    {
+      "ep": 8746,
+      "reward": 0.569452021701845,
+      "cause": "success"
+    },
+    {
+      "ep": 8751,
+      "reward": 0.0786456321237573,
+      "cause": "success"
+    },
+    {
+      "ep": 8756,
+      "reward": 0.6123462729978576,
+      "cause": "success"
+    },
+    {
+      "ep": 8761,
+      "reward": 0.6145369413304773,
+      "cause": "success"
+    },
+    {
+      "ep": 8766,
+      "reward": 0.5115120532520325,
+      "cause": "success"
+    },
+    {
+      "ep": 8771,
+      "reward": 0.5171913794842486,
+      "cause": "success"
+    },
+    {
+      "ep": 8776,
+      "reward": 0.53028557650507,
+      "cause": "success"
+    },
+    {
+      "ep": 8781,
+      "reward": 0.5198950263700373,
+      "cause": "success"
+    },
+    {
+      "ep": 8786,
+      "reward": 0.5292055582493015,
+      "cause": "success"
+    },
+    {
+      "ep": 8791,
+      "reward": 0.5108032870672973,
+      "cause": "success"
+    },
+    {
+      "ep": 8796,
+      "reward": 0.6398487591973403,
+      "cause": "success"
+    },
+    {
+      "ep": 8801,
+      "reward": 0.595974223799185,
+      "cause": "success"
+    },
+    {
+      "ep": 8806,
+      "reward": 0.1843352379146378,
+      "cause": "success"
+    },
+    {
+      "ep": 8811,
+      "reward": 0.4589459430737389,
+      "cause": "success"
+    },
+    {
+      "ep": 8816,
+      "reward": 0.3880915613026078,
+      "cause": "success"
+    },
+    {
+      "ep": 8821,
+      "reward": 0.6106327625534722,
+      "cause": "success"
+    },
+    {
+      "ep": 8826,
+      "reward": 0.4666821432540975,
+      "cause": "success"
+    },
+    {
+      "ep": 8831,
+      "reward": 0.6195709031804346,
+      "cause": "success"
+    },
+    {
+      "ep": 8836,
+      "reward": 0.461628813251762,
+      "cause": "success"
+    },
+    {
+      "ep": 8841,
+      "reward": 0.29291471058252694,
+      "cause": "success"
+    },
+    {
+      "ep": 8846,
+      "reward": 0.6096136924152643,
+      "cause": "success"
+    },
+    {
+      "ep": 8851,
+      "reward": 0.5627279532729623,
+      "cause": "success"
+    },
+    {
+      "ep": 8856,
+      "reward": 0.5351043384429491,
+      "cause": "success"
+    },
+    {
+      "ep": 8861,
+      "reward": 0.5638382393430701,
+      "cause": "success"
+    },
+    {
+      "ep": 8866,
+      "reward": 0.5394147212337692,
+      "cause": "success"
+    },
+    {
+      "ep": 8871,
+      "reward": 0.47304458357587437,
+      "cause": "success"
+    },
+    {
+      "ep": 8876,
+      "reward": 0.5502191470600771,
+      "cause": "success"
+    },
+    {
+      "ep": 8881,
+      "reward": 0.5489117401291036,
+      "cause": "success"
+    },
+    {
+      "ep": 8886,
+      "reward": 0.5618520473613884,
+      "cause": "success"
+    },
+    {
+      "ep": 8891,
+      "reward": 0.6424178633099471,
+      "cause": "success"
+    },
+    {
+      "ep": 8896,
+      "reward": 0.5941451552637296,
+      "cause": "success"
+    },
+    {
+      "ep": 8901,
+      "reward": 0.6237304042057876,
+      "cause": "success"
+    },
+    {
+      "ep": 8906,
+      "reward": 0.4846384546016525,
+      "cause": "success"
+    },
+    {
+      "ep": 8911,
+      "reward": 0.5518505662244474,
+      "cause": "success"
+    },
+    {
+      "ep": 8916,
+      "reward": 0.5868756921356935,
+      "cause": "success"
+    },
+    {
+      "ep": 8921,
+      "reward": 0.6407364609408996,
+      "cause": "success"
+    },
+    {
+      "ep": 8926,
+      "reward": 0.6469891543944899,
+      "cause": "success"
+    },
+    {
+      "ep": 8931,
+      "reward": 0.5684911550678012,
+      "cause": "success"
+    },
+    {
+      "ep": 8936,
+      "reward": 0.4506608487079327,
+      "cause": "success"
+    },
+    {
+      "ep": 8941,
+      "reward": 0.616779860094242,
+      "cause": "success"
+    },
+    {
+      "ep": 8946,
+      "reward": 0.5760933070518095,
+      "cause": "success"
+    },
+    {
+      "ep": 8951,
+      "reward": 0.2715344506185057,
+      "cause": "success"
+    },
+    {
+      "ep": 8956,
+      "reward": 0.5767567138723452,
+      "cause": "success"
+    },
+    {
+      "ep": 8961,
+      "reward": 0.6145230249385679,
+      "cause": "success"
+    },
+    {
+      "ep": 8966,
+      "reward": 0.5466737119979841,
+      "cause": "success"
+    },
+    {
+      "ep": 8971,
+      "reward": 0.6216181686417651,
+      "cause": "success"
+    },
+    {
+      "ep": 8976,
+      "reward": 0.5794386847780869,
+      "cause": "success"
+    },
+    {
+      "ep": 8981,
+      "reward": 0.5909041638272416,
+      "cause": "success"
+    },
+    {
+      "ep": 8986,
+      "reward": 0.5476010563839158,
+      "cause": "success"
+    },
+    {
+      "ep": 8991,
+      "reward": 0.6215700998588093,
+      "cause": "success"
+    },
+    {
+      "ep": 8996,
+      "reward": 0.6519175133514514,
+      "cause": "success"
+    }
+  ]
+}

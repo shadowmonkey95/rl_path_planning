@@ -1,0 +1,29 @@
+{
+  "evals": [
+    {
+      "episode": 500,
+      "reward": 0.1733,
+      "train_reward_500": 0.0031,
+      "success_rate": 1.0,
+      "mean_peak_LTR": 0.292,
+      "mean_lane_departure": 0.177
+    },
+    {
+      "episode": 1000,
+      "reward": 0.4519,
+      "train_reward_500": 0.1574,
+      "success_rate": 1.0,
+      "mean_peak_LTR": 0.253,
+      "mean_lane_departure": 0.05
+    },
+    {
+      "episode": 1500,
+      "reward": 0.4932,
+      "train_reward_500": 0.1955,
+      "success_rate": 1.0,
+      "mean_peak_LTR": 0.249,
+      "mean_lane_departure": 0.031
+    }
+  ],
+  "note": "seed 1, stopped at 1500 episodes to free a core; curve from the training log"
+}

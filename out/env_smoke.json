@@ -1,0 +1,13 @@
+{
+  "worst_ltr": 0.8456840824324671,
+  "worst_kappa_ratio": 0.999999999995087,
+  "n_rollover": 0,
+  "n_success": 399,
+  "reward_mean": 0.2820533302032149,
+  "reward_min": -1.5,
+  "reward_max": 0.6862619346584754,
+  "causes": {
+    "success": 399,
+    "collision": 1
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "m1_kg": 8000.0,
+  "m2_kg": 32000.0,
+  "GCW_t": 40.0,
+  "a1_m": 1.444,
+  "b1_m": 2.356,
+  "c_m": 1.5815238095238093,
+  "a2_m": 5.1734375,
+  "b2_m": 2.5265625,
+  "Iz1": 28880.0,
+  "Iz2": 450666.6666666667,
+  "C1_kN_rad": 280.69353,
+  "C2_kN_rad": 581.5368000000001,
+  "C3_kN_rad": 970.2089999999998,
+  "steer_t": 7.1000000000000005,
+  "drive_t": 11.399999999999999,
+  "tridem_t": 21.5,
+  "kingpin_t": 10.5,
+  "kingpin_ahead_of_drive_m": 0.7744761904761903,
+  "SRT_g": 0.36615384615384616,
+  "SRT_rigid_g": 0.5230769230769231,
+  "eig_real_min": -2.46082646261918,
+  "eig_real_max": -0.8256802015907206,
+  "stable": true,
+  "slowest_time_constant_s": 1.2111226575052207,
+  "trailer_mode_damping_ratio": 0.34916378703678397,
+  "trailer_mode_natural_freq_rad_s": 2.3647360701347195,
+  "trailer_mode_period_s": 2.657034493841688,
+  "yaw_rate_gain_per_rad": 3.390708813061513,
+  "lat_accel_gain_ms2_per_rad": 81.3770115134763,
+  "articulation_per_rad_steer_deg": -44.138284211903624,
+  "understeer_gradient_rad_per_ms2": 0.005691260500375629,
+  "understeer_gradient_deg_per_g": 3.1988958785219697,
+  "delta_for_0.2g_deg": 1.3814014217768533,
+  "rwa_peak": 1.2570083500636986,
+  "rwa_peak_f_hz": 0.2976190476190476,
+  "RWA_0.4Hz": 1.0051806854816667,
+  "RWA_0.3Hz": 1.2568855431241093,
+  "stability_vs_speed": [
+    {
+      "V": 5.0,
+      "max_real": -0.7098836530315253,
+      "zeta": NaN,
+      "stable": true
+    },
+    {
+      "V": 10.0,
+      "max_real": -2.1397586038281027,
+      "zeta": 0.901043646477605,
+      "stable": true
+    },
+    {
+      "V": 15.0,
+      "max_real": -1.3975497886803796,
+      "zeta": 0.589174577189846,
+      "stable": true
+    },
+    {
+      "V": 20.0,
+      "max_real": -1.0188585170933389,
+      "zeta": 0.43021862350191364,
+      "stable": true
+    },
+    {
+      "V": 25.0,
+      "max_real": -0.7865921890371932,
+      "zeta": 0.3327629025196857,
+      "stable": true
+    },
+    {
+      "V": 30.0,
+      "max_real": -0.6282356617335225,
+      "zeta": 0.266301596687366,
+      "stable": true
+    },
+    {
+      "V": 35.0,
+      "max_real": -0.5126101766810851,
+      "zeta": 0.2177318141813154,
+      "stable": true
+    },
+    {
+      "V": 40.0,
+      "max_real": -0.42404505043129975,
+      "zeta": 0.18047684164070818,
+      "stable": true
+    }
+  ],
+  "stable_over_speed_range": 1.0,
+  "all_checks_passed": true
+}

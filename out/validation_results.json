@@ -1,0 +1,329 @@
+{
+  "A_shipped_example": {
+    "reward": -1.0,
+    "passed": false,
+    "failureReason": "tractor lateral-slip limit",
+    "progress": 0.2325270404262372,
+    "maxSlipFront": 0.23178218125943678,
+    "peakLateralError_m": 0.013438748211631695,
+    "ay_demand_ms2": 7.541599360354402,
+    "ay_demand_g": 0.7687664995264426,
+    "kappa_max": 0.018853998400886005
+  },
+  "B_jacobian_check": {
+    "max_abs_diff": 2.842170943040401e-14,
+    "max_rel_diff": 1.6970345763399615e-14,
+    "B_max_abs_diff": 0.0,
+    "eig_real": [
+      -6.666666666666667,
+      -2.4590699273361523,
+      -2.4590699273361523,
+      -0.7540162603424203,
+      -0.7540162603424203,
+      -7.026978414586109e-16,
+      0.0
+    ]
+  },
+  "C_step_response": [
+    {
+      "step_deg": 1.0,
+      "state": "y [m]",
+      "linear": 8.439355650307606,
+      "nonlinear": 8.365880618303011,
+      "rel_err": 0.008782701470045463
+    },
+    {
+      "step_deg": 1.0,
+      "state": "psi [rad]",
+      "linear": 0.26544711683704614,
+      "nonlinear": 0.2647681406734778,
+      "rel_err": 0.0025644179161482374
+    },
+    {
+      "step_deg": 1.0,
+      "state": "r1 [rad/s]",
+      "linear": 0.07403549561982821,
+      "nonlinear": 0.07371976456470375,
+      "rel_err": 0.0042828549031426084
+    },
+    {
+      "step_deg": 1.0,
+      "state": "phi [rad]",
+      "linear": -0.025667225271886515,
+      "nonlinear": -0.025328070201924676,
+      "rel_err": 0.013390482072181985
+    },
+    {
+      "step_deg": 3.0,
+      "state": "y [m]",
+      "linear": 25.318066950922717,
+      "nonlinear": 23.418877961584204,
+      "rel_err": 0.0810964979814105
+    },
+    {
+      "step_deg": 3.0,
+      "state": "psi [rad]",
+      "linear": 0.7963413505111436,
+      "nonlinear": 0.7771985572018826,
+      "rel_err": 0.02463050546334015
+    },
+    {
+      "step_deg": 3.0,
+      "state": "r1 [rad/s]",
+      "linear": 0.2221064868594822,
+      "nonlinear": 0.212189430783463,
+      "rel_err": 0.04673680512456554
+    },
+    {
+      "step_deg": 3.0,
+      "state": "phi [rad]",
+      "linear": -0.07700167581565882,
+      "nonlinear": -0.06508648913571544,
+      "rel_err": 0.18306697500764518
+    },
+    {
+      "step_deg": 8.0,
+      "state": "y [m]",
+      "linear": 67.51484520246085,
+      "nonlinear": 42.43380428549157,
+      "rel_err": 0.5910627467720275
+    },
+    {
+      "step_deg": 8.0,
+      "state": "psi [rad]",
+      "linear": 2.123576934696369,
+      "nonlinear": 1.6750371535201312,
+      "rel_err": 0.2677790043245433
+    },
+    {
+      "step_deg": 8.0,
+      "state": "r1 [rad/s]",
+      "linear": 0.5922839649586257,
+      "nonlinear": 0.40683626601940837,
+      "rel_err": 0.4558288295035389
+    },
+    {
+      "step_deg": 8.0,
+      "state": "phi [rad]",
+      "linear": -0.20533780217509212,
+      "nonlinear": 0.07184485152527548,
+      "rel_err": 3.8580726080678582
+    }
+  ],
+  "D_speed_sweep": [
+    {
+      "V": 8.0,
+      "pass": true,
+      "reward": -0.007472787438262915,
+      "maxSlipFront_deg": 2.316041981424393,
+      "reason": "",
+      "progress": 0.9966801071321935,
+      "ay_g": 0.12300263992423081,
+      "peakLatErr_m": 0.019361687895801286,
+      "peakArt_deg": 6.033832784218713
+    },
+    {
+      "V": 10.0,
+      "pass": true,
+      "reward": -0.014175310086778829,
+      "maxSlipFront_deg": 3.984473404616055,
+      "reason": "",
+      "progress": 0.9966801071321935,
+      "ay_g": 0.19219162488161065,
+      "peakLatErr_m": 0.01858465888547093,
+      "peakArt_deg": 6.590245981486786
+    },
+    {
+      "V": 12.0,
+      "pass": true,
+      "reward": -0.026482574767959604,
+      "maxSlipFront_deg": 6.7229507829196224,
+      "reason": "",
+      "progress": 0.9966801071321935,
+      "ay_g": 0.27675593982951935,
+      "peakLatErr_m": 0.01754468172943492,
+      "peakArt_deg": 8.537922580951744
+    },
+    {
+      "V": 14.0,
+      "pass": false,
+      "reward": -1.0,
+      "maxSlipFront_deg": 14.55399426783769,
+      "reason": "tractor lateral-slip limit",
+      "progress": 0.3488014544421734,
+      "ay_g": 0.3766955847679569,
+      "peakLatErr_m": 0.14660907952116164,
+      "peakArt_deg": 8.566337977752788
+    },
+    {
+      "V": 15.0,
+      "pass": false,
+      "reward": -1.0,
+      "maxSlipFront_deg": 12.25747744710117,
+      "reason": "tractor lateral-slip limit",
+      "progress": 0.3488014544421734,
+      "ay_g": 0.4324311559836239,
+      "peakLatErr_m": 0.2968285016725332,
+      "peakArt_deg": 9.378632613909673
+    },
+    {
+      "V": 16.0,
+      "pass": false,
+      "reward": -1.0,
+      "maxSlipFront_deg": 13.03488997604222,
+      "reason": "tractor lateral-slip limit",
+      "progress": 0.35881503922747193,
+      "ay_g": 0.49201055969692326,
+      "peakLatErr_m": 0.5010811115065933,
+      "peakArt_deg": 10.044015760217647
+    },
+    {
+      "V": 18.0,
+      "pass": false,
+      "reward": -1.0,
+      "maxSlipFront_deg": 10.432562022981578,
+      "reason": "path-distance limit",
+      "progress": 0.37213836715229126,
+      "ay_g": 0.6227008646164185,
+      "peakLatErr_m": 1.0870569029463053,
+      "peakArt_deg": 12.040083382265193
+    },
+    {
+      "V": 20.0,
+      "pass": false,
+      "reward": -1.0,
+      "maxSlipFront_deg": 13.280140752501971,
+      "reason": "tractor lateral-slip limit",
+      "progress": 0.2325270404262372,
+      "ay_g": 0.7687664995264426,
+      "peakLatErr_m": 0.013438748211631695,
+      "peakArt_deg": 5.177160006580792
+    },
+    {
+      "V": 22.0,
+      "pass": false,
+      "reward": -1.0,
+      "maxSlipFront_deg": 13.633122009389519,
+      "reason": "tractor lateral-slip limit",
+      "progress": 0.21918444367306336,
+      "ay_g": 0.9302074644269956,
+      "peakLatErr_m": 0.012892273027814883,
+      "peakArt_deg": 4.134864228872117
+    }
+  ],
+  "E_reward": {
+    "mu_fit": [
+      {
+        "v_kmh": 40,
+        "mu_max": 0.05916515790057071,
+        "note": "paper fit range"
+      },
+      {
+        "v_kmh": 50,
+        "mu_max": 0.11831290116058298,
+        "note": "paper fit range"
+      },
+      {
+        "v_kmh": 55,
+        "mu_max": 0.16730739677379372,
+        "note": "paper fit range"
+      },
+      {
+        "v_kmh": 60,
+        "mu_max": 0.23659097816586513,
+        "note": "paper fit range > 0.2 rad fail limit!"
+      },
+      {
+        "v_kmh": 72,
+        "mu_max": 0.5434473445146801,
+        "note": "EXTRAPOLATED > 0.2 rad fail limit!"
+      },
+      {
+        "v_kmh": 80,
+        "mu_max": 0.9460853809187744,
+        "note": "EXTRAPOLATED > 0.2 rad fail limit!"
+      },
+      {
+        "v_kmh": 90,
+        "mu_max": 1.8918922915785157,
+        "note": "EXTRAPOLATED > 0.2 rad fail limit!"
+      }
+    ],
+    "slip_term": 0.7893757668361301,
+    "curv_term": -0.002630129556204448,
+    "ratio": 300.12809253977656,
+    "reward_if_passed": 0.3933728186399628
+  },
+  "F_resolution": {
+    "rows": [
+      {
+        "n": 61,
+        "ds": 2.0080666772839506,
+        "max_kdd": 0.0009135695592545904,
+        "min_kdd": -0.0009143739867918584,
+        "reward_curv": -0.0018279435460464488
+      },
+      {
+        "n": 121,
+        "ds": 1.004044783684115,
+        "max_kdd": 0.0011966695675145363,
+        "min_kdd": -0.0011973782211395151,
+        "reward_curv": -0.0023940477886540516
+      },
+      {
+        "n": 241,
+        "ds": 0.502023829617472,
+        "max_kdd": 0.0012850079064670949,
+        "min_kdd": -0.0012856928246431892,
+        "reward_curv": -0.002570700731110284
+      },
+      {
+        "n": 601,
+        "ds": 0.2008096930838489,
+        "max_kdd": 0.0013147358657634649,
+        "min_kdd": -0.0013153936904409835,
+        "reward_curv": -0.002630129556204448
+      },
+      {
+        "n": 1201,
+        "ds": 0.10040485806252702,
+        "max_kdd": 0.0013187336607386054,
+        "min_kdd": -0.0013193905755249683,
+        "reward_curv": -0.0026381242362635737
+      },
+      {
+        "n": 2401,
+        "ds": 0.05020243047141086,
+        "max_kdd": 0.0013197356377160519,
+        "min_kdd": -0.002234789077016792,
+        "reward_curv": -0.003554524714732844
+      },
+      {
+        "n": 4801,
+        "ds": 0.02510121541572608,
+        "max_kdd": 0.0013199885906744007,
+        "min_kdd": -0.00900140607035346,
+        "reward_curv": -0.01032139466102786
+      }
+    ],
+    "spread_factor": 5.646451545700848
+  },
+  "G_diagnostics": {
+    "massRelativeResidual": {
+      "max_abs": 2.307445118988555e-15,
+      "min": 0.0
+    },
+    "massRcond": {
+      "max_abs": 3.84173584992643e-06,
+      "min": 3.676020421855822e-06
+    },
+    "yawRateIdentity": {
+      "max_abs": 0.0,
+      "min": 0.0
+    },
+    "articulationRateIdentity": {
+      "max_abs": 0.0,
+      "min": 0.0
+    }
+  }
+}

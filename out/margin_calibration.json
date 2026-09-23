@@ -1,0 +1,79 @@
+[
+  {
+    "margin": 0.85,
+    "rollovers": 2,
+    "collisions": 1,
+    "successes": 397,
+    "worst_LTR": 1.1863828889636592,
+    "mean_LTR": 0.376955894170417,
+    "mean_reward": 0.07059532318362843,
+    "mean_L_out": 98.40066936715245,
+    "worst_kappa_ratio": 0.9999999999991931
+  },
+  {
+    "margin": 0.8,
+    "rollovers": 1,
+    "collisions": 1,
+    "successes": 398,
+    "worst_LTR": 1.8636258527064038,
+    "mean_LTR": 0.36585416340645593,
+    "mean_reward": 0.10964778394836985,
+    "mean_L_out": 100.80024878199322,
+    "worst_kappa_ratio": 0.9999999999419452
+  },
+  {
+    "margin": 0.75,
+    "rollovers": 1,
+    "collisions": 1,
+    "successes": 398,
+    "worst_LTR": 1.1561928452683732,
+    "mean_LTR": 0.3515431102054467,
+    "mean_reward": 0.14323277983891455,
+    "mean_L_out": 103.23171291678686,
+    "worst_kappa_ratio": 0.9999999999492808
+  },
+  {
+    "margin": 0.7,
+    "rollovers": 0,
+    "collisions": 1,
+    "successes": 399,
+    "worst_LTR": 0.8282032438551242,
+    "mean_LTR": 0.3381121463024511,
+    "mean_reward": 0.17940969209378246,
+    "mean_L_out": 105.71215483815755,
+    "worst_kappa_ratio": 0.9999999999840217
+  },
+  {
+    "margin": 0.66,
+    "rollovers": 0,
+    "collisions": 0,
+    "successes": 400,
+    "worst_LTR": 0.7509041663336232,
+    "mean_LTR": 0.3279206984400421,
+    "mean_reward": 0.2102888467647414,
+    "mean_L_out": 107.69053561870777,
+    "worst_kappa_ratio": 0.9999999999446662
+  },
+  {
+    "margin": 0.62,
+    "rollovers": 0,
+    "collisions": 0,
+    "successes": 400,
+    "worst_LTR": 0.6786130184794497,
+    "mean_LTR": 0.31752235837697557,
+    "mean_reward": 0.23759620484291513,
+    "mean_L_out": 109.72025124024945,
+    "worst_kappa_ratio": 0.9999999999622263
+  },
+  {
+    "margin": 0.58,
+    "rollovers": 0,
+    "collisions": 0,
+    "successes": 400,
+    "worst_LTR": 0.6488950088023081,
+    "mean_LTR": 0.30661066708862417,
+    "mean_reward": 0.27021754793039043,
+    "mean_L_out": 111.83610662818161,
+    "worst_kappa_ratio": 0.9999999999969602
+  }
+]
