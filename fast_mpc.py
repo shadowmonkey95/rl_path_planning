@@ -43,7 +43,10 @@ matter for a 40 t rig:
 
 from __future__ import annotations
 
+import contextlib
 import math
+import os
+import sys
 from dataclasses import dataclass
 from typing import Optional, Tuple
 
@@ -54,6 +57,52 @@ from scipy.linalg import expm
 import osqp
 
 from ttv_core import TTVConfig, build_linear_prediction_model
+
+
+# =============================================================================
+# OSQP >= 1.1 prints "Polishing not needed - no active set detected at optimal
+# point" from its C polish routine on EVERY solve, regardless of
+# `verbose=False`. A training run is ~10^5 solves, so the message buries the
+# eval lines and inflates the log to tens of megabytes.
+#
+# `verbose=False` cannot suppress it because the write happens below Python's
+# sys.stdout, so it has to be silenced at the file-descriptor level. The two
+# dup2 calls cost ~2 us against a ~500 us solve.
+#
+# Set TTV_OSQP_VERBOSE=1 to see the solver's own output again when debugging a
+# non-convergence.
+# =============================================================================
+_OSQP_VERBOSE = os.environ.get("TTV_OSQP_VERBOSE", "") not in ("", "0")
+
+
+class _SilenceCStdout:
+    """Redirect OS-level fd 1 to /dev/null. Reused across solves; opening the
+    null device once keeps this off the hot path."""
+
+    def __init__(self):
+        self._null = None
+        self._saved = None
+
+    def __enter__(self):
+        if _OSQP_VERBOSE:
+            return self
+        if self._null is None:
+            self._null = os.open(os.devnull, os.O_WRONLY)
+        sys.stdout.flush()
+        self._saved = os.dup(1)
+        os.dup2(self._null, 1)
+        return self
+
+    def __exit__(self, *exc):
+        if _OSQP_VERBOSE or self._saved is None:
+            return False
+        os.dup2(self._saved, 1)
+        os.close(self._saved)
+        self._saved = None
+        return False
+
+
+_silence = _SilenceCStdout()
 
 NX = 7
 IDX_Y, IDX_YDOT, IDX_PSI, IDX_R1, IDX_PHI, IDX_Q, IDX_DELTA = range(7)
@@ -216,14 +265,15 @@ class CondensedMPC:
         self.A_dense = np.vstack(rows)
 
         self._prob = osqp.OSQP()
-        self._prob.setup(P=sp.csc_matrix(self.P_full),
-                         q=np.zeros(self.nz),
-                         A=sp.csc_matrix(self.A_dense),
-                         l=-np.inf * np.ones(self.A_dense.shape[0]),
-                         u=np.inf * np.ones(self.A_dense.shape[0]),
-                         eps_abs=1e-7, eps_rel=1e-7, max_iter=8000,
-                         polish=True, verbose=False, warm_starting=True,
-                         polish_refine_iter=3)
+        with _silence:
+            self._prob.setup(P=sp.csc_matrix(self.P_full),
+                             q=np.zeros(self.nz),
+                             A=sp.csc_matrix(self.A_dense),
+                             l=-np.inf * np.ones(self.A_dense.shape[0]),
+                             u=np.inf * np.ones(self.A_dense.shape[0]),
+                             eps_abs=1e-7, eps_rel=1e-7, max_iter=8000,
+                             polish=True, verbose=False, warm_starting=True,
+                             polish_refine_iter=3)
         self._last_u = np.zeros(N)
 
     # ------------------------------------------------------------------
@@ -307,7 +357,8 @@ class CondensedMPC:
                 hi.append(h_)
 
         self._prob.update(q=q, l=np.concatenate(lo), u=np.concatenate(hi))
-        res = self._prob.solve()
+        with _silence:
+            res = self._prob.solve()
         st = str(res.info.status)
         ok = st in ("solved", "solved inaccurate")
         if ok and res.x is not None and np.all(np.isfinite(res.x)):

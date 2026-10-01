@@ -1,0 +1,23 @@
+
+================================================================================================
+one-step SAC on 'dlc' | 16,000 episodes | obs 6 | act 4 | seed 0 | started 2026-09-28 23:35:38
+================================================================================================
+  ep   1000 | eval R +0.6357 +-0.076 | train R +0.5334 | succ  92.5% | phi[deg] 2.60 | slip[deg] 1.31 | RMSe[m] 0.0581 | alpha 0.716 | 5.8 min
+  ep   2000 | eval R +0.6572 +-0.047 | train R +0.5291 | succ 100.0% | phi[deg] 2.59 | slip[deg] 1.30 | RMSe[m] 0.0576 | alpha 0.439 | 14.0 min
+  ep   3000 | eval R +0.6734 +-0.044 | train R +0.5692 | succ 100.0% | phi[deg] 2.55 | slip[deg] 1.29 | RMSe[m] 0.0559 | alpha 0.279 | 18.8 min
+  ep   4000 | eval R +0.6881 +-0.044 | train R +0.6063 | succ 100.0% | phi[deg] 2.45 | slip[deg] 1.25 | RMSe[m] 0.0527 | alpha 0.179 | 24.8 min
+  ep   5000 | eval R +0.7132 +-0.046 | train R +0.6507 | succ 100.0% | phi[deg] 2.28 | slip[deg] 1.19 | RMSe[m] 0.0467 | alpha 0.116 | 33.0 min
+  ep   6000 | eval R +0.7446 +-0.054 | train R +0.6834 | succ 100.0% | phi[deg] 2.02 | slip[deg] 1.11 | RMSe[m] 0.0382 | alpha 0.076 | 41.2 min
+  ep   7000 | eval R +0.7727 +-0.058 | train R +0.7288 | succ 100.0% | phi[deg] 1.78 | slip[deg] 1.04 | RMSe[m] 0.0303 | alpha 0.050 | 48.8 min
+  ep   8000 | eval R +0.7892 +-0.058 | train R +0.7574 | succ 100.0% | phi[deg] 1.63 | slip[deg] 1.00 | RMSe[m] 0.0255 | alpha 0.034 | 55.4 min
+  ep   9000 | eval R +0.7971 +-0.057 | train R +0.7834 | succ 100.0% | phi[deg] 1.57 | slip[deg] 0.99 | RMSe[m] 0.0233 | alpha 0.023 | 62.1 min
+  ep  10000 | eval R +0.8034 +-0.055 | train R +0.7983 | succ 100.0% | phi[deg] 1.50 | slip[deg] 0.97 | RMSe[m] 0.0214 | alpha 0.017 | 68.8 min
+  ep  11000 | eval R +0.8070 +-0.055 | train R +0.8035 | succ 100.0% | phi[deg] 1.46 | slip[deg] 0.96 | RMSe[m] 0.0204 | alpha 0.013 | 75.6 min
+  ep  12000 | eval R +0.8089 +-0.054 | train R +0.8105 | succ 100.0% | phi[deg] 1.44 | slip[deg] 0.95 | RMSe[m] 0.0199 | alpha 0.010 | 82.5 min
+  ep  13000 | eval R +0.8096 +-0.054 | train R +0.8149 | succ 100.0% | phi[deg] 1.44 | slip[deg] 0.96 | RMSe[m] 0.0199 | alpha 0.010 | 89.4 min
+  ep  14000 | eval R +0.8105 +-0.054 | train R +0.8114 | succ 100.0% | phi[deg] 1.44 | slip[deg] 0.96 | RMSe[m] 0.0199 | alpha 0.010 | 96.2 min
+  ep  15000 | eval R +0.8100 +-0.053 | train R +0.8162 | succ 100.0% | phi[deg] 1.44 | slip[deg] 0.97 | RMSe[m] 0.0199 | alpha 0.010 | 102.7 min
+  ep  16000 | eval R +0.8100 +-0.053 | train R +0.8095 | succ 100.0% | phi[deg] 1.45 | slip[deg] 0.96 | RMSe[m] 0.0200 | alpha 0.010 | 109.2 min
+
+  best eval R +0.8105 at episode 14,000; final +0.8100 at 16,000
+  saved out/rl_dlc_agent.pt, out/rl_dlc_training.json and out/rl_dlc_log.txt

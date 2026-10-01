@@ -33,6 +33,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import math
 import time
 from dataclasses import dataclass, asdict
@@ -43,8 +44,24 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from highway_env import (TruckHighwayEnv, Scenario, RewardWeights,
-                         OBS_DIM, ACTION_DIM)
+# The environment is selected at run time. Both expose the same interface --
+# OBS_DIM, ACTION_DIM, reset() -> obs, step(a) -> (obs, reward, done, info) --
+# so nothing below this line knows or cares which one is in use.
+ENVS = {
+    "highway": ("highway_env", "TruckHighwayEnv"),
+    "dlc": ("dlc_rl_env", "DLCPlannerEnv"),
+}
+
+
+def load_env(name: str):
+    import importlib
+    mod_name, cls_name = ENVS[name]
+    mod = importlib.import_module(mod_name)
+    return getattr(mod, cls_name), mod.OBS_DIM, mod.ACTION_DIM
+
+
+ENV_NAME = os.environ.get("TTV_ENV", "highway")
+EnvClass, OBS_DIM, ACTION_DIM = load_env(ENV_NAME)
 
 torch.set_num_threads(2)
 DEV = torch.device("cpu")
@@ -147,14 +164,76 @@ class TrainConfig:
     seed: int = 0
 
 
-def make_eval_set(n: int, seed: int = 12345) -> List[Scenario]:
+def make_eval_set(n: int, seed: int = 12345) -> list:
     """A fixed held-out scenario set, sampled once and never trained on."""
-    sampler = TruckHighwayEnv(randomise=True, seed=seed)
-    return [sampler.sample_scenario() for _ in range(n)]
+    sampler = EnvClass(randomise=True, seed=seed)
+    sample = (sampler.sample_scenario if hasattr(sampler, "sample_scenario")
+              else sampler.sample_task)
+    return [sample() for _ in range(n)]
 
 
-def evaluate(actor: Actor, norm: RunningNorm, scens: List[Scenario],
-             env: TruckHighwayEnv) -> dict:
+# =============================================================================
+# Logging
+# -----------------------------------------------------------------------------
+# `evaluate` returns the same four metric slots whatever the environment, but
+# they MEAN different things, so the eval line labels them per environment.
+# Reading "LTR 0.052" on a DLC run was actively misleading: that slot carries
+# the peak articulation angle in radians (3.0 deg), not a load transfer ratio.
+#
+# Every eval line is also appended to `<out_prefix>_log.txt`. Solver chatter
+# goes to stdout and can bury the run; the log file holds only the header, the
+# configuration and the eval lines, so a finished run leaves something short
+# enough to read.
+# =============================================================================
+_EVAL_COLUMNS = {
+    "highway": (("coll", "collisions", "{:2d}"),
+                ("LTR", "mean_peak_LTR", "{:.3f}"),
+                ("dep[m]", "mean_lane_departure", "{:.3f}")),
+    "dlc": (("phi[deg]", "mean_peak_LTR", "{:.2f}", math.degrees),
+            ("slip[deg]", "mean_RWA", "{:.2f}", math.degrees),
+            ("RMSe[m]", "mean_swept", "{:.4f}")),
+}
+
+
+def _eval_line(ev: dict, env_name: str) -> str:
+    cols = _EVAL_COLUMNS.get(env_name, _EVAL_COLUMNS["highway"])
+    tail = ""
+    for spec in cols:
+        label, key, fmt = spec[0], spec[1], spec[2]
+        v = ev.get(key, float("nan"))
+        if len(spec) > 3 and isinstance(v, float) and math.isfinite(v):
+            v = spec[3](v)
+        try:
+            shown = fmt.format(v)
+        except (ValueError, TypeError):
+            shown = "   nan"
+        tail += f" | {label} {shown}"
+    return (f"  ep {ev['episode']:6d} | eval R {ev['reward']:+.4f} "
+            f"+-{ev['reward_std']:.3f} | train R {ev['train_reward_500']:+.4f}"
+            f" | succ {ev['success_rate']*100:5.1f}%{tail}"
+            f" | alpha {ev['alpha']:.3f} | {ev['elapsed_s']/60:.1f} min")
+
+
+class RunLog:
+    """Writes the run's readable record to `<prefix>_log.txt` and to stdout."""
+
+    def __init__(self, prefix: str):
+        self.path = f"{prefix}_log.txt"
+        os.makedirs(os.path.dirname(self.path) or ".", exist_ok=True)
+        self._fh = open(self.path, "a", buffering=1)
+
+    def __call__(self, line: str = "") -> None:
+        print(line, flush=True)
+        self._fh.write(line + "\n")
+
+    def close(self) -> None:
+        try:
+            self._fh.close()
+        except Exception:
+            pass
+
+
+def evaluate(actor: Actor, norm: RunningNorm, scens: list, env) -> dict:
     rewards, ltr, rwa, swept, dep, ok, coll, roll = [], [], [], [], [], 0, 0, 0
     for sc in scens:
         obs = env.reset(sc)
@@ -169,10 +248,12 @@ def evaluate(actor: Actor, norm: RunningNorm, scens: List[Scenario],
         coll += int(m.get("collision", False))
         roll += int(m.get("rollover", False))
         if m:
-            ltr.append(m.get("peak_LTR", np.nan))
-            rwa.append(m.get("RWA", np.nan))
-            swept.append(m.get("swept_width", np.nan))
-            dep.append(m.get("lane_departure", np.nan))
+            # highway metrics; the DLC env reports different ones, and the
+            # nanmean below simply yields nan for whichever are absent
+            ltr.append(m.get("peak_LTR", m.get("peak_articulation_angle", np.nan)))
+            rwa.append(m.get("RWA", m.get("max_front_slip", np.nan)))
+            swept.append(m.get("swept_width", m.get("rms_lateral_error", np.nan)))
+            dep.append(m.get("lane_departure", m.get("peak_lateral_error", np.nan)))
     return {"reward": float(np.mean(rewards)),
             "reward_std": float(np.std(rewards)),
             "success_rate": ok / len(scens),
@@ -184,11 +265,41 @@ def evaluate(actor: Actor, norm: RunningNorm, scens: List[Scenario],
 
 
 # =============================================================================
-def train(tc: TrainConfig, out_prefix: str = "out/rl"):
+def _save(prefix, actor, q1, q2, norm, tc, ep, evals, history,
+          opt_a, opt_q, opt_al, log_alpha, buf_o, buf_a, buf_r, n_buf, ptr):
+    """Checkpoint after every evaluation.
+
+    The first version of this file saved only at the end. A 3-hour run that
+    dies at hour 2 then loses everything, which is exactly what makes long
+    training runs painful. The checkpoint carries the replay buffer and the
+    optimiser states too, so `--resume` continues rather than restarts.
+    """
+    torch.save({
+        "actor": actor.state_dict(), "q1": q1.state_dict(), "q2": q2.state_dict(),
+        "opt_a": opt_a.state_dict(), "opt_q": opt_q.state_dict(),
+        "opt_al": opt_al.state_dict(), "log_alpha": log_alpha.detach().clone(),
+        "norm": norm.state(), "cfg": asdict(tc), "episode": ep,
+        "evals": evals, "history": history[::5],
+        "buf": {"o": buf_o[:n_buf], "a": buf_a[:n_buf], "r": buf_r[:n_buf],
+                "n": n_buf, "ptr": ptr},
+    }, f"{prefix}_agent.pt")
+    json.dump({"config": asdict(tc), "episode": ep, "evals": evals,
+               "history": history[::5]},
+              open(f"{prefix}_training.json", "w"), indent=2, default=str)
+
+
+def train(tc: TrainConfig, out_prefix: str = "out/rl", resume: bool = False):
+    log = RunLog(out_prefix)
+    log(f"\n{'=' * 96}")
+    log(f"one-step SAC on '{ENV_NAME}' | {tc.episodes:,} episodes | "
+        f"obs {OBS_DIM} | act {ACTION_DIM} | seed {tc.seed} | "
+        f"started {time.strftime('%Y-%m-%d %H:%M:%S')}")
+    log("=" * 96)
+
     torch.manual_seed(tc.seed)
     rng = np.random.default_rng(tc.seed)
-    env = TruckHighwayEnv(randomise=True, seed=tc.seed, weights=RewardWeights())
-    eval_env = TruckHighwayEnv(randomise=False)
+    env = EnvClass(randomise=True, seed=tc.seed)
+    eval_env = EnvClass(randomise=False)
     eval_set = make_eval_set(tc.eval_scenarios)
 
     actor = Actor(OBS_DIM, ACTION_DIM, tc.hidden).to(DEV)
@@ -209,9 +320,41 @@ def train(tc: TrainConfig, out_prefix: str = "out/rl"):
     ptr = 0
 
     history, evals = [], []
+    start_ep = 0
+    if resume:
+        import os
+        ck_path = f"{out_prefix}_agent.pt"
+        if not os.path.exists(ck_path):
+            raise FileNotFoundError(f"--resume given but {ck_path} does not exist")
+        ck = torch.load(ck_path, map_location=DEV, weights_only=False)
+        # asdict() keeps `hidden` a tuple; compare as lists on both sides.
+        if (list(ck["cfg"]["hidden"]) != list(tc.hidden)
+                or ck["cfg"]["seed"] != tc.seed):
+            raise ValueError("checkpoint was trained with a different network "
+                             "or seed; use a different --out")
+        actor.load_state_dict(ck["actor"])
+        q1.load_state_dict(ck["q1"]); q2.load_state_dict(ck["q2"])
+        opt_a.load_state_dict(ck["opt_a"]); opt_q.load_state_dict(ck["opt_q"])
+        opt_al.load_state_dict(ck["opt_al"])
+        with torch.no_grad():
+            log_alpha.copy_(ck["log_alpha"])
+        norm.load(ck["norm"])
+        b = ck["buf"]
+        n_buf = int(b["n"]); ptr = int(b["ptr"])
+        buf_o[:n_buf] = b["o"]; buf_a[:n_buf] = b["a"]; buf_r[:n_buf] = b["r"]
+        evals = ck.get("evals", [])
+        start_ep = int(ck["episode"])
+        log(f"  resumed from {ck_path} at episode {start_ep:,} "
+            f"(buffer {n_buf:,}, last eval R {evals[-1]['reward']:+.4f})"
+            if evals else f"  resumed from {ck_path} at episode {start_ep:,}")
+        if start_ep >= tc.episodes:
+            log(f"  checkpoint is already at {start_ep:,} episodes; "
+                f"asked for {tc.episodes:,}. Nothing to do.")
+            return actor, norm, evals
+
     t_start = time.perf_counter()
 
-    for ep in range(1, tc.episodes + 1):
+    for ep in range(start_ep + 1, tc.episodes + 1):
         obs = env.reset()
         norm.update(obs)
         on = norm(obs)
@@ -265,6 +408,9 @@ def train(tc: TrainConfig, out_prefix: str = "out/rl"):
                 opt_al.step()
 
         if ep % tc.eval_every == 0 or ep == tc.episodes:
+            _save(out_prefix, actor, q1, q2, norm, tc, ep, evals, history,
+                  opt_a, opt_q, opt_al, log_alpha, buf_o, buf_a, buf_r,
+                  n_buf, ptr)
             ev = evaluate(actor, norm, eval_set, eval_env)
             ev["episode"] = ep
             ev["alpha"] = float(log_alpha.exp().item())
@@ -272,20 +418,17 @@ def train(tc: TrainConfig, out_prefix: str = "out/rl"):
                 [h["reward"] for h in history[-500:]]))
             ev["elapsed_s"] = time.perf_counter() - t_start
             evals.append(ev)
-            print(f"  ep {ep:6d} | eval R {ev['reward']:+.4f} "
-                  f"+-{ev['reward_std']:.3f} | train R {ev['train_reward_500']:+.4f} "
-                  f"| succ {ev['success_rate']*100:5.1f}% | coll {ev['collisions']:2d} "
-                  f"| LTR {ev['mean_peak_LTR']:.3f} | dep {ev['mean_lane_departure']:.3f} "
-                  f"| alpha {ev['alpha']:.3f} | {ev['elapsed_s']/60:.1f} min",
-                  flush=True)
+            log(_eval_line(ev, ENV_NAME))
 
-    torch.save({"actor": actor.state_dict(), "q1": q1.state_dict(),
-                "q2": q2.state_dict(), "norm": norm.state(),
-                "cfg": asdict(tc)}, f"{out_prefix}_agent.pt")
-    json.dump({"config": asdict(tc), "evals": evals,
-               "history": history[::5]},
-              open(f"{out_prefix}_training.json", "w"), indent=2, default=str)
-    print(f"\n  saved {out_prefix}_agent.pt and {out_prefix}_training.json")
+    _save(out_prefix, actor, q1, q2, norm, tc, tc.episodes, evals, history,
+          opt_a, opt_q, opt_al, log_alpha, buf_o, buf_a, buf_r, n_buf, ptr)
+    best = max(evals, key=lambda e: e["reward"]) if evals else None
+    if best is not None:
+        log(f"\n  best eval R {best['reward']:+.4f} at episode {best['episode']:,}"
+            f"; final {evals[-1]['reward']:+.4f} at {evals[-1]['episode']:,}")
+    log(f"  saved {out_prefix}_agent.pt, {out_prefix}_training.json "
+        f"and {log.path}")
+    log.close()
     return actor, norm, evals
 
 
@@ -307,13 +450,33 @@ if __name__ == "__main__":
     ap.add_argument("--warmup", type=int, default=400)
     ap.add_argument("--eval-every", type=int, default=250)
     ap.add_argument("--seed", type=int, default=0)
-    ap.add_argument("--out", type=str, default="out/rl")
+    ap.add_argument("--env", default=ENV_NAME, choices=sorted(ENVS),
+                    help="which environment to train on")
+    ap.add_argument("--out", type=str, default="out/rl",
+                    help="prefix for <prefix>_agent.pt and <prefix>_training.json")
+    ap.add_argument("--resume", action="store_true",
+                    help="continue from <out>_agent.pt instead of starting over")
+    ap.add_argument("--force", action="store_true",
+                    help="allow overwriting an existing agent at --out")
     args = ap.parse_args()
+
+    if args.env != ENV_NAME:
+        raise SystemExit(
+            f"\n  Set the environment before import:\n"
+            f"    TTV_ENV={args.env} python train_rl.py ...\n"
+            f"  (the network sizes are fixed at import time from OBS_DIM/ACTION_DIM)\n")
+
+    ck = f"{args.out}_agent.pt"
+    if os.path.exists(ck) and not (args.resume or args.force):
+        raise SystemExit(
+            f"\n  {ck} already exists.\n"
+            f"  Pick one:\n"
+            f"    --resume            continue training that agent\n"
+            f"    --out out/rl_25k    train a new agent alongside it\n"
+            f"    --force             overwrite it\n")
 
     tc = TrainConfig(episodes=args.episodes, warmup=args.warmup,
                      eval_every=args.eval_every, seed=args.seed)
-    print("=" * 96)
-    print(f"Training the one-step SAC planner: {tc.episodes} episodes, "
-          f"obs {OBS_DIM}, act {ACTION_DIM}")
-    print("=" * 96)
-    train(tc, args.out)
+    train(tc, args.out, resume=args.resume)
+    print(f"\n  The readable record of this run is {args.out}_log.txt "
+          f"-- solver chatter never reaches it.")

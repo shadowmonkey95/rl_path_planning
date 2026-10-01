@@ -1,0 +1,33 @@
+WHAT CAME FROM WHERE
+====================
+
+This matters for how the work is described. The MATLAB file that started this
+project, RUN_TTV_DLC_TRACKING_TWO_MODELS.m, contains exactly ONE optimisation:
+the tracking controller. Its "TWO MODELS" are the linear prediction model used
+inside the MPC and the nonlinear plant it is tested against -- NOT two MPCs.
+There is no path planner in it; the double lane change is a fixed analytic
+formula with hard-coded parameters.
+
+Inherited from the MATLAB (ported function-for-function, verified against an
+automatic-differentiation Jacobian to 1.7e-14):
+
+    - vehicle parameters and the saturating tyre model
+    - the 5-DOF yaw-plane tractor-semitrailer plant
+    - the linear 7-state prediction model
+    - the tracking MPC: cost, constraints, horizon
+    - the double-lane-change reference formula
+
+Written for this project:
+
+    - the RL task, observation, action decoder and reward   (dlc_rl_env.py)
+    - the one-step SAC implementation                       (train_rl.py)
+    - THE PLANNING MPC used as the 2-MPC baseline           (dlc_baselines.py)
+    - the offline optimum and the benchmark harness         (dlc_baselines.py,
+                                                             dlc_benchmark.py)
+    - faster numerically-equivalent plant and MPC backends  (plant_numpy.py,
+                                                             fast_mpc.py)
+
+So the correct statement is: "the inherited code has one MPC, the tracking
+controller. To have something to compare a learned planner against, I
+implemented a planning MPC myself." Claiming the two-MPC baseline was
+inherited would be wrong and is easy to check.

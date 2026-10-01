@@ -78,7 +78,7 @@ def main():
 
     ax2.bar(speeds, slips, width=1.5, color="skyblue", edgecolor="black")
     ax2.axhline(
-        0.2,
+        0.5,
         color="r",
         linestyle="--",
         linewidth=1.5,

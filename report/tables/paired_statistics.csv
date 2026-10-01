@@ -1,0 +1,11 @@
+seed,comparison,mean_difference,median_difference,win_rate,paired_t
+777,rl_minus_mpc2,0.36911,0.22805,1.0,4.906
+777,rl_minus_heuristic,0.29779,0.26618,1.0,14.671
+777,rl_fraction_of_optimum,0.97922,,,
+777,mpc2_fraction_of_optimum,0.53999,,,
+777,heuristic_fraction_of_optimum,0.62485,,,
+12345,rl_minus_mpc2,0.36015,0.20509,1.0,4.834
+12345,rl_minus_heuristic,0.34154,0.26071,1.0,10.18
+12345,rl_fraction_of_optimum,0.98291,,,
+12345,mpc2_fraction_of_optimum,0.54589,,,
+12345,heuristic_fraction_of_optimum,0.56848,,,
