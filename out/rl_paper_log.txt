@@ -1,0 +1,23 @@
+
+================================================================================================
+one-step SAC on 'paper' | 16,000 episodes | obs 6 | act 3 | seed 0 | started 2026-10-01 14:55:10
+================================================================================================
+  ep   1000 | eval R +0.5214 +-0.365 | train R +0.3773 | succ  40.0% | phi[deg] 1.13 | slip[deg] 0.81 | RMSe[m] 0.0163 | alpha 0.716 | 5.9 min
+  ep   2000 | eval R +0.7047 +-0.220 | train R +0.4386 | succ  67.5% | phi[deg] 1.33 | slip[deg] 0.90 | RMSe[m] 0.0197 | alpha 0.441 | 11.9 min
+  ep   3000 | eval R +0.7850 +-0.068 | train R +0.5345 | succ  95.0% | phi[deg] 1.67 | slip[deg] 1.04 | RMSe[m] 0.0261 | alpha 0.283 | 17.0 min
+  ep   4000 | eval R +0.7752 +-0.071 | train R +0.6384 | succ 100.0% | phi[deg] 1.80 | slip[deg] 1.10 | RMSe[m] 0.0290 | alpha 0.185 | 22.1 min
+  ep   5000 | eval R +0.7885 +-0.063 | train R +0.7150 | succ 100.0% | phi[deg] 1.69 | slip[deg] 1.05 | RMSe[m] 0.0268 | alpha 0.122 | 27.1 min
+  ep   6000 | eval R +0.8065 +-0.059 | train R +0.7361 | succ 100.0% | phi[deg] 1.53 | slip[deg] 0.98 | RMSe[m] 0.0237 | alpha 0.082 | 32.2 min
+  ep   7000 | eval R +0.8200 +-0.055 | train R +0.7764 | succ 100.0% | phi[deg] 1.40 | slip[deg] 0.92 | RMSe[m] 0.0214 | alpha 0.056 | 37.3 min
+  ep   8000 | eval R +0.8398 +-0.049 | train R +0.8077 | succ 100.0% | phi[deg] 1.23 | slip[deg] 0.84 | RMSe[m] 0.0182 | alpha 0.039 | 42.4 min
+  ep   9000 | eval R +0.8551 +-0.045 | train R +0.8243 | succ 100.0% | phi[deg] 1.09 | slip[deg] 0.77 | RMSe[m] 0.0158 | alpha 0.029 | 47.5 min
+  ep  10000 | eval R +0.8602 +-0.044 | train R +0.8401 | succ 100.0% | phi[deg] 1.05 | slip[deg] 0.75 | RMSe[m] 0.0150 | alpha 0.023 | 52.7 min
+  ep  11000 | eval R +0.8618 +-0.044 | train R +0.8388 | succ 100.0% | phi[deg] 1.03 | slip[deg] 0.74 | RMSe[m] 0.0147 | alpha 0.021 | 58.0 min
+  ep  12000 | eval R +0.8624 +-0.046 | train R +0.8491 | succ 100.0% | phi[deg] 1.03 | slip[deg] 0.74 | RMSe[m] 0.0146 | alpha 0.021 | 63.1 min
+  ep  13000 | eval R +0.8610 +-0.045 | train R +0.8424 | succ 100.0% | phi[deg] 1.04 | slip[deg] 0.74 | RMSe[m] 0.0148 | alpha 0.021 | 68.1 min
+  ep  14000 | eval R +0.8619 +-0.045 | train R +0.8438 | succ 100.0% | phi[deg] 1.03 | slip[deg] 0.74 | RMSe[m] 0.0147 | alpha 0.021 | 73.4 min
+  ep  15000 | eval R +0.8640 +-0.043 | train R +0.8461 | succ 100.0% | phi[deg] 1.01 | slip[deg] 0.73 | RMSe[m] 0.0144 | alpha 0.021 | 78.5 min
+  ep  16000 | eval R +0.8619 +-0.044 | train R +0.8462 | succ 100.0% | phi[deg] 1.03 | slip[deg] 0.74 | RMSe[m] 0.0147 | alpha 0.021 | 83.6 min
+
+  best eval R +0.8640 at episode 15,000; final +0.8619 at 16,000
+  saved out/rl_paper_agent.pt, out/rl_paper_training.json and out/rl_paper_log.txt

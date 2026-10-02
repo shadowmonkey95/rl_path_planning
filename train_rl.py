@@ -50,6 +50,10 @@ import torch.nn.functional as F
 ENVS = {
     "highway": ("highway_env", "TruckHighwayEnv"),
     "dlc": ("dlc_rl_env", "DLCPlannerEnv"),
+    # The reward here comes from Karimyan et al. (2024) -- peak required
+    # friction, gated on the rollover threshold -- rather than from
+    # hand-weighted terms, and the baseline planner optimises the same thing.
+    "paper": ("dlc_paper_env", "PaperPlannerEnv"),
 }
 
 
@@ -192,6 +196,9 @@ _EVAL_COLUMNS = {
     "dlc": (("phi[deg]", "mean_peak_LTR", "{:.2f}", math.degrees),
             ("slip[deg]", "mean_RWA", "{:.2f}", math.degrees),
             ("RMSe[m]", "mean_swept", "{:.4f}")),
+    "paper": (("phi[deg]", "mean_peak_LTR", "{:.2f}", math.degrees),
+              ("slip[deg]", "mean_RWA", "{:.2f}", math.degrees),
+              ("RMSe[m]", "mean_swept", "{:.4f}")),
 }
 
 
